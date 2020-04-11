@@ -93,6 +93,86 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./context/global/global.context.tsx":
+/*!*******************************************!*\
+  !*** ./context/global/global.context.tsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
+/* harmony default export */ __webpack_exports__["default"] = (GlobalContext);
+
+/***/ }),
+
+/***/ "./context/global/global.provider.tsx":
+/*!********************************************!*\
+  !*** ./context/global/global.provider.tsx ***!
+  \********************************************/
+/*! exports provided: GlobalProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalProvider", function() { return GlobalProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _global_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global.context */ "./context/global/global.context.tsx");
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/context/global/global.provider.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+const INITIAL_STATE = {};
+
+function reducer(state, action) {
+  console.log(state, 'globalContext');
+
+  switch (action.type) {
+    case 'SIGNIN':
+      return _objectSpread({}, state, {
+        currentForm: 'signIn'
+      });
+
+    default:
+      return state;
+  }
+}
+
+const GlobalProvider = ({
+  children
+}) => {
+  const {
+    0: state,
+    1: dispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, INITIAL_STATE);
+  return __jsx(_global_context__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
+    value: {
+      state,
+      dispatch
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 7
+    }
+  }, children);
+};
+
+/***/ }),
+
 /***/ "./helper/useDeviceType.tsx":
 /*!**********************************!*\
   !*** ./helper/useDeviceType.tsx ***!
@@ -455,8 +535,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helper_useDeviceType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/useDeviceType */ "./helper/useDeviceType.tsx");
-/* harmony import */ var typeface_roboto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! typeface-roboto */ "./node_modules/typeface-roboto/index.css");
-/* harmony import */ var typeface_roboto__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(typeface_roboto__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _context_global_global_provider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/global/global.provider */ "./context/global/global.provider.tsx");
+/* harmony import */ var typeface_roboto__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! typeface-roboto */ "./node_modules/typeface-roboto/index.css");
+/* harmony import */ var typeface_roboto__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(typeface_roboto__WEBPACK_IMPORTED_MODULE_4__);
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/pages/_app.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -472,6 +553,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
+
 function ExtendedApp({
   Component,
   pageProps,
@@ -479,15 +561,22 @@ function ExtendedApp({
   userAgent
 }) {
   const deviceType = Object(_helper_useDeviceType__WEBPACK_IMPORTED_MODULE_2__["useDeviceType"])(userAgent);
-  return __jsx(Component, _extends({}, pageProps, {
+  return __jsx(_context_global_global_provider__WEBPACK_IMPORTED_MODULE_3__["GlobalProvider"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 5
+    }
+  }, __jsx(Component, _extends({}, pageProps, {
     deviceType: deviceType,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 5
+      lineNumber: 17,
+      columnNumber: 9
     }
-  }));
+  })));
 }
 
 ExtendedApp.getInitialProps = async appContext => {
