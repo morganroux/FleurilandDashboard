@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _global_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global.context */ "./context/global/global.context.tsx");
-var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/context/global/global.provider.tsx";
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/context/global/global.provider.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -538,7 +538,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _context_global_global_provider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/global/global.provider */ "./context/global/global.provider.tsx");
 /* harmony import */ var typeface_roboto__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! typeface-roboto */ "./node_modules/typeface-roboto/index.css");
 /* harmony import */ var typeface_roboto__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(typeface_roboto__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/pages/_app.tsx";
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/pages/_app.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
