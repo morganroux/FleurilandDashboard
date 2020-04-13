@@ -27797,11 +27797,10 @@ var colors = {
 };
 var useStylesStatusSelector = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(function (theme) {
   return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
-    filledOverride: {
-      background: 'var(--background-start)',
-      borderRadius: 10,
-      border: 0,
-      boxShadow: '0 3px 5px 2px var(--box-shadow)'
+    root: {
+      '&:focus': {
+        background: 'transparent'
+      }
     }
   });
 });
@@ -27872,10 +27871,10 @@ var OrdersFade = function OrdersFade(props) {
         columnNumber: 21
       }
     });
-  })), ")}");
+  })));
 };
 
-var OrdersPage = function OrdersPage() {
+var Orders = function Orders() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])([]),
       orders = _useState[0],
       setOrders = _useState[1];
@@ -27915,7 +27914,7 @@ var OrdersPage = function OrdersPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -27924,14 +27923,14 @@ var OrdersPage = function OrdersPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, "Commandes"), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 48,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -27940,7 +27939,7 @@ var OrdersPage = function OrdersPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 13
     }
   }, __jsx(OrdersFade, {
@@ -27948,13 +27947,13 @@ var OrdersPage = function OrdersPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 50,
       columnNumber: 17
     }
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (OrdersPage);
+/* harmony default export */ __webpack_exports__["default"] = (Orders);
 
 /***/ }),
 
@@ -27989,7 +27988,7 @@ var StatusSelector = function StatusSelector(props) {
     value: props.status,
     onChange: props.handleChange,
     classes: {
-      root: classes.filledOverride
+      root: classes.root
     },
     disableUnderline: true //style={colors[props.status]}
     ,
@@ -27998,7 +27997,7 @@ var StatusSelector = function StatusSelector(props) {
       borderRadius: 10,
       border: 0,
       display: 'block',
-      padding: '10px 20px 10px 20px'
+      padding: '10px 10px 10px 10px'
     } // inputProps= {{
     //     padding: '15px 20px 15px 20px',
     // }}
@@ -28014,7 +28013,7 @@ var StatusSelector = function StatusSelector(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, "Annul\xE9e"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -28022,7 +28021,7 @@ var StatusSelector = function StatusSelector(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, "En Cours"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -28030,7 +28029,7 @@ var StatusSelector = function StatusSelector(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 38,
       columnNumber: 9
     }
   }, "Termin\xE9e"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -28038,7 +28037,7 @@ var StatusSelector = function StatusSelector(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, "Rembours\xE9e"));

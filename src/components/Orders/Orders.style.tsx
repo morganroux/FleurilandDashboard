@@ -33,12 +33,11 @@ export const colors = {
 export const useStylesStatusSelector = makeStyles((theme: Theme) => {
   return (
     createStyles ({
-        filledOverride: 
+        root: 
         {
-          background: 'var(--background-start)',
-          borderRadius: 10,
-          border: 0,
-          boxShadow: '0 3px 5px 2px var(--box-shadow)',
+          '&:focus':{
+            background: 'transparent'
+        }
         }
     })
   )

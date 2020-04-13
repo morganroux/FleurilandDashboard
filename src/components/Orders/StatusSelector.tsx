@@ -19,7 +19,7 @@ const StatusSelector:React.FC<StatusSelectorProps> = (props) => {
         <Select
         value={props.status}
         onChange={props.handleChange}
-        classes={{root: classes.filledOverride}}
+        classes={{root: classes.root}}
         disableUnderline
         //style={colors[props.status]}
         style={{
@@ -27,8 +27,7 @@ const StatusSelector:React.FC<StatusSelectorProps> = (props) => {
             borderRadius: 10,
             border: 0,
             display: 'block',
-            padding: '10px 20px 10px 20px',
-            
+            padding: '10px 10px 10px 10px',
         }}
         // inputProps= {{
         //     padding: '15px 20px 15px 20px',

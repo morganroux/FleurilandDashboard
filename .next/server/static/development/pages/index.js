@@ -627,11 +627,10 @@ const colors = {
 };
 const useStylesStatusSelector = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
   return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
-    filledOverride: {
-      background: 'var(--background-start)',
-      borderRadius: 10,
-      border: 0,
-      boxShadow: '0 3px 5px 2px var(--box-shadow)'
+    root: {
+      '&:focus': {
+        background: 'transparent'
+      }
     }
   });
 });
@@ -700,10 +699,10 @@ const OrdersFade = props => {
         columnNumber: 21
       }
     });
-  })), ")}");
+  })));
 };
 
-const OrdersPage = () => {
+const Orders = () => {
   const {
     0: orders,
     1: setOrders
@@ -727,7 +726,7 @@ const OrdersPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -736,14 +735,14 @@ const OrdersPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, "Commandes"), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 48,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -752,7 +751,7 @@ const OrdersPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 49,
       columnNumber: 13
     }
   }, __jsx(OrdersFade, {
@@ -760,13 +759,13 @@ const OrdersPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 50,
       columnNumber: 17
     }
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (OrdersPage);
+/* harmony default export */ __webpack_exports__["default"] = (Orders);
 
 /***/ }),
 
@@ -801,7 +800,7 @@ const StatusSelector = props => {
     value: props.status,
     onChange: props.handleChange,
     classes: {
-      root: classes.filledOverride
+      root: classes.root
     },
     disableUnderline: true //style={colors[props.status]}
     ,
@@ -810,7 +809,7 @@ const StatusSelector = props => {
       borderRadius: 10,
       border: 0,
       display: 'block',
-      padding: '10px 20px 10px 20px'
+      padding: '10px 10px 10px 10px'
     } // inputProps= {{
     //     padding: '15px 20px 15px 20px',
     // }}
@@ -826,7 +825,7 @@ const StatusSelector = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, "Annul\xE9e"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -834,7 +833,7 @@ const StatusSelector = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, "En Cours"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -842,7 +841,7 @@ const StatusSelector = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 38,
       columnNumber: 9
     }
   }, "Termin\xE9e"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -850,7 +849,7 @@ const StatusSelector = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, "Rembours\xE9e"));

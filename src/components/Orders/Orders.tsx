@@ -24,12 +24,11 @@ const OrdersFade: React.FC<OrdersProps> = (props) => {
                     />)}
                 )}
             </OrderList>
-            )}
         </div>
     )
 }
 
-const OrdersPage: React.FC = () => {
+const Orders: React.FC = () => {
     const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const classes = useStylesOrders();
@@ -53,4 +52,4 @@ const OrdersPage: React.FC = () => {
         </div>
     )
 }
-export default OrdersPage;
+export default Orders;
