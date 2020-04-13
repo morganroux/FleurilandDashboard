@@ -27530,47 +27530,47 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var OrderItem = function OrderItem(props) {
-  return __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return props.order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2__["default"], {
     key: props.order.id,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 9
-    }
-  }, __jsx(IdCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
       columnNumber: 13
     }
-  }, props.order.id), __jsx(NameCell, {
+  }, __jsx(IdCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
       columnNumber: 13
     }
-  }, props.order.billing.first_name, " ", props.order.billing.last_name, " "), __jsx(PriceCell, {
+  }, props.order.id), __jsx(NameCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
       columnNumber: 13
     }
-  }, props.order.total, "\u20AC"), __jsx(StatusCell, {
+  }, props.order.billing.first_name, " ", props.order.billing.last_name, " "), __jsx(PriceCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
       columnNumber: 13
     }
-  }, props.order.status), __jsx(MethodCell, {
+  }, props.order.total, "\u20AC"), __jsx(StatusCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
+      columnNumber: 13
+    }
+  }, props.order.status), props.order.shipping_lines[0] && __jsx(MethodCell, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, props.order.shipping_lines[0].method_title));
@@ -27581,7 +27581,7 @@ var IdCell = function IdCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 29,
       columnNumber: 9
     }
   }, props.children);
@@ -27592,7 +27592,7 @@ var NameCell = function NameCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, props.children);
@@ -27603,7 +27603,7 @@ var PriceCell = function PriceCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, props.children);
@@ -27626,7 +27626,7 @@ var StatusCell = function StatusCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 55,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -27635,7 +27635,7 @@ var StatusCell = function StatusCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 56,
       columnNumber: 13
     }
   }));
@@ -27646,7 +27646,7 @@ var MethodCell = function MethodCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, props.children);

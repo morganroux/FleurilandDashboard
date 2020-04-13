@@ -10,13 +10,17 @@ type OrderItemProps = {
 
 const OrderItem: React.FC<OrderItemProps> = (props) => {
     return (
-        <TableRow key={props.order.id}>
+            props.order && (
+            <TableRow key={props.order.id}>
             <IdCell>{props.order.id}</IdCell>
             <NameCell>{props.order.billing.first_name} {props.order.billing.last_name} </NameCell>
             <PriceCell>{props.order.total}€</PriceCell>
+
             <StatusCell>{props.order.status}</StatusCell>
-            <MethodCell>{props.order.shipping_lines[0].method_title}</MethodCell>
-        </TableRow>
+            {props.order.shipping_lines[0] && 
+            <MethodCell>{props.order.shipping_lines[0].method_title}</MethodCell>}
+            </TableRow>
+            )
     );
 }
 
