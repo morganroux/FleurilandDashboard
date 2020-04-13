@@ -1114,32 +1114,25 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 13,
         columnNumber: 11
       }
-    }), __jsx("title", {
+    })), __jsx("body", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17,
-        columnNumber: 11
-      }
-    }, "Fleuriland")), __jsx("body", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 18,
         columnNumber: 9
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 19,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 20,
         columnNumber: 11
       }
     })));
@@ -1178,7 +1171,7 @@ MyDocument.getInitialProps = async ctx => {
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 56,
         columnNumber: 54
       }
     })))

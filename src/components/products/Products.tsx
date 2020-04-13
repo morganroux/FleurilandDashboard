@@ -2,10 +2,13 @@ import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
 import ProductList from './ProductList';
 import ProductItem from './ProductItem';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import useStylesProducts from './Products.style';
 
 const Products: React.FC = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const classes = useStylesProducts();
 
     useEffect(() => {
         async function loadProducts() {
@@ -14,12 +17,13 @@ const Products: React.FC = () => {
             setIsLoading(false);
         }
         loadProducts();
-    }, [])
+    }, []);
+
     return (
-        <div>
+        <div className = {classes.root}>
             <h1>Commandes</h1>
                 {isLoading == true ? (
-                    <p>Chargement...</p>
+                    <CircularProgress />
                 ) : (
                 <ProductList>
                     {products.map((product) => {

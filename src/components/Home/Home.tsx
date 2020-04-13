@@ -20,13 +20,13 @@ const Home: React.FC = () => {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      {/* <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
             Fleuriland
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar> */}
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -34,7 +34,12 @@ const Home: React.FC = () => {
           paper: classes.drawerPaper,
         }}
       >
-        <Toolbar />
+        <Toolbar>
+          <Typography variant="h6" noWrap>
+            Fleuriland
+          </Typography>
+        </Toolbar>
+        <Divider />
         <div className={classes.drawerContainer}>
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -44,20 +49,11 @@ const Home: React.FC = () => {
               </ListItem>
             ))}
           </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
         </div>
       </Drawer>
-      <main className={classes.content}>
-        <Toolbar />
-        <Products/>
+      <main className = {classes.content}>
+        <Toolbar className = {classes.toolbar}></Toolbar>
+          <Products/>
       </main>
     </div>
   )

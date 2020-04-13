@@ -4,7 +4,10 @@ import Home from '../components/Home/Home';
 
 const Index: React.FC = () => {
     return (
+      <React.Fragment>
+        <title>Fleuriland</title>
         <Home />
+      </React.Fragment>
     );
   }
 

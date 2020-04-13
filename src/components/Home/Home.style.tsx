@@ -16,14 +16,19 @@ const useStyles = makeStyles((theme: Theme) => {
         flexShrink: 0,
       },
       drawerPaper: {
+        background: '#456F61',
+        color: '#FFF',
         width: drawerWidth,
       },
       drawerContainer: {
         overflow: 'auto',
       },
+      toolbar: {
+        background: '#E6ECF4'
+      },
       content: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        //padding: theme.spacing(3),
       },
     }));
   });
