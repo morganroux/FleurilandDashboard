@@ -12,7 +12,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import Products from '../Products/Products';
+import OrdersPage from '../Orders/Orders';
 import useStylesHome from './Home.style';
 
 const Home: React.FC = () => {
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
         }}
       >
         <Toolbar>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h5" noWrap>
             Fleuriland
           </Typography>
         </Toolbar>
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
           <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon className={classes.icon}/> : <MailIcon className={classes.icon}/>}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
       </Drawer>
       <main className = {classes.content}>
         <Toolbar className = {classes.toolbar}></Toolbar>
-          <Products/>
+          <OrdersPage/>
       </main>
     </div>
   )

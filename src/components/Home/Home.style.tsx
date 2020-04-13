@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme: Theme) => {
         flexShrink: 0,
       },
       drawerPaper: {
-        background: '#456F61',
+        background: 'linear-gradient(135deg, #456F61 50%, #417991 90%)',
         color: '#FFF',
+        fill: '#FFF',
         width: drawerWidth,
       },
       drawerContainer: {
@@ -26,9 +27,11 @@ const useStyles = makeStyles((theme: Theme) => {
       toolbar: {
         background: '#edf2f7'
       },
+      icon: {
+        fill: '#edf2f7'
+      },
       content: {
         flexGrow: 1,
-        //padding: theme.spacing(3),
       },
     }));
   });

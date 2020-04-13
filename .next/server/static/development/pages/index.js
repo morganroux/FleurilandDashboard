@@ -119,8 +119,9 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
       flexShrink: 0
     },
     drawerPaper: {
-      background: '#456F61',
+      background: 'linear-gradient(135deg, #456F61 50%, #417991 90%)',
       color: '#FFF',
+      fill: '#FFF',
       width: drawerWidth
     },
     drawerContainer: {
@@ -129,9 +130,11 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
     toolbar: {
       background: '#edf2f7'
     },
+    icon: {
+      fill: '#edf2f7'
+    },
     content: {
-      flexGrow: 1 //padding: theme.spacing(3),
-
+      flexGrow: 1
     }
   });
 });
@@ -172,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_MoveToInbox__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MoveToInbox__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _material_ui_icons_Mail__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Mail */ "@material-ui/icons/Mail");
 /* harmony import */ var _material_ui_icons_Mail__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Mail__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _Products_Products__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Products/Products */ "./src/components/Products/Products.tsx");
+/* harmony import */ var _Orders_Orders__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Orders/Orders */ "./src/components/Orders/Orders.tsx");
 /* harmony import */ var _Home_style__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Home.style */ "./src/components/Home/Home.style.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Home/Home.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -228,7 +231,7 @@ const Home = () => {
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
-    variant: "h6",
+    variant: "h5",
     noWrap: true,
     __self: undefined,
     __source: {
@@ -275,6 +278,7 @@ const Home = () => {
       columnNumber: 17
     }
   }, index % 2 === 0 ? __jsx(_material_ui_icons_MoveToInbox__WEBPACK_IMPORTED_MODULE_10___default.a, {
+    className: classes.icon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -282,11 +286,12 @@ const Home = () => {
       columnNumber: 50
     }
   }) : __jsx(_material_ui_icons_Mail__WEBPACK_IMPORTED_MODULE_11___default.a, {
+    className: classes.icon,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47,
-      columnNumber: 66
+      columnNumber: 90
     }
   })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_9___default.a, {
     primary: text,
@@ -312,7 +317,7 @@ const Home = () => {
       lineNumber: 55,
       columnNumber: 9
     }
-  }), __jsx(_Products_Products__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), __jsx(_Orders_Orders__WEBPACK_IMPORTED_MODULE_12__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -326,10 +331,10 @@ const Home = () => {
 
 /***/ }),
 
-/***/ "./src/components/Products/ProductItem.tsx":
-/*!*************************************************!*\
-  !*** ./src/components/Products/ProductItem.tsx ***!
-  \*************************************************/
+/***/ "./src/components/Orders/OrderItem.tsx":
+/*!*********************************************!*\
+  !*** ./src/components/Orders/OrderItem.tsx ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -341,57 +346,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TableRow */ "@material-ui/core/TableRow");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Products/ProductItem.tsx";
+/* harmony import */ var _StatusSelector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StatusSelector */ "./src/components/Orders/StatusSelector.tsx");
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
 
-const ProductItem = props => {
+
+const OrderItem = props => {
   return __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    key: props.product.id,
+    key: props.order.id,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 13,
       columnNumber: 9
     }
   }, __jsx(IdCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 13
-    }
-  }, props.product.id), __jsx(NameCell, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13,
-      columnNumber: 13
-    }
-  }, props.product.billing.first_name, " ", props.product.billing.last_name, " "), __jsx(PriceCell, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 14,
       columnNumber: 13
     }
-  }, props.product.total, "\u20AC"), __jsx(StatusCell, {
+  }, props.order.id), __jsx(NameCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
       columnNumber: 13
     }
-  }, props.product.status), __jsx(MethodCell, {
+  }, props.order.billing.first_name, " ", props.order.billing.last_name, " "), __jsx(PriceCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
       columnNumber: 13
     }
-  }, props.product.shipping_lines[0].method_title));
+  }, props.order.total, "\u20AC"), __jsx(StatusCell, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, props.order.status), __jsx(MethodCell, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 13
+    }
+  }, props.order.shipping_lines[0].method_title));
 };
 
 const IdCell = props => {
@@ -399,7 +406,7 @@ const IdCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, props.children);
@@ -410,7 +417,7 @@ const NameCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, props.children);
@@ -421,45 +428,43 @@ const PriceCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, props.children);
 };
 
 const StatusCell = props => {
-  let color = "white";
-  let text = "";
+  const {
+    0: status,
+    1: setStatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.children.toString());
 
-  if (props.children.toString() == "processing") {
-    color = "Coral";
-    text = "En cours";
-  } else if (props.children.toString() == "completed") {
-    color = "LightGreen";
-    text = "Terminée";
-  } else if (props.children.toString() == "cancelled") {
-    color = "WhiteSmoke";
-    text = "Annulée";
-  } else if (props.children.toString() == "refunded") {
-    color = "#bad095";
-    text = "Remboursée";
-  } else {
-    color = "White";
-    text = props.children.toString();
-  }
+  const handleChange = event => {
+    console.log("here");
+    setStatus(event.target.value); //setColor(colors[event.target.value as string]);
+  };
 
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
     style: {
-      backgroundColor: `${color}`,
       borderRadius: 10
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 51,
       columnNumber: 9
     }
-  }, text);
+  }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    status: status,
+    handleChange: handleChange,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 13
+    }
+  }));
 };
 
 const MethodCell = props => {
@@ -467,20 +472,20 @@ const MethodCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, props.children);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductItem);
+/* harmony default export */ __webpack_exports__["default"] = (OrderItem);
 
 /***/ }),
 
-/***/ "./src/components/Products/ProductList.tsx":
-/*!*************************************************!*\
-  !*** ./src/components/Products/ProductList.tsx ***!
-  \*************************************************/
+/***/ "./src/components/Orders/OrderList.tsx":
+/*!*********************************************!*\
+  !*** ./src/components/Orders/OrderList.tsx ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -498,7 +503,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/TableRow */ "@material-ui/core/TableRow");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Products/ProductList.tsx";
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderList.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -507,7 +512,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const ProductList = props => {
+const OrderList = props => {
   return __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
@@ -574,38 +579,69 @@ const ProductList = props => {
   }, props.children));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductList);
+/* harmony default export */ __webpack_exports__["default"] = (OrderList);
 
 /***/ }),
 
-/***/ "./src/components/Products/Products.style.tsx":
-/*!****************************************************!*\
-  !*** ./src/components/Products/Products.style.tsx ***!
-  \****************************************************/
-/*! exports provided: default */
+/***/ "./src/components/Orders/Orders.style.tsx":
+/*!************************************************!*\
+  !*** ./src/components/Orders/Orders.style.tsx ***!
+  \************************************************/
+/*! exports provided: useStylesOrders, colors, useStylesStatusSelector */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStylesOrders", function() { return useStylesOrders; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colors", function() { return colors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStylesStatusSelector", function() { return useStylesStatusSelector; });
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__);
 
-const drawerWidth = 242;
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
+const useStylesOrders = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
   return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
     root: {
       padding: theme.spacing(3)
     }
   });
 });
-/* harmony default export */ __webpack_exports__["default"] = (useStyles);
+/*==================================*/
+
+const colors = {
+  "completed": {
+    '--background-start': '#76D3C9',
+    '--background-end': '#CEEDEB'
+  },
+  "processing": {
+    '--background-start': '#FBA285',
+    '--background-end': '#FEE2E1'
+  },
+  "cancelled": {
+    '--background-start': '#E2E3E5',
+    '--background-end': '#F1ECE1'
+  },
+  "refunded": {
+    '--background-start': '#ABA4D3',
+    '--background-end': '#E7B8D9'
+  }
+};
+const useStylesStatusSelector = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
+  return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
+    filledOverride: {
+      background: 'var(--background-start)',
+      borderRadius: 10,
+      border: 0,
+      boxShadow: '0 3px 5px 2px var(--box-shadow)'
+    }
+  });
+});
 
 /***/ }),
 
-/***/ "./src/components/Products/Products.tsx":
-/*!**********************************************!*\
-  !*** ./src/components/Products/Products.tsx ***!
-  \**********************************************/
+/***/ "./src/components/Orders/Orders.tsx":
+/*!******************************************!*\
+  !*** ./src/components/Orders/Orders.tsx ***!
+  \******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -615,14 +651,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _ProductList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductList */ "./src/components/Products/ProductList.tsx");
-/* harmony import */ var _ProductItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProductItem */ "./src/components/Products/ProductItem.tsx");
+/* harmony import */ var _OrderList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./OrderList */ "./src/components/Orders/OrderList.tsx");
+/* harmony import */ var _OrderItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./OrderItem */ "./src/components/Orders/OrderItem.tsx");
 /* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
 /* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
-/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _Products_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Products.style */ "./src/components/Products/Products.style.tsx");
-var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Products/Products.tsx";
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Orders_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Orders.style */ "./src/components/Orders/Orders.style.tsx");
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/Orders.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -635,97 +673,190 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-const ProductsFade = props => {
+
+const OrdersFade = props => {
   return __jsx("div", _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 17,
       columnNumber: 9
     }
-  }), __jsx(_ProductList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_OrderList__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 13
     }
-  }, props.products.map(product => {
-    return __jsx(_ProductItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: product.id,
-      product: product,
+  }, props.orders.map(order => {
+    return __jsx(_OrderItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: order.id,
+      order: order,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 21,
         columnNumber: 21
       }
     });
   })), ")}");
 };
 
-const ProductsPage = () => {
+const OrdersPage = () => {
   const {
-    0: products,
-    1: setProducts
+    0: orders,
+    1: setOrders
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   const {
     0: isLoading,
     1: setIsLoading
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
-  const classes = Object(_Products_style__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  const classes = Object(_Orders_style__WEBPACK_IMPORTED_MODULE_7__["useStylesOrders"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    async function loadProducts() {
-      const newProducts = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:3000/api/products");
-      setProducts(newProducts.data);
+    async function loadOrders() {
+      const newOrders = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:3000/api/orders");
+      setOrders(newOrders.data);
       setIsLoading(false);
     }
 
-    loadProducts();
+    loadOrders();
   }, []);
   return __jsx("div", {
     className: classes.root,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 9
     }
-  }, __jsx("h1", {
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    variant: "h4",
+    noWrap: true,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 13
     }
   }, "Commandes"), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 35
     }
-  }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6___default.a, {
     in: !isLoading,
     timeout: 500,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 13
     }
-  }, __jsx(ProductsFade, {
-    products: products,
+  }, __jsx(OrdersFade, {
+    orders: orders,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 17
     }
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProductsPage);
+/* harmony default export */ __webpack_exports__["default"] = (OrdersPage);
+
+/***/ }),
+
+/***/ "./src/components/Orders/StatusSelector.tsx":
+/*!**************************************************!*\
+  !*** ./src/components/Orders/StatusSelector.tsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "@material-ui/core/MenuItem");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Select */ "@material-ui/core/Select");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Orders_style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Orders.style */ "./src/components/Orders/Orders.style.tsx");
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/StatusSelector.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+const StatusSelector = props => {
+  const classes = Object(_Orders_style__WEBPACK_IMPORTED_MODULE_3__["useStylesStatusSelector"])();
+  const colorStart = _Orders_style__WEBPACK_IMPORTED_MODULE_3__["colors"][props.status]['--background-start'];
+  const colorEnd = _Orders_style__WEBPACK_IMPORTED_MODULE_3__["colors"][props.status]['--background-end'];
+  return __jsx(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    value: props.status,
+    onChange: props.handleChange,
+    classes: {
+      root: classes.filledOverride
+    },
+    disableUnderline: true //style={colors[props.status]}
+    ,
+    style: {
+      background: `linear-gradient(45deg, ${colorStart} 30%, ${colorEnd} 90%)`,
+      borderRadius: 10,
+      border: 0,
+      display: 'block',
+      padding: '10px 20px 10px 20px'
+    } // inputProps= {{
+    //     padding: '15px 20px 15px 20px',
+    // }}
+    ,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 9
+    }
+  }, __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    value: "cancelled",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 9
+    }
+  }, "Annul\xE9e"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    value: "processing",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 9
+    }
+  }, "En Cours"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    value: "completed",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, "Termin\xE9e"), __jsx(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    value: "refunded",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 9
+    }
+  }, "Rembours\xE9e"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (StatusSelector);
 
 /***/ }),
 
@@ -883,6 +1014,28 @@ module.exports = require("@material-ui/core/ListItemIcon");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/ListItemText");
+
+/***/ }),
+
+/***/ "@material-ui/core/MenuItem":
+/*!*********************************************!*\
+  !*** external "@material-ui/core/MenuItem" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/MenuItem");
+
+/***/ }),
+
+/***/ "@material-ui/core/Select":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/Select" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Select");
 
 /***/ }),
 
