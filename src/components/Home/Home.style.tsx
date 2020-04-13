@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) => {
         overflow: 'auto',
       },
       toolbar: {
-        background: '#E6ECF4'
+        background: '#edf2f7'
       },
       content: {
         flexGrow: 1,

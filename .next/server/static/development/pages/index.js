@@ -127,7 +127,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
       overflow: 'auto'
     },
     toolbar: {
-      background: '#E6ECF4'
+      background: '#edf2f7'
     },
     content: {
       flexGrow: 1 //padding: theme.spacing(3),
@@ -619,17 +619,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProductItem */ "./src/components/Products/ProductItem.tsx");
 /* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
 /* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Products_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Products.style */ "./src/components/Products/Products.style.tsx");
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Products_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Products.style */ "./src/components/Products/Products.style.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Products/Products.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
 
 
 
-const Products = () => {
+
+
+
+const ProductsFade = props => {
+  return __jsx("div", _extends({}, props, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }), __jsx(_ProductList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, props.products.map(product => {
+    return __jsx(_ProductItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      key: product.id,
+      product: product,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20,
+        columnNumber: 21
+      }
+    });
+  })), ")}");
+};
+
+const ProductsPage = () => {
   const {
     0: products,
     1: setProducts
@@ -638,7 +673,7 @@ const Products = () => {
     0: isLoading,
     1: setIsLoading
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
-  const classes = Object(_Products_style__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  const classes = Object(_Products_style__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function loadProducts() {
       const newProducts = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:3000/api/products");
@@ -653,45 +688,44 @@ const Products = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 47,
       columnNumber: 13
     }
-  }, "Commandes"), isLoading == true ? __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default.a, {
+  }, "Commandes"), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 21
+      lineNumber: 48,
+      columnNumber: 35
     }
-  }) : __jsx(_ProductList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    in: !isLoading,
+    timeout: 500,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 49,
+      columnNumber: 13
+    }
+  }, __jsx(ProductsFade, {
+    products: products,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
       columnNumber: 17
     }
-  }, products.map(product => {
-    return __jsx(_ProductItem__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      key: product.id,
-      product: product,
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31,
-        columnNumber: 25
-      }
-    });
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Products);
+/* harmony default export */ __webpack_exports__["default"] = (ProductsPage);
 
 /***/ }),
 
@@ -794,6 +828,17 @@ module.exports = require("@material-ui/core/Divider");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Drawer");
+
+/***/ }),
+
+/***/ "@material-ui/core/Fade":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/Fade" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Fade");
 
 /***/ }),
 
