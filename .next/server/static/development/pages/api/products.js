@@ -88,15 +88,15 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./pages/api/products.js":
-/*!*******************************!*\
-  !*** ./pages/api/products.js ***!
-  \*******************************/
+/***/ "./src/pages/api/products.js":
+/*!***********************************!*\
+  !*** ./src/pages/api/products.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -111,7 +111,7 @@ const axios = __webpack_require__(/*! axios */ "axios");
     params: {
       consumer_key: "ck_8b723182d48e755debe4ab8a88190376ee40fab7",
       consumer_secret: "cs_c7cfd6fb8fbf6211d88e210519e8e315efc1aa88",
-      per_page: 20
+      per_page: 100
     }
   });
   res.send(ret.data);
@@ -119,14 +119,14 @@ const axios = __webpack_require__(/*! axios */ "axios");
 
 /***/ }),
 
-/***/ 4:
-/*!*************************************!*\
-  !*** multi ./pages/api/products.js ***!
-  \*************************************/
+/***/ 5:
+/*!*****************************************!*\
+  !*** multi ./src/pages/api/products.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/pages/api/products.js */"./pages/api/products.js");
+module.exports = __webpack_require__(/*! /Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/api/products.js */"./src/pages/api/products.js");
 
 
 /***/ }),
