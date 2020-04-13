@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
+
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 
@@ -18,40 +18,17 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Products from '../Products/Products';
+import useStylesHome from './Home.style';
 
-import Products from './products/Products';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 
-const drawerWidth = 242;
-
-const useStyles = makeStyles((theme: Theme) => {
-  return (
-  createStyles({
-    root: {
-      display: 'flex',
-    },
-    appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-    },
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    drawerContainer: {
-      overflow: 'auto',
-    },
-    content: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
-  }));
-});
 
 
 const Home: React.FC = () => {
-    const classes = useStyles();
+    const classes = useStylesHome();
+    
     return (
       <div className={classes.root}>
         <AppBar position="fixed" style={{zIndex: 1300}} className={classes.appBar}>
@@ -89,10 +66,14 @@ const Home: React.FC = () => {
             </List>
           </div>
         </Drawer>
+        <Container>
+        <Box>
         <main className={classes.content}>
           <Toolbar />
           <Products/>
         </main>
+        </Box>
+        </Container>
       </div>
     );
 }
