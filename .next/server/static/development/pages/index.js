@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -357,9 +357,11 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const OrderItem = props => {
-  return props.order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    key: props.order.id,
+const OrderItem = ({
+  order
+}) => {
+  return order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    key: order.id,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -373,35 +375,36 @@ const OrderItem = props => {
       lineNumber: 16,
       columnNumber: 13
     }
-  }, props.order.id), __jsx(NameCell, {
+  }, order.id), __jsx(NameCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
       columnNumber: 13
     }
-  }, props.order.billing.first_name, " ", props.order.billing.last_name, " "), __jsx(PriceCell, {
+  }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
       columnNumber: 13
     }
-  }, props.order.total, "\u20AC"), __jsx(StatusCell, {
+  }, order.total, "\u20AC"), __jsx(StatusCell, {
+    order: order,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 19,
       columnNumber: 13
     }
-  }, props.order.status), props.order.shipping_lines[0] && __jsx(MethodCell, {
+  }), order.shipping_lines[0] && __jsx(MethodCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 21,
       columnNumber: 13
     }
-  }, props.order.shipping_lines[0].method_title));
+  }, order.shipping_lines[0].method_title));
 };
 
 const IdCell = props => {
@@ -409,7 +412,7 @@ const IdCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 9
     }
   }, props.children);
@@ -420,7 +423,7 @@ const NameCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, props.children);
@@ -431,22 +434,23 @@ const PriceCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, props.children);
 };
 
-const StatusCell = props => {
+const StatusCell = ({
+  order
+}) => {
   const {
     0: status,
     1: setStatus
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(props.children.toString());
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(order.status);
 
   const handleChange = async event => {
-    const id = "12156";
     const status = event.target.value;
-    const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`http://localhost:3000/api/updateOrder?id=${id}&status=${status}`);
+    const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
     if (rep.data.status == event.target.value) setStatus(event.target.value);
   };
 
@@ -457,7 +461,7 @@ const StatusCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 56,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -466,7 +470,7 @@ const StatusCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 57,
       columnNumber: 13
     }
   }));
@@ -477,7 +481,7 @@ const MethodCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 64,
       columnNumber: 9
     }
   }, props.children);
@@ -910,7 +914,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/

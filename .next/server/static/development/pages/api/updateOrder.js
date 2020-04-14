@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -124,7 +124,7 @@ const axios = __webpack_require__(/*! axios */ "axios");
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!********************************************!*\
   !*** multi ./src/pages/api/updateOrder.js ***!
   \********************************************/

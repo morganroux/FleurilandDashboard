@@ -30,9 +30,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var OrderItem = function OrderItem(props) {
-  return props.order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    key: props.order.id,
+var OrderItem = function OrderItem(_ref) {
+  var order = _ref.order;
+  return order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    key: order.id,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -46,35 +47,36 @@ var OrderItem = function OrderItem(props) {
       lineNumber: 16,
       columnNumber: 13
     }
-  }, props.order.id), __jsx(NameCell, {
+  }, order.id), __jsx(NameCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
       columnNumber: 13
     }
-  }, props.order.billing.first_name, " ", props.order.billing.last_name, " "), __jsx(PriceCell, {
+  }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
       columnNumber: 13
     }
-  }, props.order.total, "\u20AC"), __jsx(StatusCell, {
+  }, order.total, "\u20AC"), __jsx(StatusCell, {
+    order: order,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 19,
       columnNumber: 13
     }
-  }, props.order.status), props.order.shipping_lines[0] && __jsx(MethodCell, {
+  }), order.shipping_lines[0] && __jsx(MethodCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 21,
       columnNumber: 13
     }
-  }, props.order.shipping_lines[0].method_title));
+  }, order.shipping_lines[0].method_title));
 };
 
 var IdCell = function IdCell(props) {
@@ -82,7 +84,7 @@ var IdCell = function IdCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 9
     }
   }, props.children);
@@ -93,7 +95,7 @@ var NameCell = function NameCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, props.children);
@@ -104,33 +106,34 @@ var PriceCell = function PriceCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, props.children);
 };
 
-var StatusCell = function StatusCell(props) {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(props.children.toString()),
+var StatusCell = function StatusCell(_ref2) {
+  var order = _ref2.order;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(order.status),
       status = _useState[0],
       setStatus = _useState[1];
 
   var handleChange = function handleChange(event) {
-    var id, status, rep;
+    var status, rep;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleChange$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            id = "12156";
-            status = "processing";
-            _context.next = 4;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("http://localhost:3000/api/updateOrder/?id=".concat(id, "&status=").concat(status)));
+            status = event.target.value;
+            _context.next = 3;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("http://localhost:3000/api/updateOrder?id=".concat(order.id, "&status=").concat(status)));
 
-          case 4:
+          case 3:
             rep = _context.sent;
-            setStatus(event.target.value);
+            if (rep.data.status == event.target.value) setStatus(event.target.value);
 
-          case 6:
+          case 5:
           case "end":
             return _context.stop();
         }
@@ -145,7 +148,7 @@ var StatusCell = function StatusCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 56,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -154,7 +157,7 @@ var StatusCell = function StatusCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 57,
       columnNumber: 13
     }
   }));
@@ -165,7 +168,7 @@ var MethodCell = function MethodCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 64,
       columnNumber: 9
     }
   }, props.children);
@@ -176,4 +179,4 @@ var MethodCell = function MethodCell(props) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.28fa81b6ff9b286de34c.hot-update.js.map
+//# sourceMappingURL=index.js.30a218bbb8fd7022620e.hot-update.js.map

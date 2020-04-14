@@ -9,17 +9,16 @@ type OrderItemProps = {
     order: any
 }
 
-const OrderItem: React.FC<OrderItemProps> = (props) => {
+const OrderItem: React.FC<OrderItemProps> = ({order}) => {
     return (
-            props.order && (
-            <TableRow key={props.order.id}>
-            <IdCell>{props.order.id}</IdCell>
-            <NameCell>{props.order.billing.first_name} {props.order.billing.last_name} </NameCell>
-            <PriceCell>{props.order.total}€</PriceCell>
-
-            <StatusCell>{props.order.status}</StatusCell>
-            {props.order.shipping_lines[0] && 
-            <MethodCell>{props.order.shipping_lines[0].method_title}</MethodCell>}
+            order && (
+            <TableRow key={order.id}>
+            <IdCell>{order.id}</IdCell>
+            <NameCell>{order.billing.first_name} {order.billing.last_name} </NameCell>
+            <PriceCell>{order.total}€</PriceCell>
+            <StatusCell order={order} />
+            {order.shipping_lines[0] && 
+            <MethodCell>{order.shipping_lines[0].method_title}</MethodCell>}
             </TableRow>
             )
     );
@@ -43,13 +42,12 @@ const PriceCell: React.FC = (props) => {
     );
 }
 
-const StatusCell: React.FC = (props) => {
-    const [status, setStatus] = useState(props.children.toString());
+const StatusCell: React.FC<OrderItemProps> = ({order}) => {
+    const [status, setStatus] = useState(order.status);
 
     const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
-        const id = "12156";
         const status = event.target.value;
-        const rep = await axios.put(`http://localhost:3000/api/updateOrder?id=${id}&status=${status}`);
+        const rep = await axios.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
         if (rep.data.status == event.target.value)
             setStatus(event.target.value as string);
       };
