@@ -18,12 +18,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StatusSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StatusSelector */ "./src/components/Orders/StatusSelector.tsx");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/HouseOutlined */ "./node_modules/@material-ui/icons/HouseOutlined.js");
+/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__);
 
 
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
 
@@ -37,28 +43,28 @@ var OrderItem = function OrderItem(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 17,
       columnNumber: 13
     }
   }, __jsx(IdCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 13
     }
   }, order.id), __jsx(NameCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 19,
       columnNumber: 13
     }
   }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 20,
       columnNumber: 13
     }
   }, order.total, "\u20AC"), __jsx(StatusCell, {
@@ -66,14 +72,14 @@ var OrderItem = function OrderItem(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 21,
       columnNumber: 13
     }
   }), order.shipping_lines[0] && __jsx(MethodCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 23,
       columnNumber: 13
     }
   }, order.shipping_lines[0].method_title));
@@ -84,7 +90,7 @@ var IdCell = function IdCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, props.children);
@@ -95,7 +101,7 @@ var NameCell = function NameCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, props.children);
@@ -106,7 +112,7 @@ var PriceCell = function PriceCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 9
     }
   }, props.children);
@@ -148,7 +154,7 @@ var StatusCell = function StatusCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 58,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -157,7 +163,7 @@ var StatusCell = function StatusCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 59,
       columnNumber: 13
     }
   }));
@@ -165,13 +171,30 @@ var StatusCell = function StatusCell(_ref2) {
 
 var MethodCell = function MethodCell(props) {
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    align: "center",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 9
     }
-  }, props.children);
+  }, props.children == "Retrait en point de vente" ? __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    fontSize: "large",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 17
+    }
+  }) : __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    fontSize: "large",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 17
+    }
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderItem);
@@ -179,4 +202,4 @@ var MethodCell = function MethodCell(props) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.30a218bbb8fd7022620e.hot-update.js.map
+//# sourceMappingURL=index.js.8a08c4e1e7e27b9a0ab3.hot-update.js.map

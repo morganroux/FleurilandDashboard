@@ -15,7 +15,7 @@ const OrderList: React.FC = (props) => {
                     <TableCell>Nom</TableCell>
                     <TableCell>Total</TableCell>
                     <TableCell>Status</TableCell>
-                    <TableCell>Expédition</TableCell>
+                    <TableCell align="center">Expédition</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>

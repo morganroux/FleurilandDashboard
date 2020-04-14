@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -111,7 +111,7 @@ const axios = __webpack_require__(/*! axios */ "axios");
     params: {
       consumer_key: "ck_8b723182d48e755debe4ab8a88190376ee40fab7",
       consumer_secret: "cs_c7cfd6fb8fbf6211d88e210519e8e315efc1aa88",
-      per_page: 10
+      per_page: 100
     }
   });
   res.send(ret.data);
@@ -119,7 +119,7 @@ const axios = __webpack_require__(/*! axios */ "axios");
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!***************************************!*\
   !*** multi ./src/pages/api/orders.js ***!
   \***************************************/

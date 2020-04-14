@@ -4,6 +4,8 @@ import TableRow from '@material-ui/core/TableRow';
 import StatusSelector from './StatusSelector';
 import { useStylesStatusSelector, colors } from './Orders.style';
 import axios from 'axios';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
 
 type OrderItemProps = {
     order: any
@@ -61,7 +63,13 @@ const StatusCell: React.FC<OrderItemProps> = ({order}) => {
 
 const MethodCell: React.FC = (props) => {
     return (
-        <TableCell>{props.children}</TableCell>
+        <TableCell align="center">
+            {props.children == "Retrait en point de vente" ? (
+                <HouseOutlinedIcon fontSize='large'/>
+            ) : (
+                <LocalShippingIcon fontSize='large'/>
+            )}
+        </TableCell>
     );
 }
 

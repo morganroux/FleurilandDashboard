@@ -1,5 +1,39 @@
 webpackHotUpdate("static/development/pages/index.js",{
 
+/***/ "./node_modules/@material-ui/icons/House.js":
+false,
+
+/***/ "./node_modules/@material-ui/icons/HouseOutlined.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/HouseOutlined.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  d: "M19 9.3V4h-3v2.6L12 3 2 12h3v8h6v-6h2v6h6v-8h3l-3-2.7zM17 18h-2v-6H9v6H7v-7.81l5-4.5 5 4.5V18z"
+}), _react.default.createElement("path", {
+  d: "M10 10h4c0-1.1-.9-2-2-2s-2 .9-2 2z"
+})), 'HouseOutlined');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./src/components/Orders/OrderItem.tsx":
 /*!*********************************************!*\
   !*** ./src/components/Orders/OrderItem.tsx ***!
@@ -18,12 +52,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StatusSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StatusSelector */ "./src/components/Orders/StatusSelector.tsx");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "./node_modules/@material-ui/icons/LocalShipping.js");
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/HouseOutlined */ "./node_modules/@material-ui/icons/HouseOutlined.js");
+/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__);
 
 
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
 
@@ -37,28 +77,28 @@ var OrderItem = function OrderItem(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 17,
       columnNumber: 13
     }
   }, __jsx(IdCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 13
     }
   }, order.id), __jsx(NameCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 19,
       columnNumber: 13
     }
   }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 20,
       columnNumber: 13
     }
   }, order.total, "\u20AC"), __jsx(StatusCell, {
@@ -66,14 +106,14 @@ var OrderItem = function OrderItem(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 21,
       columnNumber: 13
     }
   }), order.shipping_lines[0] && __jsx(MethodCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 23,
       columnNumber: 13
     }
   }, order.shipping_lines[0].method_title));
@@ -84,7 +124,7 @@ var IdCell = function IdCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, props.children);
@@ -95,7 +135,7 @@ var NameCell = function NameCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, props.children);
@@ -106,7 +146,7 @@ var PriceCell = function PriceCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 9
     }
   }, props.children);
@@ -120,21 +160,20 @@ var StatusCell = function StatusCell(_ref2) {
       setStatus = _useState[1];
 
   var handleChange = function handleChange(event) {
-    var id, status, rep;
+    var status, rep;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleChange$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            id = "12156";
             status = event.target.value;
-            _context.next = 4;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("http://localhost:3000/api/updateOrder?id=".concat(id, "&status=").concat(status)));
+            _context.next = 3;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_5___default.a.put("http://localhost:3000/api/updateOrder?id=".concat(order.id, "&status=").concat(status)));
 
-          case 4:
+          case 3:
             rep = _context.sent;
             if (rep.data.status == event.target.value) setStatus(event.target.value);
 
-          case 6:
+          case 5:
           case "end":
             return _context.stop();
         }
@@ -149,7 +188,7 @@ var StatusCell = function StatusCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 58,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -158,7 +197,7 @@ var StatusCell = function StatusCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 59,
       columnNumber: 13
     }
   }));
@@ -166,13 +205,28 @@ var StatusCell = function StatusCell(_ref2) {
 
 var MethodCell = function MethodCell(props) {
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    align: "center",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 9
     }
-  }, props.children);
+  }, props.children == "Retrait en point de vente" ? __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68,
+      columnNumber: 17
+    }
+  }) : __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70,
+      columnNumber: 17
+    }
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderItem);
@@ -180,4 +234,4 @@ var MethodCell = function MethodCell(props) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.a82aab88ddf0bf0f920a.hot-update.js.map
+//# sourceMappingURL=index.js.9a925f49ef4619deffd9.hot-update.js.map
