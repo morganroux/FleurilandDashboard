@@ -88,15 +88,15 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/pages/api/orders.js":
-/*!*********************************!*\
-  !*** ./src/pages/api/orders.js ***!
-  \*********************************/
+/***/ "./src/pages/api/updateOrder.js":
+/*!**************************************!*\
+  !*** ./src/pages/api/updateOrder.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -106,27 +106,32 @@ const WooCommerceRestApi = __webpack_require__(/*! @woocommerce/woocommerce-rest
 
 const axios = __webpack_require__(/*! axios */ "axios");
 
-/* harmony default export */ __webpack_exports__["default"] = (async (_req, res) => {
-  const ret = await axios.get("https://www.fleuriland.fr/wp-json/wc/v2/orders", {
-    params: {
-      consumer_key: "ck_8b723182d48e755debe4ab8a88190376ee40fab7",
-      consumer_secret: "cs_c7cfd6fb8fbf6211d88e210519e8e315efc1aa88",
-      per_page: 10
-    }
-  });
-  res.send(ret.data);
+/* harmony default export */ __webpack_exports__["default"] = (async (req, res) => {
+  if (req.method === 'PUT') {
+    const {
+      id,
+      status
+    } = req.query;
+    const ret = await axios.put(`https://www.fleuriland.fr/wp-json/wc/v3/orders/${id}?consumer_key=ck_8b723182d48e755debe4ab8a88190376ee40fab7&consumer_secret=cs_c7cfd6fb8fbf6211d88e210519e8e315efc1aa88&status=${status}`, {// params: {
+      //   // consumer_key: "ck_8b723182d48e755debe4ab8a88190376ee40fab7",
+      //   // consumer_secret: "cs_c7cfd6fb8fbf6211d88e210519e8e315efc1aa88",
+      //   status: "completed"
+      // }
+    });
+    res.send(ret.data);
+  }
 });
 
 /***/ }),
 
-/***/ 4:
-/*!***************************************!*\
-  !*** multi ./src/pages/api/orders.js ***!
-  \***************************************/
+/***/ 6:
+/*!********************************************!*\
+  !*** multi ./src/pages/api/updateOrder.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/api/orders.js */"./src/pages/api/orders.js");
+module.exports = __webpack_require__(/*! /Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/api/updateOrder.js */"./src/pages/api/updateOrder.js");
 
 
 /***/ }),
@@ -154,4 +159,4 @@ module.exports = require("axios");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=orders.js.map
+//# sourceMappingURL=updateOrder.js.map

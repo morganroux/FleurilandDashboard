@@ -3,6 +3,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import StatusSelector from './StatusSelector';
 import { useStylesStatusSelector, colors } from './Orders.style';
+import axios from 'axios';
 
 type OrderItemProps = {
     order: any
@@ -45,10 +46,12 @@ const PriceCell: React.FC = (props) => {
 const StatusCell: React.FC = (props) => {
     const [status, setStatus] = useState(props.children.toString());
 
-    const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
-        console.log("here");
-        setStatus(event.target.value as string);
-        //setColor(colors[event.target.value as string]);
+    const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
+        const id = "12156";
+        const status = event.target.value;
+        const rep = await axios.put(`http://localhost:3000/api/updateOrder?id=${id}&status=${status}`);
+        if (rep.data.status == event.target.value)
+            setStatus(event.target.value as string);
       };
  
     return (

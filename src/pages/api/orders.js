@@ -2,8 +2,6 @@ const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
 const axios = require("axios");
 
   export default async (_req, res) => {
-    
-   
       const ret = await axios.get("https://www.fleuriland.fr/wp-json/wc/v2/orders", {
         params: {
           consumer_key: "ck_8b723182d48e755debe4ab8a88190376ee40fab7",
@@ -12,6 +10,4 @@ const axios = require("axios");
         }
       })
       res.send(ret.data);
-    
-    
   };
