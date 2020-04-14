@@ -1,39 +1,5 @@
 webpackHotUpdate("static/development/pages/index.js",{
 
-/***/ "./node_modules/@material-ui/icons/House.js":
-false,
-
-/***/ "./node_modules/@material-ui/icons/HouseOutlined.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@material-ui/icons/HouseOutlined.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
-
-var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
-  d: "M19 9.3V4h-3v2.6L12 3 2 12h3v8h6v-6h2v6h6v-8h3l-3-2.7zM17 18h-2v-6H9v6H7v-7.81l5-4.5 5 4.5V18z"
-}), _react.default.createElement("path", {
-  d: "M10 10h4c0-1.1-.9-2-2-2s-2 .9-2 2z"
-})), 'HouseOutlined');
-
-exports.default = _default;
-
-/***/ }),
-
 /***/ "./src/components/Orders/OrderItem.tsx":
 /*!*********************************************!*\
   !*** ./src/components/Orders/OrderItem.tsx ***!
@@ -56,12 +22,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/HouseOutlined */ "./node_modules/@material-ui/icons/HouseOutlined.js");
 /* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Tooltip */ "./node_modules/@material-ui/core/esm/Tooltip/index.js");
 
 
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -77,28 +45,28 @@ var OrderItem = function OrderItem(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 19,
       columnNumber: 13
     }
   }, __jsx(IdCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 20,
       columnNumber: 13
     }
   }, order.id), __jsx(NameCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 22,
       columnNumber: 13
     }
   }, order.total, "\u20AC"), __jsx(StatusCell, {
@@ -106,14 +74,14 @@ var OrderItem = function OrderItem(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 23,
       columnNumber: 13
     }
   }), order.shipping_lines[0] && __jsx(MethodCell, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 25,
       columnNumber: 13
     }
   }, order.shipping_lines[0].method_title));
@@ -124,7 +92,7 @@ var IdCell = function IdCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 33,
       columnNumber: 9
     }
   }, props.children);
@@ -135,7 +103,7 @@ var NameCell = function NameCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, props.children);
@@ -146,7 +114,7 @@ var PriceCell = function PriceCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, props.children);
@@ -188,7 +156,7 @@ var StatusCell = function StatusCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -197,7 +165,7 @@ var StatusCell = function StatusCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 13
     }
   }));
@@ -209,24 +177,34 @@ var MethodCell = function MethodCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 68,
       columnNumber: 9
     }
-  }, props.children == "Retrait en point de vente" ? __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    title: props.children,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 17
+      lineNumber: 69,
+      columnNumber: 13
+    }
+  }, props.children == "Retrait en point de vente" ? __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    fontSize: "large",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 21
     }
   }) : __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    fontSize: "large",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 73,
       columnNumber: 17
     }
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderItem);
@@ -234,4 +212,4 @@ var MethodCell = function MethodCell(props) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.9a925f49ef4619deffd9.hot-update.js.map
+//# sourceMappingURL=index.js.17e4bb9b4852d5186ac2.hot-update.js.map

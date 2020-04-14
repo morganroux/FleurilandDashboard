@@ -6,6 +6,8 @@ import { useStylesStatusSelector, colors } from './Orders.style';
 import axios from 'axios';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
+import Tooltip from '@material-ui/core/Tooltip';
+import Fade from '@material-ui/core/Fade';
 
 type OrderItemProps = {
     order: any
@@ -64,11 +66,17 @@ const StatusCell: React.FC<OrderItemProps> = ({order}) => {
 const MethodCell: React.FC = (props) => {
     return (
         <TableCell align="center">
+            <Tooltip 
+                title={props.children}
+                TransitionComponent={Fade} 
+                TransitionProps={{ timeout: 600 }}
+            >
             {props.children == "Retrait en point de vente" ? (
-                <HouseOutlinedIcon fontSize='large'/>
+                    <HouseOutlinedIcon fontSize='large'/>
             ) : (
                 <LocalShippingIcon fontSize='large'/>
             )}
+            </Tooltip>
         </TableCell>
     );
 }
