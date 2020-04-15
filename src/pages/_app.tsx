@@ -3,6 +3,7 @@ import App from 'next/app';
 import { useDeviceType } from '../helper/useDeviceType';
 import { GlobalProvider } from '../context/global/global.provider';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { SnackbarProvider } from 'notistack';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../theme';
 import 'typeface-roboto';
@@ -19,7 +20,9 @@ export default function ExtendedApp({
       <GlobalProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Component {...pageProps} deviceType={deviceType} />
+          <SnackbarProvider> 
+            <Component {...pageProps} deviceType={deviceType} />
+          </SnackbarProvider>
         </ThemeProvider>
       </GlobalProvider>
     );

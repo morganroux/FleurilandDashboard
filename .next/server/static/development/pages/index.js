@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -357,9 +357,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
 /* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! notistack */ "notistack");
+/* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_9__);
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
@@ -369,51 +372,54 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const OrderItem = ({
-  order
-}) => {
+
+
+
+const OrderItem = props => {
+  const {
+    order
+  } = props;
   return order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2___default.a, {
     key: order.id,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 13
-    }
-  }, __jsx(IdCell, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 13
-    }
-  }, order.id), __jsx(NameCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21,
       columnNumber: 13
     }
-  }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
+  }, __jsx(IdCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22,
       columnNumber: 13
     }
-  }, order.total, "\u20AC"), __jsx(StatusCell, {
-    order: order,
+  }, order.id), __jsx(NameCell, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
       columnNumber: 13
     }
-  }), order.shipping_lines[0] && __jsx(MethodCell, {
+  }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  }, order.total, "\u20AC"), __jsx(StatusCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 25,
+      columnNumber: 13
+    }
+  })), order.shipping_lines[0] && __jsx(MethodCell, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
       columnNumber: 13
     }
   }, order.shipping_lines[0].method_title));
@@ -424,7 +430,7 @@ const IdCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, props.children);
@@ -435,7 +441,7 @@ const NameCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 41,
       columnNumber: 9
     }
   }, props.children);
@@ -446,14 +452,15 @@ const PriceCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, props.children);
 };
 
 const StatusCell = ({
-  order
+  order,
+  enqueueSnackbar
 }) => {
   const {
     0: status,
@@ -463,7 +470,24 @@ const StatusCell = ({
   const handleChange = async event => {
     const status = event.target.value;
     const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
-    if (rep.data.status == event.target.value) setStatus(event.target.value);
+    console.log("ok");
+
+    if (rep.data.status == event.target.value) {
+      setStatus(event.target.value);
+      enqueueSnackbar('Mise à jour réussie', {
+        variant: 'success',
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'right'
+        }
+      });
+    } else enqueueSnackbar('Erreur de connexion au serveur', {
+      variant: 'error',
+      anchorOrigin: {
+        vertical: 'bottom',
+        horizontal: 'right'
+      }
+    });
   };
 
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -473,7 +497,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 73,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -482,7 +506,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 74,
       columnNumber: 13
     }
   }));
@@ -494,7 +518,7 @@ const MethodCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -506,7 +530,7 @@ const MethodCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 82,
       columnNumber: 13
     }
   }, props.children == "Retrait en point de vente" ? __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -514,7 +538,7 @@ const MethodCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 88,
       columnNumber: 21
     }
   }) : __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -522,13 +546,13 @@ const MethodCell = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 90,
       columnNumber: 17
     }
   })));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (OrderItem);
+/* harmony default export */ __webpack_exports__["default"] = (Object(notistack__WEBPACK_IMPORTED_MODULE_9__["withSnackbar"])(OrderItem));
 
 /***/ }),
 
@@ -956,7 +980,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/
@@ -1240,6 +1264,17 @@ module.exports = require("@material-ui/icons/MoveToInbox");
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "notistack":
+/*!****************************!*\
+  !*** external "notistack" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("notistack");
 
 /***/ }),
 

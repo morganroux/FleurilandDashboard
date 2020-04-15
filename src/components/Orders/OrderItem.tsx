@@ -8,19 +8,21 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
 import Tooltip from '@material-ui/core/Tooltip';
 import Fade from '@material-ui/core/Fade';
+import { withSnackbar, WithSnackbarProps } from 'notistack';
 
-type OrderItemProps = {
-    order: any
+interface OrderItemProps extends WithSnackbarProps {
+    order: any,
 }
 
-const OrderItem: React.FC<OrderItemProps> = ({order}) => {
+const OrderItem: React.FC<OrderItemProps> = (props) => {
+    const { order } = props;
     return (
             order && (
             <TableRow key={order.id}>
             <IdCell>{order.id}</IdCell>
             <NameCell>{order.billing.first_name} {order.billing.last_name} </NameCell>
             <PriceCell>{order.total}€</PriceCell>
-            <StatusCell order={order} />
+            <StatusCell {...props }/>
             {order.shipping_lines[0] && 
             <MethodCell>{order.shipping_lines[0].method_title}</MethodCell>}
             </TableRow>
@@ -46,14 +48,25 @@ const PriceCell: React.FC = (props) => {
     );
 }
 
-const StatusCell: React.FC<OrderItemProps> = ({order}) => {
+const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
     const [status, setStatus] = useState(order.status);
 
     const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
         const status = event.target.value;
         const rep = await axios.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
-        if (rep.data.status == event.target.value)
+        console.log("ok")
+        if (rep.data.status == event.target.value) {
             setStatus(event.target.value as string);
+            enqueueSnackbar('Mise à jour réussie', { 
+                variant: 'success',
+                anchorOrigin: { vertical: 'bottom', horizontal: 'right'}
+            });
+        }
+        else
+            enqueueSnackbar('Erreur de connexion au serveur', { 
+                variant: 'error',
+                anchorOrigin: { vertical: 'bottom', horizontal: 'right'}
+            });
       };
  
     return (
@@ -81,4 +94,4 @@ const MethodCell: React.FC = (props) => {
     );
 }
 
-export default OrderItem;
+export default withSnackbar(OrderItem);
