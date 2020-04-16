@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,32 +6,50 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import OrderItem from './OrderItem';
+import { TableSortLabel } from '@material-ui/core';
 
-type TableProps = {
+interface TableProps {
     orders:any
 }
 
-const OrderHead: React.FC = () => {
+interface HeadProps {
+    orderBy: number
+    orderDir: any
+}
+const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir}) => {
+    const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande"];
+    const createSortHandler = (id) => null;
     return (
         <TableHead>
-                <TableRow>
-                    <TableCell>Numéro de Commande</TableCell>
-                    <TableCell>Nom</TableCell>
-                    <TableCell>Total</TableCell>
-                    <TableCell>Status</TableCell>
-                    <TableCell>Date de commande</TableCell>
-                    <TableCell align="center">Expédition</TableCell>
-                </TableRow>
+            <TableRow>
+                {heads.map((name:string, id: number) => (
+                <TableCell 
+                    key={id}
+                    align = {name=="Expédition" ? "center" : "left"}
+                >
+                    <TableSortLabel
+                        active={orderBy === id}
+                        direction={orderBy === id ? orderDir : 'asc'}
+                        onClick={createSortHandler(id)}
+                    >
+                    {name}
+                    </TableSortLabel>
+                </TableCell>
+                ))}
+            </TableRow>
         </TableHead>
     );
 }
 
 const OrderTable: React.FC<TableProps> = (props) => {
     const { orders } = props;
+    const [orderBy, setOrderBy] = useState();
+    const [orderDir, setOrderDir] = useState('asc');
+
     return (
         <div {...props}>
         <Table stickyHeader size="small">
-            <OrderHead/>
+            <OrderHead orderBy={orderBy} orderDir={orderDir}/>
             <TableBody>
                 {orders.map((order) => {
                     return (
