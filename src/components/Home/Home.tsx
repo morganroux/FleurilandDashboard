@@ -41,14 +41,14 @@ const Home: React.FC = () => {
         </Toolbar>
         <Divider />
         <div className={classes.drawerContainer}>
-          <List>
+          {/* <List>
             {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
               <ListItem button key={text}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon className={classes.icon}/> : <MailIcon className={classes.icon}/>}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
-          </List>
+          </List> */}
         </div>
       </Drawer>
       <main className = {classes.content}>

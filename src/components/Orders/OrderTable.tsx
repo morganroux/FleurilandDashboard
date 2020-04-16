@@ -17,7 +17,7 @@ interface HeadProps {
     orderDir: any
 }
 const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir}) => {
-    const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande"];
+    const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande", "Expédition"];
     const createSortHandler = (id) => null;
     return (
         <TableHead>
