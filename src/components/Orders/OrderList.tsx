@@ -8,13 +8,14 @@ import TableRow from '@material-ui/core/TableRow';
 
 const OrderList: React.FC = (props) => {
     return (
-        <Table>
+        <Table size="small">
             <TableHead>
                 <TableRow>
                     <TableCell>Numéro de Commande</TableCell>
                     <TableCell>Nom</TableCell>
                     <TableCell>Total</TableCell>
                     <TableCell>Status</TableCell>
+                    <TableCell>Date de commande</TableCell>
                     <TableCell align="center">Expédition</TableCell>
                 </TableRow>
             </TableHead>

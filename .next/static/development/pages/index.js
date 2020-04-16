@@ -33963,83 +33963,95 @@ var OrderItem = function OrderItem(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 13
+    }
+  }, __jsx(IdCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 21,
       columnNumber: 13
     }
-  }, __jsx(IdCell, {
+  })), __jsx(NameCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 22,
       columnNumber: 13
     }
-  }, order.id), __jsx(NameCell, {
+  })), __jsx(PriceCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
       columnNumber: 13
     }
-  }, order.billing.first_name, " ", order.billing.last_name, " "), __jsx(PriceCell, {
+  })), __jsx(StatusCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24,
       columnNumber: 13
     }
-  }, order.total, "\u20AC"), __jsx(StatusCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+  })), __jsx(DateCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 25,
       columnNumber: 13
     }
-  })), order.shipping_lines[0] && __jsx(MethodCell, {
+  })), __jsx(MethodCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 26,
       columnNumber: 13
     }
-  }, order.shipping_lines[0].method_title));
+  })));
 };
 
-var IdCell = function IdCell(props) {
+var IdCell = function IdCell(_ref) {
+  var order = _ref.order;
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 9
     }
-  }, props.children);
+  }, order.id);
 };
 
-var NameCell = function NameCell(props) {
+var NameCell = function NameCell(_ref2) {
+  var order = _ref2.order;
+  var firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
+  var lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 42,
       columnNumber: 9
     }
-  }, props.children);
+  }, firstName, " ", lastName);
 };
 
-var PriceCell = function PriceCell(props) {
+var PriceCell = function PriceCell(_ref3) {
+  var order = _ref3.order;
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 9
     }
-  }, props.children);
+  }, order.total, "\u20AC");
 };
 
-var StatusCell = function StatusCell(_ref) {
-  var order = _ref.order,
-      enqueueSnackbar = _ref.enqueueSnackbar;
+var StatusCell = function StatusCell(_ref4) {
+  var order = _ref4.order,
+      enqueueSnackbar = _ref4.enqueueSnackbar;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(order.status),
       status = _useState[0],
@@ -34091,7 +34103,7 @@ var StatusCell = function StatusCell(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -34100,23 +34112,43 @@ var StatusCell = function StatusCell(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 13
     }
   }));
 };
 
-var MethodCell = function MethodCell(props) {
+var DateCell = function DateCell(_ref5) {
+  var order = _ref5.order;
+  var date = new Date(order.date_created);
+  var min = date.getMinutes().toString().padStart(2, "0");
+  var hh = date.getHours().toString().padStart(2, "0");
+  var dd = date.getDate().toString().padStart(2, "0");
+  var mm = (date.getMonth() + 1).toString().padStart(2, "0");
+  var yyyy = date.getFullYear().toString().padStart(2, "0");
+  return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88,
+      columnNumber: 9
+    }
+  }, "".concat(dd, "-").concat(mm, "-").concat(yyyy, " ").concat(hh, ":").concat(min));
+};
+
+var MethodCell = function MethodCell(_ref6) {
+  var order = _ref6.order;
+  var method = order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     align: "center",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 95,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    title: props.children,
+  }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    title: method,
     TransitionComponent: _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_10__["default"],
     TransitionProps: {
       timeout: 600
@@ -34124,26 +34156,33 @@ var MethodCell = function MethodCell(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 13
-    }
-  }, props.children == "Retrait en point de vente" ? __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    fontSize: "large",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 21
-    }
-  }) : __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    fontSize: "large",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 97,
       columnNumber: 17
     }
-  })));
+  }, __jsx("div", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102,
+      columnNumber: 21
+    }
+  }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    fontSize: "large",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104,
+      columnNumber: 33
+    }
+  }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    fontSize: "large",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 29
+    }
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(notistack__WEBPACK_IMPORTED_MODULE_11__["withSnackbar"])(OrderItem));
@@ -34179,6 +34218,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var OrderList = function OrderList(props) {
   return __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    size: "small",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -34228,18 +34268,25 @@ var OrderList = function OrderList(props) {
       columnNumber: 21
     }
   }, "Status"), __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    align: "center",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
       columnNumber: 21
     }
+  }, "Date de commande"), __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    align: "center",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 21
+    }
   }, "Exp\xE9dition"))), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 13
     }
   }, props.children));
@@ -34590,7 +34637,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -34613,5 +34660,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

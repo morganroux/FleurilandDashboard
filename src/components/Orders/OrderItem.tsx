@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import StatusSelector from './StatusSelector';
-import { useStylesStatusSelector, colors } from './Orders.style';
 import axios from 'axios';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
@@ -19,32 +18,34 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
     return (
             order && (
             <TableRow key={order.id}>
-            <IdCell>{order.id}</IdCell>
-            <NameCell>{order.billing.first_name} {order.billing.last_name} </NameCell>
-            <PriceCell>{order.total}€</PriceCell>
+            <IdCell {...props }/>
+            <NameCell {...props }/>
+            <PriceCell {...props }/>
             <StatusCell {...props }/>
-            {order.shipping_lines[0] && 
-            <MethodCell>{order.shipping_lines[0].method_title}</MethodCell>}
+            <DateCell {...props} />
+            <MethodCell {...props }/>
             </TableRow>
             )
     );
 }
 
-const IdCell: React.FC = (props) => {
+const IdCell: React.FC<OrderItemProps> = ({ order }) => {
     return (
-        <TableCell>{props.children}</TableCell>
+        <TableCell>{order.id}</TableCell>
     );
 }
 
-const NameCell: React.FC = (props) => {
+const NameCell: React.FC<OrderItemProps> = ({ order }) => {
+    const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
+    const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
     return (
-        <TableCell>{props.children}</TableCell>
+        <TableCell>{firstName} {lastName}</TableCell>
     );
 }
 
-const PriceCell: React.FC = (props) => {
+const PriceCell: React.FC<OrderItemProps> = ({ order }) => {
     return (
-        <TableCell>{props.children}</TableCell>
+        <TableCell>{order.total}€</TableCell>
     );
 }
 
@@ -76,20 +77,38 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
     );
 }
 
-const MethodCell: React.FC = (props) => {
+const DateCell: React.FC<OrderItemProps> = ({ order }) => {
+    const date:Date = new Date(order.date_created);
+    const min = date.getMinutes().toString().padStart(2, "0");
+    const hh = date.getHours().toString().padStart(2, "0");
+    const dd = date.getDate().toString().padStart(2, "0");
+    const mm = (date.getMonth()+1).toString().padStart(2, "0");
+    const yyyy = date.getFullYear().toString().padStart(2, "0");
+    return (
+        <TableCell>{`${dd}-${mm}-${yyyy} ${hh}:${min}`}</TableCell>
+    );
+}
+
+const MethodCell: React.FC<OrderItemProps> = ({ order }) => {
+    const method = order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
     return (
         <TableCell align="center">
-            <Tooltip 
-                title={props.children}
-                TransitionComponent={Fade} 
-                TransitionProps={{ timeout: 600 }}
-            >
-            {props.children == "Retrait en point de vente" ? (
-                    <HouseOutlinedIcon fontSize='large'/>
-            ) : (
-                <LocalShippingIcon fontSize='large'/>
+            { (!!method) && (
+                <Tooltip 
+                    title={method}
+                    TransitionComponent={Fade} 
+                    TransitionProps={{ timeout: 600 }}
+                >
+                    <div>
+                        {method == "Retrait en point de vente" && (
+                                <HouseOutlinedIcon fontSize='large'/>
+                        )}
+                        {method == "Livraison chez vous" && (
+                            <LocalShippingIcon fontSize='large'/>
+                        )}
+                </div>
+                </Tooltip>
             )}
-            </Tooltip>
         </TableCell>
     );
 }
