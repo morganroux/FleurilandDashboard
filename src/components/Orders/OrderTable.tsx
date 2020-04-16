@@ -6,7 +6,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-const OrderList: React.FC = (props) => {
+const OrderTable: React.FC = (props) => {
     return (
         <Table stickyHeader size="small">
             <TableHead>
@@ -25,4 +25,4 @@ const OrderList: React.FC = (props) => {
         </Table>
 )}
    
-export default OrderList;
+export default OrderTable;

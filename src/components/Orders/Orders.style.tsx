@@ -5,6 +5,13 @@ export const useStylesOrders = makeStyles((theme: Theme) => {
     createStyles({
       root: {
         padding: theme.spacing(3),
+      },
+      toolbar: {
+        paddingLeft: theme.spacing(2),
+        paddingRight: theme.spacing(1),
+      },
+      title: {
+        flex: '1 1 100%'
       }
     }))
 });
