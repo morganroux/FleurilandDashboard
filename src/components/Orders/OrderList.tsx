@@ -8,7 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 
 const OrderList: React.FC = (props) => {
     return (
-        <Table size="small">
+        <Table stickyHeader size="small">
             <TableHead>
                 <TableRow>
                     <TableCell>Numéro de Commande</TableCell>

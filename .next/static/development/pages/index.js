@@ -34218,6 +34218,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 var OrderList = function OrderList(props) {
   return __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    stickyHeader: true,
     size: "small",
     __self: _this,
     __source: {
