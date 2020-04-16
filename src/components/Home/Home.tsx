@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         </div>
       </Drawer>
       <main className = {classes.content}>
-        <Toolbar className = {classes.toolbar}></Toolbar>
+      \<Toolbar className = {classes.toolbar}></Toolbar>
           <OrdersPage/>
       </main>
     </div>
