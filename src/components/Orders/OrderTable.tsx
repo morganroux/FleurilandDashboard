@@ -5,9 +5,16 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import OrderItem from './OrderItem';
 
-const OrderTable: React.FC = (props) => {
+type OrdersProps = {
+    orders:any
+}
+
+const OrderTable: React.FC<OrdersProps> = (props) => {
+    const { orders } = props;
     return (
+        <div {...props}>
         <Table stickyHeader size="small">
             <TableHead>
                 <TableRow>
@@ -20,9 +27,16 @@ const OrderTable: React.FC = (props) => {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {props.children}
+                {orders.map((order) => {
+                    return (
+                    <OrderItem 
+                        key = {order.id}
+                        order={order}
+                    />)}
+                )}
             </TableBody>
         </Table>
+        </div>
 )}
    
 export default OrderTable;
