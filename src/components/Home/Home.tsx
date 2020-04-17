@@ -14,6 +14,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import OrdersPage from '../Orders/Orders';
 import useStylesHome from './Home.style';
+import { Button } from '@material-ui/core';
+import { firebase } from '../../helper/firebase';
 
 const Home: React.FC = () => {
   const classes = useStylesHome();
@@ -52,7 +54,11 @@ const Home: React.FC = () => {
         </div>
       </Drawer>
       <main className = {classes.content}>
-      <Toolbar className = {classes.toolbar}></Toolbar>
+      <Toolbar className = {classes.toolbar}>
+        <Button onClick={() => firebase.auth().signOut()}>
+          Logout
+        </Button>
+      </Toolbar>
           <OrdersPage/>
       </main>
     </div>

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -165,8 +165,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Orders_Orders__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Orders/Orders */ "./src/components/Orders/Orders.tsx");
 /* harmony import */ var _Home_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Home.style */ "./src/components/Home/Home.style.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../helper/firebase */ "./src/helper/firebase.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Home/Home.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -183,14 +188,14 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 23,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 24,
       columnNumber: 7
     }
   }), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -202,14 +207,14 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -218,14 +223,14 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 40,
       columnNumber: 11
     }
   }, "Fleuriland")), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -233,7 +238,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 45,
       columnNumber: 9
     }
   })), __jsx("main", {
@@ -241,7 +246,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 56,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -249,14 +254,22 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 57,
       columnNumber: 7
     }
-  }), __jsx(_Orders_Orders__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
+    onClick: () => _helper_firebase__WEBPACK_IMPORTED_MODULE_9__["firebase"].auth().signOut(),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 58,
+      columnNumber: 9
+    }
+  }, "Logout")), __jsx(_Orders_Orders__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
       columnNumber: 11
     }
   })));
@@ -1060,6 +1073,43 @@ const sortByMethod = (elmt1, elmt2) => {
 
 /***/ }),
 
+/***/ "./src/helper/firebase.tsx":
+/*!*********************************!*\
+  !*** ./src/helper/firebase.tsx ***!
+  \*********************************/
+/*! exports provided: firebase, googleAuthProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "googleAuthProvider", function() { return googleAuthProvider; });
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (module object) */ __webpack_require__.d(__webpack_exports__, "firebase", function() { return firebase_app__WEBPACK_IMPORTED_MODULE_0__; });
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const config = {
+  apiKey: "AIzaSyARkwRYJ_YxFZByN8dDCpD8Cirs8j3sB9w",
+  authDomain: "fleuriland-dashboard.firebaseapp.com",
+  databaseURL: "https://fleuriland-dashboard.firebaseio.com",
+  projectId: "fleuriland-dashboard",
+  storageBucket: "fleuriland-dashboard.appspot.com",
+  messagingSenderId: "1055673697175",
+  appId: "1:1055673697175:web:51faa702f99b19eb7ffad2"
+};
+
+if (!firebase_app__WEBPACK_IMPORTED_MODULE_0__["apps"].length) {
+  firebase_app__WEBPACK_IMPORTED_MODULE_0__["initializeApp"](config);
+}
+
+const googleAuthProvider = new firebase_app__WEBPACK_IMPORTED_MODULE_0__["auth"].GoogleAuthProvider(); //const database = firebase.database();
+
+
+
+/***/ }),
+
 /***/ "./src/pages/index.tsx":
 /*!*****************************!*\
   !*** ./src/pages/index.tsx ***!
@@ -1072,32 +1122,79 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Home_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home/Home */ "./src/components/Home/Home.tsx");
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/firebase */ "./src/helper/firebase.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
+const LoginPage = () => {
+  const hanldeClick = () => {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_2__["googleAuthProvider"]);
+  };
+
+  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    onClick: hanldeClick,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 5
+    }
+  }, "Click");
+};
+
 const Index = () => {
+  const {
+    0: auth,
+    1: setAuth
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().onAuthStateChanged(function (user) {
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  });
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
+      lineNumber: 36,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8,
+      lineNumber: 37,
       columnNumber: 9
     }
-  }, "Fleuriland"), __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "Fleuriland"), auth ? __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 9
+      lineNumber: 38,
+      columnNumber: 18
+    }
+  }) : __jsx(LoginPage, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 29
     }
   }));
 };
@@ -1106,7 +1203,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/
@@ -1346,6 +1443,28 @@ module.exports = require("@material-ui/icons/Search");
 /***/ (function(module, exports) {
 
 module.exports = require("axios");
+
+/***/ }),
+
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/auth":
+/*!********************************!*\
+  !*** external "firebase/auth" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/auth");
 
 /***/ }),
 
