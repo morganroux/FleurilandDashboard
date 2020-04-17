@@ -55,8 +55,8 @@ const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrder
 
 const OrderTable: React.FC<TableProps> = (props) => {
     const { orders } = props;
-    const [orderBy, setOrderBy] = useState(0);
-    const [orderDir, setOrderDir] = useState<"desc" | "asc">('asc');
+    const [orderBy, setOrderBy] = useState<number>(0);
+    const [orderDir, setOrderDir] = useState<"desc" | "asc">('desc');
     const sorters = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod];
     const getSortHandler = (orderBy, orderDir) => { return (
         (elmt1: any, elmt2: any) =>  {

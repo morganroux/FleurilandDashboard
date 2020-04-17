@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import SearchIcon from '@material-ui/icons/Search';
 import Fade from '@material-ui/core/Fade';
 import { useStylesOrders } from './Orders.style';
-import { Toolbar, IconButton, Tooltip } from '@material-ui/core';
+import { Toolbar, IconButton, Tooltip, InputBase } from '@material-ui/core';
 
 const Orders: React.FC = () => {
     const [orders, setOrders] = useState([]);
@@ -27,11 +27,14 @@ const Orders: React.FC = () => {
         <div className = {classes.root}>
             <Toolbar className = {classes.toolbar}>
                 <Typography className = {classes.title} variant="h4" noWrap>Commandes</Typography>
-                <Tooltip title = "Rechercher">
-                    <IconButton>
-                        <SearchIcon />
-                    </IconButton>
-                </Tooltip>
+                <div className = {classes.search}>
+                    <Tooltip title = "Rechercher">
+                        <IconButton>
+                            <SearchIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <InputBase className = {classes.searchtextfield} />
+                </div>
             </Toolbar>
             {isLoading == true && <CircularProgress />}
             <Fade in={!isLoading} timeout={500}>

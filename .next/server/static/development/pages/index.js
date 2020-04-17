@@ -638,7 +638,7 @@ const OrderTable = props => {
   const {
     0: orderDir,
     1: setOrderDir
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('asc');
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('desc');
   const sorters = [_sorters__WEBPACK_IMPORTED_MODULE_7__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByMethod"]];
 
   const getSortHandler = (orderBy, orderDir) => {
@@ -723,10 +723,18 @@ const useStylesOrders = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
     },
     toolbar: {
       paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(1)
+      paddingRight: theme.spacing(1),
+      display: 'flex',
+      justifyContent: 'space-between'
     },
-    title: {
-      flex: '1 1 100%'
+    title: {//flex: '1 1 100%'
+    },
+    search: {
+      border: 1,
+      borderColor: "black"
+    },
+    searchtextfield: {
+      background: '#edf2f7'
     }
   });
 });
@@ -844,33 +852,49 @@ const Orders = () => {
       lineNumber: 29,
       columnNumber: 17
     }
-  }, "Commandes"), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
-    title: "Rechercher",
+  }, "Commandes"), __jsx("div", {
+    className: classes.search,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["IconButton"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
+    title: "Rechercher",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31,
       columnNumber: 21
     }
-  }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["IconButton"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 32,
       columnNumber: 25
     }
-  })))), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 29
+    }
+  }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["InputBase"], {
+    className: classes.searchtextfield,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 36,
+      columnNumber: 21
+    }
+  }))), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -879,7 +903,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 40,
       columnNumber: 13
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -887,7 +911,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 41,
       columnNumber: 17
     }
   })));
