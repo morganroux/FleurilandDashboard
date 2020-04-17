@@ -11,7 +11,6 @@ const INITIAL_STATE = {
 export const AuthContext = React.createContext<Partial<any>>({});
 
 const authReducer = (state: any, action: any) => {
-  console.log(state, 'authContext');
 
   switch (action.type) {
     case 'LOGIN':

@@ -57016,7 +57016,9 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["ma
       overflow: 'auto'
     },
     toolbar: {
-      background: '#edf2f7'
+      background: '#edf2f7',
+      justifyContent: 'space-between',
+      paddingRight: theme.spacing(3)
     },
     icon: {
       fill: '#edf2f7'
@@ -57152,19 +57154,26 @@ var Home = function Home() {
       lineNumber: 63,
       columnNumber: 7
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
-    onClick: handleLogout,
+  }, __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 64,
       columnNumber: 9
     }
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
+    onClick: handleLogout,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 9
+    }
   }, "Logout")), __jsx(_Orders_Orders__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 11
     }
   })));
@@ -58035,8 +58044,6 @@ var INITIAL_STATE = {
 var AuthContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext({});
 
 var authReducer = function authReducer(state, action) {
-  console.log(state, 'authContext');
-
   switch (action.type) {
     case 'LOGIN':
       return _objectSpread({}, state, {
@@ -58068,7 +58075,7 @@ var AuthProvider = function AuthProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 5
     }
   }, children);
@@ -58154,7 +58161,7 @@ var LoginPage = function LoginPage() {
       lineNumber: 14,
       columnNumber: 5
     }
-  }, "Click");
+  }, "Login");
 };
 
 var Index = function Index() {
@@ -58220,7 +58227,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -58243,5 +58250,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

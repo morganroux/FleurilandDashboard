@@ -25,7 +25,9 @@ const useStyles = makeStyles((theme: Theme) => {
         overflow: 'auto',
       },
       toolbar: {
-        background: '#edf2f7'
+        background: '#edf2f7',
+        justifyContent: 'space-between',
+        paddingRight: theme.spacing(3),
       },
       icon: {
         fill: '#edf2f7'

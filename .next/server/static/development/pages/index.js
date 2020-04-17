@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -128,7 +128,9 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
       overflow: 'auto'
     },
     toolbar: {
-      background: '#edf2f7'
+      background: '#edf2f7',
+      justifyContent: 'space-between',
+      paddingRight: theme.spacing(3)
     },
     icon: {
       fill: '#edf2f7'
@@ -268,19 +270,26 @@ const Home = () => {
       lineNumber: 63,
       columnNumber: 7
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
-    onClick: handleLogout,
+  }, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 64,
       columnNumber: 9
     }
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
+    onClick: handleLogout,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 9
+    }
   }, "Logout")), __jsx(_Orders_Orders__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 69,
       columnNumber: 11
     }
   })));
@@ -1113,8 +1122,6 @@ const INITIAL_STATE = {
 const AuthContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
 
 const authReducer = (state, action) => {
-  console.log(state, 'authContext');
-
   switch (action.type) {
     case 'LOGIN':
       return _objectSpread({}, state, {
@@ -1146,7 +1153,7 @@ const AuthProvider = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 5
     }
   }, children);
@@ -1233,7 +1240,7 @@ const LoginPage = () => {
       lineNumber: 14,
       columnNumber: 5
     }
-  }, "Click");
+  }, "Login");
 };
 
 const Index = () => {
@@ -1299,7 +1306,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/

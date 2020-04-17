@@ -21701,8 +21701,6 @@ var INITIAL_STATE = {
 var AuthContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext({});
 
 var authReducer = function authReducer(state, action) {
-  console.log(state, 'authContext');
-
   switch (action.type) {
     case 'LOGIN':
       return _objectSpread({}, state, {
@@ -21734,7 +21732,7 @@ var AuthProvider = function AuthProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 5
     }
   }, children);

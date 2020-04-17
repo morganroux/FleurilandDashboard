@@ -61,6 +61,7 @@ const Home: React.FC = () => {
       </Drawer>
       <main className = {classes.content}>
       <Toolbar className = {classes.toolbar}>
+        <div></div>
         <Button onClick={handleLogout}>
           Logout
         </Button>

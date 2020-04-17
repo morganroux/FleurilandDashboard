@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
   return (
     <Button
     onClick={hanldeClick}
-    >Click</Button>
+    >Login</Button>
   )
 }
 
