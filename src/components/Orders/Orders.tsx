@@ -13,6 +13,7 @@ const Orders: React.FC = () => {
     const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const classes = useStylesOrders();
+    const [searchText, setSearchText] = useState<string>("");
 
     useEffect(() => {
         async function loadOrders() {
@@ -33,12 +34,16 @@ const Orders: React.FC = () => {
                             <SearchIcon />
                         </IconButton>
                     </Tooltip>
-                    <InputBase className = {classes.searchtextfield} />
+                    <InputBase 
+                        className={classes.searchtextfield} 
+                        placeholder="Rechercher"
+                        onChange={(event) => setSearchText(event.target.value)}
+                        value={searchText}/>
                 </div>
             </Toolbar>
             {isLoading == true && <CircularProgress />}
             <Fade in={!isLoading} timeout={500}>
-                <OrderTable orders={orders}/>
+                <OrderTable orders={orders} searchText={searchText}/>
             </Fade>
         </div>
     )

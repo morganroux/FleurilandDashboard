@@ -53757,14 +53757,14 @@ var OrderHead = function OrderHead(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 13
     }
   }, heads.map(function (name, id) {
@@ -53774,7 +53774,7 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 39,
         columnNumber: 17
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["TableSortLabel"], {
@@ -53786,7 +53786,7 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 21
       }
     }, name));
@@ -53794,7 +53794,8 @@ var OrderHead = function OrderHead(_ref) {
 };
 
 var OrderTable = function OrderTable(props) {
-  var orders = props.orders;
+  var orders = props.orders,
+      searchText = props.searchText;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
       orderBy = _useState[0],
@@ -53818,7 +53819,7 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -53827,7 +53828,7 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 9
     }
   }, __jsx(OrderHead, {
@@ -53838,24 +53839,30 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 72,
       columnNumber: 13
     }
   }), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 73,
       columnNumber: 13
     }
-  }, orders.sort(getSortHandler(orderBy, orderDir)).map(function (order) {
+  }, orders.filter(function (order) {
+    var text = searchText.toLowerCase();
+    var firstName = order.billing.first_name.toLowerCase();
+    var lastName = order.billing.last_name.toLowerCase();
+    var id = order.id.toString();
+    return id.includes(text) || lastName.includes(text) || firstName.includes(text);
+  }).sort(getSortHandler(orderBy, orderDir)).map(function (order) {
     return __jsx(_OrderItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: order.id,
       order: order,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 75,
+        lineNumber: 84,
         columnNumber: 21
       }
     });
@@ -53891,12 +53898,8 @@ var useStylesOrders = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0
       display: 'flex',
       justifyContent: 'space-between'
     },
-    title: {//flex: '1 1 100%'
-    },
-    search: {
-      border: 1,
-      borderColor: "black"
-    },
+    title: {},
+    search: {},
     searchtextfield: {
       background: '#edf2f7'
     }
@@ -53983,6 +53986,11 @@ var Orders = function Orders() {
       setIsLoading = _useState2[1];
 
   var classes = Object(_Orders_style__WEBPACK_IMPORTED_MODULE_8__["useStylesOrders"])();
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
+      searchText = _useState3[0],
+      setSearchText = _useState3[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     function loadOrders() {
       var newOrders;
@@ -54013,7 +54021,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Toolbar"], {
@@ -54021,7 +54029,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -54031,7 +54039,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 17
     }
   }, "Commandes"), __jsx("div", {
@@ -54039,7 +54047,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Tooltip"], {
@@ -54047,36 +54055,41 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["IconButton"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 25
     }
   }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_6___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 29
     }
   }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["InputBase"], {
     className: classes.searchtextfield,
+    placeholder: "Rechercher",
+    onChange: function onChange(event) {
+      return setSearchText(event.target.value);
+    },
+    value: searchText,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 21
     }
   }))), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 44,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -54085,15 +54098,16 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
     orders: orders,
+    searchText: searchText,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 46,
       columnNumber: 17
     }
   })));

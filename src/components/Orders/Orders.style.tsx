@@ -13,12 +13,8 @@ export const useStylesOrders = makeStyles((theme: Theme) => {
         justifyContent: 'space-between',
       },
       title: {
-        //flex: '1 1 100%'
       },
       search: {
-        border: 1,
-        borderColor: "black",
-        
       },
       searchtextfield: {
         background: '#edf2f7'
