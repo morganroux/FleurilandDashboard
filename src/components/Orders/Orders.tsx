@@ -43,7 +43,7 @@ const Orders: React.FC = () => {
             </Toolbar>
             {isLoading == true && <CircularProgress />}
             <Fade in={!isLoading} timeout={500}>
-                <OrderTable orders={orders} searchText={searchText}/>
+                <OrderTable orders={orders} searchtext={searchText}/>
             </Fade>
         </div>
     )

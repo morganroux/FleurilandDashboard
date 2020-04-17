@@ -17,6 +17,7 @@ export const useStylesOrders = makeStyles((theme: Theme) => {
       search: {
       },
       searchtextfield: {
+        paddingLeft: theme.spacing(1),
         background: '#edf2f7'
       }
     }))

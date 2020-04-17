@@ -11,7 +11,7 @@ import { TableSortLabel } from '@material-ui/core';
 
 interface TableProps {
     orders:any
-    searchText: string
+    searchtext: string
 }
 
 interface HeadProps {
@@ -55,7 +55,7 @@ const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrder
 }
 
 const OrderTable: React.FC<TableProps> = (props) => {
-    const { orders, searchText } = props;
+    const { orders, searchtext } = props;
     const [orderBy, setOrderBy] = useState<number>(0);
     const [orderDir, setOrderDir] = useState<"desc" | "asc">('desc');
     const sorters = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod];
@@ -72,7 +72,7 @@ const OrderTable: React.FC<TableProps> = (props) => {
             <OrderHead orderBy={orderBy} orderDir={orderDir} setOrderBy={setOrderBy} setOrderDir={setOrderDir}/>
             <TableBody>
                 {orders.filter((order) => {
-                    const text = searchText.toLowerCase();
+                    const text = searchtext.toLowerCase();
                     const firstName = order.billing.first_name.toLowerCase();
                     const lastName = order.billing.last_name.toLowerCase();
                     const id = order.id.toString();

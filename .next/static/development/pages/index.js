@@ -53795,7 +53795,7 @@ var OrderHead = function OrderHead(_ref) {
 
 var OrderTable = function OrderTable(props) {
   var orders = props.orders,
-      searchText = props.searchText;
+      searchtext = props.searchtext;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
       orderBy = _useState[0],
@@ -53850,7 +53850,7 @@ var OrderTable = function OrderTable(props) {
       columnNumber: 13
     }
   }, orders.filter(function (order) {
-    var text = searchText.toLowerCase();
+    var text = searchtext.toLowerCase();
     var firstName = order.billing.first_name.toLowerCase();
     var lastName = order.billing.last_name.toLowerCase();
     var id = order.id.toString();
@@ -53901,6 +53901,7 @@ var useStylesOrders = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0
     title: {},
     search: {},
     searchtextfield: {
+      paddingLeft: theme.spacing(1),
       background: '#edf2f7'
     }
   });
@@ -54103,7 +54104,7 @@ var Orders = function Orders() {
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
     orders: orders,
-    searchText: searchText,
+    searchtext: searchText,
     __self: _this,
     __source: {
       fileName: _jsxFileName,

@@ -630,7 +630,7 @@ const OrderHead = ({
 const OrderTable = props => {
   const {
     orders,
-    searchText
+    searchtext
   } = props;
   const {
     0: orderBy,
@@ -685,7 +685,7 @@ const OrderTable = props => {
       columnNumber: 13
     }
   }, orders.filter(order => {
-    const text = searchText.toLowerCase();
+    const text = searchtext.toLowerCase();
     const firstName = order.billing.first_name.toLowerCase();
     const lastName = order.billing.last_name.toLowerCase();
     const id = order.id.toString();
@@ -737,6 +737,7 @@ const useStylesOrders = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
     title: {},
     search: {},
     searchtextfield: {
+      paddingLeft: theme.spacing(1),
       background: '#edf2f7'
     }
   });
@@ -918,7 +919,7 @@ const Orders = () => {
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
     orders: orders,
-    searchText: searchText,
+    searchtext: searchText,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
