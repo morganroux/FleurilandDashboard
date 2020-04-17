@@ -39,7 +39,7 @@ const NameCell: React.FC<OrderItemProps> = ({ order }) => {
     const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
     const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
     return (
-        <TableCell>{firstName} {lastName}</TableCell>
+        <TableCell>{lastName} {firstName}</TableCell>
     );
 }
 

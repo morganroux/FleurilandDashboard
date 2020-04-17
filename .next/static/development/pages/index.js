@@ -53547,7 +53547,7 @@ var NameCell = function NameCell(_ref2) {
       lineNumber: 42,
       columnNumber: 9
     }
-  }, firstName, " ", lastName);
+  }, lastName, " ", firstName);
 };
 
 var PriceCell = function PriceCell(_ref3) {
@@ -53720,7 +53720,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/TableHead */ "./node_modules/@material-ui/core/esm/TableHead/index.js");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/TableRow */ "./node_modules/@material-ui/core/esm/TableRow/index.js");
 /* harmony import */ var _OrderItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./OrderItem */ "./src/components/Orders/OrderItem.tsx");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _sorters__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sorters */ "./src/components/Orders/sorters.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
 
 
 var _this = undefined,
@@ -53736,27 +53737,34 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 var OrderHead = function OrderHead(_ref) {
   var orderBy = _ref.orderBy,
-      orderDir = _ref.orderDir;
+      orderDir = _ref.orderDir,
+      setOrderBy = _ref.setOrderBy,
+      setOrderDir = _ref.setOrderDir;
   var heads = ["N°", "Nom", "Total", "Status", "Date de commande", "Expédition"];
 
   var createSortHandler = function createSortHandler(id) {
-    return null;
+    console.log(id);
+    if (orderBy == id) setOrderDir(orderDir == 'asc' ? 'desc' : 'asc');else {
+      setOrderBy(id);
+      setOrderDir('asc');
+    }
   };
 
   return __jsx(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 36,
       columnNumber: 13
     }
   }, heads.map(function (name, id) {
@@ -53766,17 +53774,19 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 38,
         columnNumber: 17
       }
-    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["TableSortLabel"], {
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["TableSortLabel"], {
       active: orderBy === id,
       direction: orderBy === id ? orderDir : 'asc',
-      onClick: createSortHandler(id),
+      onClick: function onClick() {
+        return createSortHandler(id);
+      },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 30,
+        lineNumber: 42,
         columnNumber: 21
       }
     }, name));
@@ -53786,7 +53796,7 @@ var OrderHead = function OrderHead(_ref) {
 var OrderTable = function OrderTable(props) {
   var orders = props.orders;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
       orderBy = _useState[0],
       setOrderBy = _useState[1];
 
@@ -53794,11 +53804,21 @@ var OrderTable = function OrderTable(props) {
       orderDir = _useState2[0],
       setOrderDir = _useState2[1];
 
+  var sorters = [_sorters__WEBPACK_IMPORTED_MODULE_8__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByMethod"]];
+
+  var getSortHandler = function getSortHandler(orderBy, orderDir) {
+    return function (elmt1, elmt2) {
+      var ret = sorters[orderBy](elmt1, elmt2); //elmt1.id <= elmt2.id ? -1 : 1;
+
+      return orderDir == 'asc' ? ret : -ret;
+    };
+  };
+
   return __jsx("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 69,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -53807,33 +53827,35 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 70,
       columnNumber: 9
     }
   }, __jsx(OrderHead, {
     orderBy: orderBy,
     orderDir: orderDir,
+    setOrderBy: setOrderBy,
+    setOrderDir: setOrderDir,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 71,
       columnNumber: 13
     }
   }), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 72,
       columnNumber: 13
     }
-  }, orders.map(function (order) {
+  }, orders.sort(getSortHandler(orderBy, orderDir)).map(function (order) {
     return __jsx(_OrderItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: order.id,
       order: order,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 75,
         columnNumber: 21
       }
     });
@@ -54144,6 +54166,51 @@ var StatusSelector = function StatusSelector(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (StatusSelector);
+
+/***/ }),
+
+/***/ "./src/components/Orders/sorters.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/Orders/sorters.tsx ***!
+  \*******************************************/
+/*! exports provided: sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortById", function() { return sortById; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByName", function() { return sortByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByTotal", function() { return sortByTotal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByStatus", function() { return sortByStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByDate", function() { return sortByDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByMethod", function() { return sortByMethod; });
+var sortById = function sortById(elmt1, elmt2) {
+  return elmt1.id <= elmt2.id ? -1 : 1;
+};
+var sortByName = function sortByName(elmt1, elmt2) {
+  var firstName1 = elmt1.billing.first_name.charAt(0).toUpperCase() + elmt1.billing.first_name.slice(1).toLowerCase();
+  var lastName1 = elmt1.billing.last_name.charAt(0).toUpperCase() + elmt1.billing.last_name.slice(1).toLowerCase();
+  var firstName2 = elmt2.billing.first_name.charAt(0).toUpperCase() + elmt2.billing.first_name.slice(1).toLowerCase();
+  var lastName2 = elmt2.billing.last_name.charAt(0).toUpperCase() + elmt2.billing.last_name.slice(1).toLowerCase();
+
+  if (lastName1 != lastName2) {
+    return lastName1 <= lastName2 ? -1 : 1;
+  } else return firstName1 <= firstName2 ? -1 : 1;
+};
+var sortByTotal = function sortByTotal(elmt1, elmt2) {
+  return parseFloat(elmt1.total) <= parseFloat(elmt2.total) ? -1 : 1;
+};
+var sortByStatus = function sortByStatus(elmt1, elmt2) {
+  return elmt1.status <= elmt2.status ? -1 : 1;
+};
+var sortByDate = function sortByDate(elmt1, elmt2) {
+  return elmt1.date_created <= elmt2.date_created ? -1 : 1;
+};
+var sortByMethod = function sortByMethod(elmt1, elmt2) {
+  var method1 = elmt1.shipping_lines[0] ? elmt1.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+  var method2 = elmt2.shipping_lines[0] ? elmt2.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+  return method1 <= method2 ? -1 : 1;
+};
 
 /***/ }),
 

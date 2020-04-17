@@ -392,7 +392,7 @@ const NameCell = ({
       lineNumber: 42,
       columnNumber: 9
     }
-  }, firstName, " ", lastName);
+  }, lastName, " ", firstName);
 };
 
 const PriceCell = ({
@@ -557,8 +557,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/TableRow */ "@material-ui/core/TableRow");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _OrderItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./OrderItem */ "./src/components/Orders/OrderItem.tsx");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _sorters__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sorters */ "./src/components/Orders/sorters.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__);
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderTable.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -573,26 +574,35 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
+
 const OrderHead = ({
   orderBy,
-  orderDir
+  orderDir,
+  setOrderBy,
+  setOrderDir
 }) => {
   const heads = ["N°", "Nom", "Total", "Status", "Date de commande", "Expédition"];
 
-  const createSortHandler = id => null;
+  const createSortHandler = id => {
+    console.log(id);
+    if (orderBy == id) setOrderDir(orderDir == 'asc' ? 'desc' : 'asc');else {
+      setOrderBy(id);
+      setOrderDir('asc');
+    }
+  };
 
   return __jsx(_material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 36,
       columnNumber: 13
     }
   }, heads.map((name, id) => __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -601,17 +611,17 @@ const OrderHead = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 38,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__["TableSortLabel"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["TableSortLabel"], {
     active: orderBy === id,
     direction: orderBy === id ? orderDir : 'asc',
-    onClick: createSortHandler(id),
+    onClick: () => createSortHandler(id),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 42,
       columnNumber: 21
     }
   }, name)))));
@@ -624,16 +634,26 @@ const OrderTable = props => {
   const {
     0: orderBy,
     1: setOrderBy
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   const {
     0: orderDir,
     1: setOrderDir
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('asc');
+  const sorters = [_sorters__WEBPACK_IMPORTED_MODULE_7__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByMethod"]];
+
+  const getSortHandler = (orderBy, orderDir) => {
+    return (elmt1, elmt2) => {
+      const ret = sorters[orderBy](elmt1, elmt2); //elmt1.id <= elmt2.id ? -1 : 1;
+
+      return orderDir == 'asc' ? ret : -ret;
+    };
+  };
+
   return __jsx("div", _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 69,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -642,33 +662,35 @@ const OrderTable = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 70,
       columnNumber: 9
     }
   }, __jsx(OrderHead, {
     orderBy: orderBy,
     orderDir: orderDir,
+    setOrderBy: setOrderBy,
+    setOrderDir: setOrderDir,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 71,
       columnNumber: 13
     }
   }), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 72,
       columnNumber: 13
     }
-  }, orders.map(order => {
+  }, orders.sort(getSortHandler(orderBy, orderDir)).map(order => {
     return __jsx(_OrderItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
       key: order.id,
       order: order,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 75,
         columnNumber: 21
       }
     });
@@ -962,6 +984,43 @@ const StatusSelector = props => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (StatusSelector);
+
+/***/ }),
+
+/***/ "./src/components/Orders/sorters.tsx":
+/*!*******************************************!*\
+  !*** ./src/components/Orders/sorters.tsx ***!
+  \*******************************************/
+/*! exports provided: sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortById", function() { return sortById; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByName", function() { return sortByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByTotal", function() { return sortByTotal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByStatus", function() { return sortByStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByDate", function() { return sortByDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByMethod", function() { return sortByMethod; });
+const sortById = (elmt1, elmt2) => elmt1.id <= elmt2.id ? -1 : 1;
+const sortByName = (elmt1, elmt2) => {
+  const firstName1 = elmt1.billing.first_name.charAt(0).toUpperCase() + elmt1.billing.first_name.slice(1).toLowerCase();
+  const lastName1 = elmt1.billing.last_name.charAt(0).toUpperCase() + elmt1.billing.last_name.slice(1).toLowerCase();
+  const firstName2 = elmt2.billing.first_name.charAt(0).toUpperCase() + elmt2.billing.first_name.slice(1).toLowerCase();
+  const lastName2 = elmt2.billing.last_name.charAt(0).toUpperCase() + elmt2.billing.last_name.slice(1).toLowerCase();
+
+  if (lastName1 != lastName2) {
+    return lastName1 <= lastName2 ? -1 : 1;
+  } else return firstName1 <= firstName2 ? -1 : 1;
+};
+const sortByTotal = (elmt1, elmt2) => parseFloat(elmt1.total) <= parseFloat(elmt2.total) ? -1 : 1;
+const sortByStatus = (elmt1, elmt2) => elmt1.status <= elmt2.status ? -1 : 1;
+const sortByDate = (elmt1, elmt2) => elmt1.date_created <= elmt2.date_created ? -1 : 1;
+const sortByMethod = (elmt1, elmt2) => {
+  const method1 = elmt1.shipping_lines[0] ? elmt1.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+  const method2 = elmt2.shipping_lines[0] ? elmt2.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+  return method1 <= method2 ? -1 : 1;
+};
 
 /***/ }),
 
