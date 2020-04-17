@@ -1,7 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import { useDeviceType } from '../helper/useDeviceType';
-import { GlobalProvider } from '../context/global/global.provider';
+import { AuthProvider } from '../context/auth/auth.context';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { SnackbarProvider } from 'notistack';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -17,14 +17,14 @@ export default function ExtendedApp({
     const deviceType = useDeviceType(userAgent);
     return (
    
-      <GlobalProvider>
+      <AuthProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <SnackbarProvider> 
             <Component {...pageProps} deviceType={deviceType} />
           </SnackbarProvider>
         </ThemeProvider>
-      </GlobalProvider>
+      </AuthProvider>
     );
   }
   

@@ -404,37 +404,20 @@ function createUrl(router) {
 
 /***/ }),
 
-/***/ "./src/context/global/global.context.tsx":
-/*!***********************************************!*\
-  !*** ./src/context/global/global.context.tsx ***!
-  \***********************************************/
-/*! exports provided: default */
+/***/ "./src/context/auth/auth.context.tsx":
+/*!*******************************************!*\
+  !*** ./src/context/auth/auth.context.tsx ***!
+  \*******************************************/
+/*! exports provided: AuthContext, AuthProvider */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthContext", function() { return AuthContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthProvider", function() { return AuthProvider; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-const GlobalContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
-/* harmony default export */ __webpack_exports__["default"] = (GlobalContext);
-
-/***/ }),
-
-/***/ "./src/context/global/global.provider.tsx":
-/*!************************************************!*\
-  !*** ./src/context/global/global.provider.tsx ***!
-  \************************************************/
-/*! exports provided: GlobalProvider */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GlobalProvider", function() { return GlobalProvider; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _global_context__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global.context */ "./src/context/global/global.context.tsx");
-var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/context/global/global.provider.tsx";
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/context/auth/auth.context.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -444,40 +427,47 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
+const INITIAL_STATE = {
+  auth: false
+};
+const AuthContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
 
-const INITIAL_STATE = {};
-
-function reducer(state, action) {
-  console.log(state, 'globalContext');
+const authReducer = (state, action) => {
+  console.log(state, 'authContext');
 
   switch (action.type) {
-    case 'SIGNIN':
+    case 'LOGIN':
       return _objectSpread({}, state, {
-        currentForm: 'signIn'
+        auth: true
+      });
+
+    case 'LOGOUT':
+      return _objectSpread({}, state, {
+        auth: false
       });
 
     default:
       return state;
   }
-}
+};
 
-const GlobalProvider = ({
+const AuthProvider = ({
   children
 }) => {
   const {
-    0: state,
-    1: dispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(reducer, INITIAL_STATE);
-  return __jsx(_global_context__WEBPACK_IMPORTED_MODULE_1__["default"].Provider, {
+    0: authState,
+    1: authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(authReducer, INITIAL_STATE);
+  return __jsx(AuthContext.Provider, {
     value: {
-      state,
-      dispatch
+      authState,
+      authDispatch
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
-      columnNumber: 7
+      lineNumber: 35,
+      columnNumber: 5
     }
   }, children);
 };
@@ -535,7 +525,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/app */ "./node_modules/next/app.js");
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _helper_useDeviceType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/useDeviceType */ "./src/helper/useDeviceType.tsx");
-/* harmony import */ var _context_global_global_provider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/global/global.provider */ "./src/context/global/global.provider.tsx");
+/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! notistack */ "notistack");
@@ -572,7 +562,7 @@ function ExtendedApp({
   userAgent
 }) {
   const deviceType = Object(_helper_useDeviceType__WEBPACK_IMPORTED_MODULE_2__["useDeviceType"])(userAgent);
-  return __jsx(_context_global_global_provider__WEBPACK_IMPORTED_MODULE_3__["GlobalProvider"], {
+  return __jsx(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_3__["AuthProvider"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,

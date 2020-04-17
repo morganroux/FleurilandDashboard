@@ -168,6 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../helper/firebase */ "./src/helper/firebase.tsx");
+/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Home/Home.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -181,21 +182,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const Home = () => {
   const classes = Object(_Home_style__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  const {
+    authState,
+    authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__["AuthContext"]);
+
+  const handleLogout = () => {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_9__["firebase"].auth().signOut();
+  };
+
   return __jsx("div", {
     className: classes.root,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 29,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_CssBaseline__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 30,
       columnNumber: 7
     }
   }), __jsx(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -207,14 +218,14 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 38,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -223,14 +234,14 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 46,
       columnNumber: 11
     }
   }, "Fleuriland")), __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 50,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -238,7 +249,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 51,
       columnNumber: 9
     }
   })), __jsx("main", {
@@ -246,7 +257,7 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 62,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_3___default.a, {
@@ -254,22 +265,22 @@ const Home = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 63,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Button"], {
-    onClick: () => _helper_firebase__WEBPACK_IMPORTED_MODULE_9__["firebase"].auth().signOut(),
+    onClick: handleLogout,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 64,
       columnNumber: 9
     }
   }, "Logout")), __jsx(_Orders_Orders__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 68,
       columnNumber: 11
     }
   })));
@@ -1073,6 +1084,76 @@ const sortByMethod = (elmt1, elmt2) => {
 
 /***/ }),
 
+/***/ "./src/context/auth/auth.context.tsx":
+/*!*******************************************!*\
+  !*** ./src/context/auth/auth.context.tsx ***!
+  \*******************************************/
+/*! exports provided: AuthContext, AuthProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthContext", function() { return AuthContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthProvider", function() { return AuthProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/context/auth/auth.context.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+const INITIAL_STATE = {
+  auth: false
+};
+const AuthContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
+
+const authReducer = (state, action) => {
+  console.log(state, 'authContext');
+
+  switch (action.type) {
+    case 'LOGIN':
+      return _objectSpread({}, state, {
+        auth: true
+      });
+
+    case 'LOGOUT':
+      return _objectSpread({}, state, {
+        auth: false
+      });
+
+    default:
+      return state;
+  }
+};
+
+const AuthProvider = ({
+  children
+}) => {
+  const {
+    0: authState,
+    1: authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useReducer"])(authReducer, INITIAL_STATE);
+  return __jsx(AuthContext.Provider, {
+    value: {
+      authState,
+      authDispatch
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 5
+    }
+  }, children);
+};
+
+/***/ }),
+
 /***/ "./src/helper/firebase.tsx":
 /*!*********************************!*\
   !*** ./src/helper/firebase.tsx ***!
@@ -1125,6 +1206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/firebase */ "./src/helper/firebase.tsx");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1132,7 +1214,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const LoginPage = () => {
+  const {
+    authState,
+    authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__["AuthContext"]);
+
   const hanldeClick = () => {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_2__["googleAuthProvider"]);
   };
@@ -1142,7 +1230,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 14,
       columnNumber: 5
     }
   }, "Click");
@@ -1150,50 +1238,58 @@ const LoginPage = () => {
 
 const Index = () => {
   const {
-    0: auth,
-    1: setAuth
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().onAuthStateChanged(function (user) {
-    if (user) {
-      // User is signed in.
-      var displayName = user.displayName;
-      var email = user.email;
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      setAuth(true);
-    } else {
-      setAuth(false);
-    }
-  });
+    authState,
+    authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__["AuthContext"]);
+  const auth = authState.auth;
+
+  const setAuthListener = () => {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().onAuthStateChanged(user => {
+      if (user) {
+        // User is signed in.
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        authDispatch({
+          type: 'LOGIN'
+        });
+      } else authDispatch({
+        type: 'LOGOUT'
+      });
+    });
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(setAuthListener, []);
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 44,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, "Fleuriland"), auth ? __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 46,
       columnNumber: 18
     }
   }) : __jsx(LoginPage, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 46,
       columnNumber: 29
     }
   }));

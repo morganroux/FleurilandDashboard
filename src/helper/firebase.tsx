@@ -1,6 +1,7 @@
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 
+
 const config = {
     apiKey: "AIzaSyARkwRYJ_YxFZByN8dDCpD8Cirs8j3sB9w",
     authDomain: "fleuriland-dashboard.firebaseapp.com",

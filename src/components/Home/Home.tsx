@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useContext }from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -16,9 +16,15 @@ import OrdersPage from '../Orders/Orders';
 import useStylesHome from './Home.style';
 import { Button } from '@material-ui/core';
 import { firebase } from '../../helper/firebase';
+import { AuthContext, AuthProvider } from '../../context/auth/auth.context';
 
 const Home: React.FC = () => {
   const classes = useStylesHome();
+  const {authState, authDispatch} = useContext(AuthContext);
+
+  const handleLogout = () => {
+    firebase.auth().signOut();
+  }
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -55,7 +61,7 @@ const Home: React.FC = () => {
       </Drawer>
       <main className = {classes.content}>
       <Toolbar className = {classes.toolbar}>
-        <Button onClick={() => firebase.auth().signOut()}>
+        <Button onClick={handleLogout}>
           Logout
         </Button>
       </Toolbar>
