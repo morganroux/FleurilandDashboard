@@ -1,21 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Home from '../components/Home/Home';
+import LoginPage from '../components/LoginPage/LoginPage';
 import { firebase, googleAuthProvider } from '../helper/firebase';
-import { Button } from '@material-ui/core';
 import { AuthContext, AuthProvider } from '../context/auth/auth.context';
-
-const LoginPage: React.FC = () => {
-  const {authState, authDispatch} = useContext(AuthContext);
-  const hanldeClick =  () => {
-    
-    firebase.auth().signInWithPopup(googleAuthProvider);
-  }
-  return (
-    <Button
-    onClick={hanldeClick}
-    >Login</Button>
-  )
-}
 
 const Index: React.FC = () => {
   const {authState, authDispatch} = useContext(AuthContext);

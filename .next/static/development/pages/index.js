@@ -39354,6 +39354,35 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/MailOutline.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/MailOutline.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"
+}), 'MailOutline');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/Search.js":
 /*!***************************************************!*\
   !*** ./node_modules/@material-ui/icons/Search.js ***!
@@ -39378,6 +39407,35 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
   d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
 }), 'Search');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/VpnKey.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@material-ui/icons/VpnKey.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
+}), 'VpnKey');
 
 exports.default = _default;
 
@@ -57183,6 +57241,268 @@ var Home = function Home() {
 
 /***/ }),
 
+/***/ "./src/components/LoginPage/LoginPage.style.tsx":
+/*!******************************************************!*\
+  !*** ./src/components/LoginPage/LoginPage.style.tsx ***!
+  \******************************************************/
+/*! exports provided: useStyleLoginPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStyleLoginPage", function() { return useStyleLoginPage; });
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+
+var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(function (theme) {
+  return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
+    root: {
+      background: 'linear-gradient(135deg, #00b300 10%, #39ac73 60%, #002db3 99%)'
+    },
+    container: {
+      maxWidth: 'sm',
+      height: '100vh',
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: '5vh'
+    },
+    paper: {
+      display: "flex",
+      // justifyContent: "center",
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      height: '90vh',
+      width: '35vw',
+      minWidth: '300px'
+    },
+    typo: {
+      display: "flex",
+      justifyContent: "center" // paddingTop: '15vh',
+      // paddingBottom: '10vh'
+
+    },
+    button: {
+      background: '#39ac73',
+      color: 'white',
+      marginTop: '1vw',
+      height: '4vw'
+    },
+    form: {
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: 'column',
+      paddingLeft: '5vw',
+      paddingRight: '5vw'
+    },
+    textfield: {
+      paddingBottom: '1vw'
+    },
+    providers: {
+      display: "flex",
+      justifyContent: "center"
+    },
+    google: {
+      marginTop: '1vh'
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/components/LoginPage/LoginPage.tsx":
+/*!************************************************!*\
+  !*** ./src/components/LoginPage/LoginPage.tsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helper/firebase */ "./src/helper/firebase.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/MailOutline */ "./node_modules/@material-ui/icons/MailOutline.js");
+/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/VpnKey */ "./node_modules/@material-ui/icons/VpnKey.js");
+/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
+var _this = undefined,
+    _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/LoginPage/LoginPage.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+var LoginPage = function LoginPage() {
+  var classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_5__["useStyleLoginPage"])();
+
+  var hanldeClick = function hanldeClick() {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_1__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_1__["googleAuthProvider"]);
+  };
+
+  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+    className: classes.root,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    className: classes.container,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Paper"], {
+    className: classes.paper,
+    elevation: 10,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+    className: classes.typo,
+    variant: "h2",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 21
+    }
+  }, "LOGIN"), __jsx("form", {
+    noValidate: true,
+    autoComplete: "off",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    className: classes.form,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
+    className: classes.textfield,
+    id: "mail",
+    label: "Email",
+    variant: "outlined",
+    InputProps: {
+      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+        position: "start",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 35
+        }
+      }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 37
+        }
+      }))
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 25
+    }
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
+    className: classes.textfield,
+    id: "password",
+    label: "Password",
+    variant: "outlined",
+    InputProps: {
+      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+        position: "start",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 35
+        }
+      }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 37
+        }
+      }))
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 25
+    }
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: classes.button,
+    onClick: hanldeClick,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 25
+    }
+  }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+    variant: "body1",
+    className: classes.typo,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 25
+    }
+  }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+    className: classes.providers,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 24
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: classes.google,
+    variant: "outlined",
+    onClick: hanldeClick,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 29
+    }
+  }, "Google"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoginPage);
+
+/***/ }),
+
 /***/ "./src/components/Orders/OrderItem.tsx":
 /*!*********************************************!*\
   !*** ./src/components/Orders/OrderItem.tsx ***!
@@ -58131,8 +58451,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Home_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home/Home */ "./src/components/Home/Home.tsx");
-/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/firebase */ "./src/helper/firebase.tsx");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _components_LoginPage_LoginPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LoginPage/LoginPage */ "./src/components/LoginPage/LoginPage.tsx");
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/firebase */ "./src/helper/firebase.tsx");
 /* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/index.tsx";
@@ -58144,35 +58464,15 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var LoginPage = function LoginPage() {
+var Index = function Index() {
   var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__["AuthContext"]),
       authState = _useContext.authState,
       authDispatch = _useContext.authDispatch;
 
-  var hanldeClick = function hanldeClick() {
-    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_2__["googleAuthProvider"]);
-  };
-
-  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    onClick: hanldeClick,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 5
-    }
-  }, "Login");
-};
-
-var Index = function Index() {
-  var _useContext2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__["AuthContext"]),
-      authState = _useContext2.authState,
-      authDispatch = _useContext2.authDispatch;
-
   var auth = authState.auth;
 
   var setAuthListener = function setAuthListener() {
-    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().onAuthStateChanged(function (user) {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_3__["firebase"].auth().onAuthStateChanged(function (user) {
       if (user) {
         // User is signed in.
         var displayName = user.displayName;
@@ -58196,28 +58496,28 @@ var Index = function Index() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 31,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 32,
       columnNumber: 9
     }
   }, "Fleuriland"), auth ? __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 33,
       columnNumber: 18
     }
-  }) : __jsx(LoginPage, {
+  }) : __jsx(_components_LoginPage_LoginPage__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 33,
       columnNumber: 29
     }
   }));
@@ -58227,7 +58527,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -58250,5 +58550,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

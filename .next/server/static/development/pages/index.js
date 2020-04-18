@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -296,6 +296,268 @@ const Home = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
+
+/***/ }),
+
+/***/ "./src/components/LoginPage/LoginPage.style.tsx":
+/*!******************************************************!*\
+  !*** ./src/components/LoginPage/LoginPage.style.tsx ***!
+  \******************************************************/
+/*! exports provided: useStyleLoginPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStyleLoginPage", function() { return useStyleLoginPage; });
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__);
+
+const useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
+  return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
+    root: {
+      background: 'linear-gradient(135deg, #00b300 10%, #39ac73 60%, #002db3 99%)'
+    },
+    container: {
+      maxWidth: 'sm',
+      height: '100vh',
+      display: "flex",
+      justifyContent: "center",
+      paddingTop: '5vh'
+    },
+    paper: {
+      display: "flex",
+      // justifyContent: "center",
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      height: '90vh',
+      width: '35vw',
+      minWidth: '300px'
+    },
+    typo: {
+      display: "flex",
+      justifyContent: "center" // paddingTop: '15vh',
+      // paddingBottom: '10vh'
+
+    },
+    button: {
+      background: '#39ac73',
+      color: 'white',
+      marginTop: '1vw',
+      height: '4vw'
+    },
+    form: {
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: 'column',
+      paddingLeft: '5vw',
+      paddingRight: '5vw'
+    },
+    textfield: {
+      paddingBottom: '1vw'
+    },
+    providers: {
+      display: "flex",
+      justifyContent: "center"
+    },
+    google: {
+      marginTop: '1vh'
+    }
+  });
+});
+
+/***/ }),
+
+/***/ "./src/components/LoginPage/LoginPage.tsx":
+/*!************************************************!*\
+  !*** ./src/components/LoginPage/LoginPage.tsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helper/firebase */ "./src/helper/firebase.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/MailOutline */ "@material-ui/icons/MailOutline");
+/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/VpnKey */ "@material-ui/icons/VpnKey");
+/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
+var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/LoginPage/LoginPage.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+const LoginPage = () => {
+  const classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_5__["useStyleLoginPage"])();
+
+  const hanldeClick = () => {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_1__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_1__["googleAuthProvider"]);
+  };
+
+  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+    className: classes.root,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    className: classes.container,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 13
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Paper"], {
+    className: classes.paper,
+    elevation: 10,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+    className: classes.typo,
+    variant: "h2",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 21
+    }
+  }, "LOGIN"), __jsx("form", {
+    noValidate: true,
+    autoComplete: "off",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    className: classes.form,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
+    className: classes.textfield,
+    id: "mail",
+    label: "Email",
+    variant: "outlined",
+    InputProps: {
+      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+        position: "start",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29,
+          columnNumber: 35
+        }
+      }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30,
+          columnNumber: 37
+        }
+      }))
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 25
+    }
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
+    className: classes.textfield,
+    id: "password",
+    label: "Password",
+    variant: "outlined",
+    InputProps: {
+      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+        position: "start",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41,
+          columnNumber: 35
+        }
+      }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42,
+          columnNumber: 37
+        }
+      }))
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 25
+    }
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: classes.button,
+    onClick: hanldeClick,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47,
+      columnNumber: 25
+    }
+  }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+    variant: "body1",
+    className: classes.typo,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 25
+    }
+  }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+    className: classes.providers,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 24
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: classes.google,
+    variant: "outlined",
+    onClick: hanldeClick,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 29
+    }
+  }, "Google"))))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LoginPage);
 
 /***/ }),
 
@@ -1210,9 +1472,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Home_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Home/Home */ "./src/components/Home/Home.tsx");
-/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/firebase */ "./src/helper/firebase.tsx");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_LoginPage_LoginPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/LoginPage/LoginPage */ "./src/components/LoginPage/LoginPage.tsx");
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/firebase */ "./src/helper/firebase.tsx");
 /* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/pages/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1222,27 +1483,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const LoginPage = () => {
-  const {
-    authState,
-    authDispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_4__["AuthContext"]);
-
-  const hanldeClick = () => {
-    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_2__["googleAuthProvider"]);
-  };
-
-  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    onClick: hanldeClick,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14,
-      columnNumber: 5
-    }
-  }, "Login");
-};
-
 const Index = () => {
   const {
     authState,
@@ -1251,7 +1491,7 @@ const Index = () => {
   const auth = authState.auth;
 
   const setAuthListener = () => {
-    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().onAuthStateChanged(user => {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_3__["firebase"].auth().onAuthStateChanged(user => {
       if (user) {
         // User is signed in.
         var displayName = user.displayName;
@@ -1275,28 +1515,28 @@ const Index = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 31,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 32,
       columnNumber: 9
     }
   }, "Fleuriland"), auth ? __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 33,
       columnNumber: 18
     }
-  }) : __jsx(LoginPage, {
+  }) : __jsx(_components_LoginPage_LoginPage__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 33,
       columnNumber: 29
     }
   }));
@@ -1306,7 +1546,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/
@@ -1527,6 +1767,17 @@ module.exports = require("@material-ui/icons/LocalShipping");
 
 /***/ }),
 
+/***/ "@material-ui/icons/MailOutline":
+/*!*************************************************!*\
+  !*** external "@material-ui/icons/MailOutline" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/MailOutline");
+
+/***/ }),
+
 /***/ "@material-ui/icons/Search":
 /*!********************************************!*\
   !*** external "@material-ui/icons/Search" ***!
@@ -1535,6 +1786,17 @@ module.exports = require("@material-ui/icons/LocalShipping");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Search");
+
+/***/ }),
+
+/***/ "@material-ui/icons/VpnKey":
+/*!********************************************!*\
+  !*** external "@material-ui/icons/VpnKey" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/VpnKey");
 
 /***/ }),
 
