@@ -2,10 +2,12 @@ import React, { useReducer } from 'react';
 
 interface AuthContextProps {
   auth: any
+  user: any
 }
 
 const INITIAL_STATE = {
-  auth: false
+  auth: false,
+  user:''
 };
 
 export const AuthContext = React.createContext<Partial<any>>({});
@@ -16,12 +18,14 @@ const authReducer = (state: any, action: any) => {
     case 'LOGIN':
       return {
         ...state,
-        auth: true
+        auth: true,
+        user: action.user
       };
     case 'LOGOUT':
         return {
           ...state,
-          auth: false
+          auth: false,
+          user: ''
         };
     default:
       return state;

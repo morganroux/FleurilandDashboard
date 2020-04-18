@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -469,7 +469,7 @@ const LoginPage = () => {
       lineNumber: 41,
       columnNumber: 21
     }
-  }, "LOGIN"), __jsx("form", {
+  }, "Fleuriland"), __jsx("form", {
     noValidate: true,
     autoComplete: "off",
     onSubmit: hanldeSignIn,
@@ -1594,7 +1594,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/

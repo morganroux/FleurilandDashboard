@@ -11,7 +11,7 @@ const Index: React.FC = () => {
   const setAuthListener = () => { 
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
+        
         // User is signed in.
         var displayName = user.displayName;
         var email = user.email;
@@ -20,7 +20,7 @@ const Index: React.FC = () => {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         var providerData = user.providerData;
-        authDispatch({type: 'LOGIN'});
+        authDispatch({type: 'LOGIN', user});
       } else 
         authDispatch({type: 'LOGOUT'});
     })

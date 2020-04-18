@@ -57426,7 +57426,7 @@ var LoginPage = function LoginPage() {
       lineNumber: 41,
       columnNumber: 21
     }
-  }, "LOGIN"), __jsx("form", {
+  }, "Fleuriland"), __jsx("form", {
     noValidate: true,
     autoComplete: "off",
     onSubmit: hanldeSignIn,
@@ -58594,7 +58594,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -58617,5 +58617,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

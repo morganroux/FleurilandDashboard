@@ -38,7 +38,7 @@ const LoginPage: React.FC = () => {
         <Box className={classes.root}>
             <Container className={classes.container}>
                 <Paper className={classes.paper} elevation={10}>
-                    <Typography className={classes.typo} variant='h2'>LOGIN</Typography>
+                    <Typography className={classes.typo} variant='h2'>Fleuriland</Typography>
                     <form  noValidate autoComplete="off" onSubmit={hanldeSignIn}>
                     <Container className={classes.form}>
                         <TextField
