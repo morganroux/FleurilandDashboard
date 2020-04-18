@@ -17,7 +17,7 @@ const Orders: React.FC = () => {
 
     useEffect(() => {
         async function loadOrders() {
-            const newOrders = await axios.get("http://localhost:3000/api/orders");
+            const newOrders = await axios.get("https://fleurilanddashboard.now.sh/api/orders");
             setOrders(newOrders.data);
             setIsLoading(false);
         }

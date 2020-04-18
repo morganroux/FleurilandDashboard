@@ -66,7 +66,7 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
             return;
         }
 
-        const rep = await axios.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
+        const rep = await axios.put(`https://fleurilanddashboard.now.sh/api/updateOrder?id=${order.id}&status=${status}`);
         if (rep.data.status == event.target.value) {
             setStatus(event.target.value as string);
             enqueueSnackbar('Mise à jour réussie', { 
