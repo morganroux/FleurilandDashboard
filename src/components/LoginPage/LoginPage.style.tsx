@@ -27,11 +27,15 @@ export const useStyleLoginPage = makeStyles((theme: Theme) => {
             // paddingTop: '15vh',
             // paddingBottom: '10vh'
         },
+        error: {
+            color:'red'
+        },
         button: {
-            background: '#39ac73',
-            color: 'white',
-            marginTop: '1vw',
-            height: '4vw'
+            
+                background: '#39ac73',
+                color: 'white',
+                marginTop: '1vw',
+                height: '4vw'
         },
         form: {
             display: "flex",

@@ -57065,7 +57065,8 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["ma
       flexShrink: 0
     },
     drawerPaper: {
-      background: 'linear-gradient(135deg, #456F61 50%, #417991 90%)',
+      background: 'linear-gradient(135deg, #00b300 10%, #39ac73 30%, #002db3 99%)',
+      //'linear-gradient(135deg, #456F61 50%, #417991 90%)',
       color: '#FFF',
       fill: '#FFF',
       width: drawerWidth
@@ -57280,6 +57281,9 @@ var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
       // paddingBottom: '10vh'
 
     },
+    error: {
+      color: 'red'
+    },
     button: {
       background: '#39ac73',
       color: 'white',
@@ -57317,19 +57321,23 @@ var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../helper/firebase */ "./src/helper/firebase.tsx");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
-/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/MailOutline */ "./node_modules/@material-ui/icons/MailOutline.js");
-/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/VpnKey */ "./node_modules/@material-ui/icons/VpnKey.js");
-/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _helper_firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/firebase */ "./src/helper/firebase.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/MailOutline */ "./node_modules/@material-ui/icons/MailOutline.js");
+/* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/VpnKey */ "./node_modules/@material-ui/icons/VpnKey.js");
+/* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
+
+
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/LoginPage/LoginPage.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
@@ -57338,82 +57346,127 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 var LoginPage = function LoginPage() {
-  var classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_5__["useStyleLoginPage"])();
+  var classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_6__["useStyleLoginPage"])();
 
-  var hanldeClick = function hanldeClick() {
-    _helper_firebase__WEBPACK_IMPORTED_MODULE_1__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_1__["googleAuthProvider"]);
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      email = _useState[0],
+      setEmail = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      pwd = _useState2[0],
+      setPwd = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+      error = _useState3[0],
+      setError = _useState3[1];
+
+  var hanldeGoogleClick = function hanldeGoogleClick() {
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_2__["googleAuthProvider"]);
   };
 
-  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+  var hanldeSignIn = function hanldeSignIn(e) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function hanldeSignIn$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            e.preventDefault(); // await firebase.auth().createUserWithEmailAndPassword('test@test.fr', '123456').catch(function(error) {
+            //     // Handle Errors here.
+            //     setError(error.message)
+            //     var errorCode = error.code;
+            //     var errorMessage = error.message;
+            //     // ...
+            // });
+
+            _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithEmailAndPassword(email, pwd)["catch"](function (error) {
+              // Handle Errors here.
+              setError(error.message);
+              var errorCode = error.code;
+              var errorMessage = error.message; // ...
+            });
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  };
+
+  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
     className: classes.root,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 38,
       columnNumber: 9
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     className: classes.container,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 39,
       columnNumber: 13
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Paper"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Paper"], {
     className: classes.paper,
     elevation: 10,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 40,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
     className: classes.typo,
     variant: "h2",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 41,
       columnNumber: 21
     }
   }, "LOGIN"), __jsx("form", {
     noValidate: true,
     autoComplete: "off",
+    onSubmit: hanldeSignIn,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 42,
       columnNumber: 21
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     className: classes.form,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 43,
       columnNumber: 21
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["TextField"], {
     className: classes.textfield,
+    value: email,
+    onChange: function onChange(event) {
+      return setEmail(event.target.value);
+    },
     id: "mail",
     label: "Email",
     variant: "outlined",
     InputProps: {
-      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["InputAdornment"], {
         position: "start",
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 53,
           columnNumber: 35
         }
-      }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4___default.a, {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 54,
           columnNumber: 37
         }
       }))
@@ -57421,28 +57474,32 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 44,
       columnNumber: 25
     }
-  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
+  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["TextField"], {
     className: classes.textfield,
+    value: pwd,
+    onChange: function onChange(event) {
+      return setPwd(event.target.value);
+    },
     id: "password",
     label: "Password",
     variant: "outlined",
     InputProps: {
-      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+      startAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["InputAdornment"], {
         position: "start",
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 68,
           columnNumber: 35
         }
-      }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default.a, {
+      }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5___default.a, {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42,
+          lineNumber: 69,
           columnNumber: 37
         }
       }))
@@ -57450,50 +57507,59 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 59,
       columnNumber: 25
     }
-  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+  }), !!error && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
+    variant: "body1",
+    className: "".concat(classes.typo, " ").concat(classes.error),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 37
+    }
+  }, error), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     className: classes.button,
-    onClick: hanldeClick,
+    type: "submit",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 75,
       columnNumber: 25
     }
-  }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
+  }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 79,
       columnNumber: 21
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
     variant: "body1",
     className: classes.typo,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 80,
       columnNumber: 25
     }
-  }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
+  }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
     className: classes.providers,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 81,
       columnNumber: 24
     }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     className: classes.google,
     variant: "outlined",
-    onClick: hanldeClick,
+    onClick: hanldeGoogleClick,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 82,
       columnNumber: 29
     }
   }, "Google"))))));
@@ -58474,7 +58540,8 @@ var Index = function Index() {
   var setAuthListener = function setAuthListener() {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_3__["firebase"].auth().onAuthStateChanged(function (user) {
       if (user) {
-        // User is signed in.
+        console.log(user); // User is signed in.
+
         var displayName = user.displayName;
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -58496,28 +58563,28 @@ var Index = function Index() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 9
     }
   }, "Fleuriland"), auth ? __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 18
     }
   }) : __jsx(_components_LoginPage_LoginPage__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 29
     }
   }));

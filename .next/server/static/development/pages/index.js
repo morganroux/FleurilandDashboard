@@ -119,7 +119,8 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
       flexShrink: 0
     },
     drawerPaper: {
-      background: 'linear-gradient(135deg, #456F61 50%, #417991 90%)',
+      background: 'linear-gradient(135deg, #00b300 10%, #39ac73 30%, #002db3 99%)',
+      //'linear-gradient(135deg, #456F61 50%, #417991 90%)',
       color: '#FFF',
       fill: '#FFF',
       width: drawerWidth
@@ -339,6 +340,9 @@ const useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODU
       // paddingBottom: '10vh'
 
     },
+    error: {
+      color: 'red'
+    },
     button: {
       background: '#39ac73',
       color: 'white',
@@ -397,9 +401,38 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 const LoginPage = () => {
   const classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_5__["useStyleLoginPage"])();
+  const {
+    0: email,
+    1: setEmail
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    0: pwd,
+    1: setPwd
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    0: error,
+    1: setError
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
 
-  const hanldeClick = () => {
+  const hanldeGoogleClick = () => {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_1__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_1__["googleAuthProvider"]);
+  };
+
+  const hanldeSignIn = async e => {
+    e.preventDefault(); // await firebase.auth().createUserWithEmailAndPassword('test@test.fr', '123456').catch(function(error) {
+    //     // Handle Errors here.
+    //     setError(error.message)
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // ...
+    // });
+
+    _helper_firebase__WEBPACK_IMPORTED_MODULE_1__["firebase"].auth().signInWithEmailAndPassword(email, pwd).catch(function (error) {
+      // Handle Errors here.
+      setError(error.message);
+      var errorCode = error.code;
+      var errorMessage = error.message; // ...
+    });
   };
 
   return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
@@ -407,7 +440,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 38,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
@@ -415,7 +448,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 39,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Paper"], {
@@ -424,7 +457,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 40,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
@@ -433,16 +466,17 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 41,
       columnNumber: 21
     }
   }, "LOGIN"), __jsx("form", {
     noValidate: true,
     autoComplete: "off",
+    onSubmit: hanldeSignIn,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 42,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
@@ -450,11 +484,13 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 43,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
     className: classes.textfield,
+    value: email,
+    onChange: event => setEmail(event.target.value),
     id: "mail",
     label: "Email",
     variant: "outlined",
@@ -464,14 +500,14 @@ const LoginPage = () => {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29,
+          lineNumber: 53,
           columnNumber: 35
         }
       }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30,
+          lineNumber: 54,
           columnNumber: 37
         }
       }))
@@ -479,11 +515,13 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 44,
       columnNumber: 25
     }
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
     className: classes.textfield,
+    value: pwd,
+    onChange: event => setPwd(event.target.value),
     id: "password",
     label: "Password",
     variant: "outlined",
@@ -493,14 +531,14 @@ const LoginPage = () => {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41,
+          lineNumber: 68,
           columnNumber: 35
         }
       }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default.a, {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42,
+          lineNumber: 69,
           columnNumber: 37
         }
       }))
@@ -508,23 +546,32 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 59,
       columnNumber: 25
     }
-  }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    className: classes.button,
-    onClick: hanldeClick,
+  }), !!error && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
+    variant: "body1",
+    className: `${classes.typo} ${classes.error}`,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 74,
+      columnNumber: 37
+    }
+  }, error), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    className: classes.button,
+    type: "submit",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
       columnNumber: 25
     }
   }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 79,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
@@ -533,7 +580,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 80,
       columnNumber: 25
     }
   }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
@@ -541,17 +588,17 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 81,
       columnNumber: 24
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     className: classes.google,
     variant: "outlined",
-    onClick: hanldeClick,
+    onClick: hanldeGoogleClick,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 82,
       columnNumber: 29
     }
   }, "Google"))))));
@@ -1493,7 +1540,8 @@ const Index = () => {
   const setAuthListener = () => {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_3__["firebase"].auth().onAuthStateChanged(user => {
       if (user) {
-        // User is signed in.
+        console.log(user); // User is signed in.
+
         var displayName = user.displayName;
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -1515,28 +1563,28 @@ const Index = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, __jsx("title", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 9
     }
   }, "Fleuriland"), auth ? __jsx(_components_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 18
     }
   }) : __jsx(_components_LoginPage_LoginPage__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 29
     }
   }));

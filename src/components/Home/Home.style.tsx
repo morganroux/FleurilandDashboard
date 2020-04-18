@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) => {
         flexShrink: 0,
       },
       drawerPaper: {
-        background: 'linear-gradient(135deg, #456F61 50%, #417991 90%)',
+        background: 'linear-gradient(135deg, #00b300 10%, #39ac73 30%, #002db3 99%)',//'linear-gradient(135deg, #456F61 50%, #417991 90%)',
         color: '#FFF',
         fill: '#FFF',
         width: drawerWidth,
