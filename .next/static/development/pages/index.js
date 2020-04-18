@@ -57596,6 +57596,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Fade */ "./node_modules/@material-ui/core/esm/Fade/index.js");
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! notistack */ "./node_modules/notistack/build/index.js");
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 
 
 
@@ -57614,6 +57615,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
+
 var OrderItem = function OrderItem(props) {
   var order = props.order;
   return order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -57621,49 +57623,49 @@ var OrderItem = function OrderItem(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, __jsx(IdCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 13
     }
   })), __jsx(NameCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 13
     }
   })), __jsx(PriceCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 13
     }
   })), __jsx(StatusCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 13
     }
   })), __jsx(DateCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 13
     }
   })), __jsx(MethodCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   })));
@@ -57675,7 +57677,7 @@ var IdCell = function IdCell(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, order.id);
@@ -57689,7 +57691,7 @@ var NameCell = function NameCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 9
     }
   }, lastName, " ", firstName);
@@ -57701,7 +57703,7 @@ var PriceCell = function PriceCell(_ref3) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, order.total, "\u20AC");
@@ -57715,6 +57717,10 @@ var StatusCell = function StatusCell(_ref4) {
       status = _useState[0],
       setStatus = _useState[1];
 
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_12__["AuthContext"]),
+      authState = _useContext.authState,
+      authDispatch = _useContext.authDispatch;
+
   var handleChange = function handleChange(event) {
     var status, rep;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function handleChange$(_context) {
@@ -57722,12 +57728,28 @@ var StatusCell = function StatusCell(_ref4) {
         switch (_context.prev = _context.next) {
           case 0:
             status = event.target.value;
-            _context.next = 3;
+            console.log('state', authState.user.email);
+
+            if (!(authState.user.email == 'test@test.fr')) {
+              _context.next = 5;
+              break;
+            }
+
+            enqueueSnackbar("Vous n'avez pas l'autorisation d'apporter des modifications", {
+              variant: 'warning',
+              anchorOrigin: {
+                vertical: 'bottom',
+                horizontal: 'right'
+              }
+            });
+            return _context.abrupt("return");
+
+          case 5:
+            _context.next = 7;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.put("http://localhost:3000/api/updateOrder?id=".concat(order.id, "&status=").concat(status)));
 
-          case 3:
+          case 7:
             rep = _context.sent;
-            console.log("ok");
 
             if (rep.data.status == event.target.value) {
               setStatus(event.target.value);
@@ -57746,7 +57768,7 @@ var StatusCell = function StatusCell(_ref4) {
               }
             });
 
-          case 6:
+          case 9:
           case "end":
             return _context.stop();
         }
@@ -57761,7 +57783,7 @@ var StatusCell = function StatusCell(_ref4) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 85,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -57770,7 +57792,7 @@ var StatusCell = function StatusCell(_ref4) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 86,
       columnNumber: 13
     }
   }));
@@ -57788,7 +57810,7 @@ var DateCell = function DateCell(_ref5) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 99,
       columnNumber: 9
     }
   }, "".concat(dd, "-").concat(mm, "-").concat(yyyy, " ").concat(hh, ":").concat(min));
@@ -57802,7 +57824,7 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 106,
       columnNumber: 9
     }
   }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -57814,14 +57836,14 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 108,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 113,
       columnNumber: 21
     }
   }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -57829,7 +57851,7 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 115,
       columnNumber: 33
     }
   }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -57837,7 +57859,7 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 118,
       columnNumber: 29
     }
   }))));
@@ -58425,7 +58447,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 var INITIAL_STATE = {
-  auth: false
+  auth: false,
+  user: ''
 };
 var AuthContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext({});
 
@@ -58433,12 +58456,14 @@ var authReducer = function authReducer(state, action) {
   switch (action.type) {
     case 'LOGIN':
       return _objectSpread({}, state, {
-        auth: true
+        auth: true,
+        user: action.user
       });
 
     case 'LOGOUT':
       return _objectSpread({}, state, {
-        auth: false
+        auth: false,
+        user: ''
       });
 
     default:
@@ -58461,7 +58486,7 @@ var AuthProvider = function AuthProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 38,
       columnNumber: 5
     }
   }, children);
@@ -58540,8 +58565,7 @@ var Index = function Index() {
   var setAuthListener = function setAuthListener() {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_3__["firebase"].auth().onAuthStateChanged(function (user) {
       if (user) {
-        console.log(user); // User is signed in.
-
+        // User is signed in.
         var displayName = user.displayName;
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -58550,7 +58574,8 @@ var Index = function Index() {
         var uid = user.uid;
         var providerData = user.providerData;
         authDispatch({
-          type: 'LOGIN'
+          type: 'LOGIN',
+          user: user
         });
       } else authDispatch({
         type: 'LOGOUT'

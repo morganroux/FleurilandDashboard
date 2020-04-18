@@ -8,6 +8,7 @@ import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
 import Tooltip from '@material-ui/core/Tooltip';
 import Fade from '@material-ui/core/Fade';
 import { withSnackbar, WithSnackbarProps } from 'notistack';
+import { AuthContext } from '../../context/auth/auth.context';
 
 interface OrderItemProps extends WithSnackbarProps {
     order: any,
@@ -51,11 +52,21 @@ const PriceCell: React.FC<OrderItemProps> = ({ order }) => {
 
 const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
     const [status, setStatus] = useState(order.status);
+    const {authState, authDispatch} = useContext(AuthContext);
 
     const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
         const status = event.target.value;
+        console.log('state', authState.user.email);
+        if (authState.user.email == 'test@test.fr') {
+           
+            enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, { 
+                variant: 'warning',
+                anchorOrigin: { vertical: 'bottom', horizontal: 'right'}
+            });
+            return;
+        }
+
         const rep = await axios.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
-        console.log("ok")
         if (rep.data.status == event.target.value) {
             setStatus(event.target.value as string);
             enqueueSnackbar('Mise à jour réussie', { 
@@ -67,8 +78,8 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
             enqueueSnackbar('Erreur de connexion au serveur', { 
                 variant: 'error',
                 anchorOrigin: { vertical: 'bottom', horizontal: 'right'}
-            });
-      };
+        });
+    };
  
     return (
         <TableCell style={{ borderRadius:10 }}>

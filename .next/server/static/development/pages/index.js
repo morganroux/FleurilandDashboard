@@ -636,10 +636,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! notistack */ "notistack");
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -661,49 +663,49 @@ const OrderItem = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 21,
       columnNumber: 13
     }
   }, __jsx(IdCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 13
     }
   })), __jsx(NameCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 13
     }
   })), __jsx(PriceCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 13
     }
   })), __jsx(StatusCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 13
     }
   })), __jsx(DateCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 13
     }
   })), __jsx(MethodCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   })));
@@ -716,7 +718,7 @@ const IdCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 9
     }
   }, order.id);
@@ -731,7 +733,7 @@ const NameCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 9
     }
   }, lastName, " ", firstName);
@@ -744,7 +746,7 @@ const PriceCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 9
     }
   }, order.total, "\u20AC");
@@ -758,11 +760,27 @@ const StatusCell = ({
     0: status,
     1: setStatus
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(order.status);
+  const {
+    authState,
+    authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__["AuthContext"]);
 
   const handleChange = async event => {
     const status = event.target.value;
+    console.log('state', authState.user.email);
+
+    if (authState.user.email == 'test@test.fr') {
+      enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, {
+        variant: 'warning',
+        anchorOrigin: {
+          vertical: 'bottom',
+          horizontal: 'right'
+        }
+      });
+      return;
+    }
+
     const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
-    console.log("ok");
 
     if (rep.data.status == event.target.value) {
       setStatus(event.target.value);
@@ -789,7 +807,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 85,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -798,7 +816,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 86,
       columnNumber: 13
     }
   }));
@@ -817,7 +835,7 @@ const DateCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 99,
       columnNumber: 9
     }
   }, `${dd}-${mm}-${yyyy} ${hh}:${min}`);
@@ -832,7 +850,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 106,
       columnNumber: 9
     }
   }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -844,14 +862,14 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 108,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 113,
       columnNumber: 21
     }
   }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -859,7 +877,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 115,
       columnNumber: 33
     }
   }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -867,7 +885,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 118,
       columnNumber: 29
     }
   }))));
@@ -1426,7 +1444,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 const INITIAL_STATE = {
-  auth: false
+  auth: false,
+  user: ''
 };
 const AuthContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
 
@@ -1434,12 +1453,14 @@ const authReducer = (state, action) => {
   switch (action.type) {
     case 'LOGIN':
       return _objectSpread({}, state, {
-        auth: true
+        auth: true,
+        user: action.user
       });
 
     case 'LOGOUT':
       return _objectSpread({}, state, {
-        auth: false
+        auth: false,
+        user: ''
       });
 
     default:
@@ -1462,7 +1483,7 @@ const AuthProvider = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 38,
       columnNumber: 5
     }
   }, children);
@@ -1540,8 +1561,7 @@ const Index = () => {
   const setAuthListener = () => {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_3__["firebase"].auth().onAuthStateChanged(user => {
       if (user) {
-        console.log(user); // User is signed in.
-
+        // User is signed in.
         var displayName = user.displayName;
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -1550,7 +1570,8 @@ const Index = () => {
         var uid = user.uid;
         var providerData = user.providerData;
         authDispatch({
-          type: 'LOGIN'
+          type: 'LOGIN',
+          user
         });
       } else authDispatch({
         type: 'LOGOUT'
