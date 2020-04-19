@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -809,14 +809,18 @@ const NameCell = ({
 const PriceCell = ({
   order
 }) => {
+  const {
+    authState,
+    authDispatch
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__["AuthContext"]);
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 9
     }
-  }, order.total, "\u20AC");
+  }, authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***', "\u20AC");
 };
 
 const StatusCell = ({
@@ -834,7 +838,6 @@ const StatusCell = ({
 
   const handleChange = async event => {
     const status = event.target.value;
-    console.log('state', authState.user.email);
 
     if (authState.user.email != 'valerie@fleuriland.fr') {
       enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, {
@@ -1698,7 +1701,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/

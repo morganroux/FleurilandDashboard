@@ -57823,14 +57823,19 @@ var NameCell = function NameCell(_ref2) {
 
 var PriceCell = function PriceCell(_ref3) {
   var order = _ref3.order;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_12__["AuthContext"]),
+      authState = _useContext.authState,
+      authDispatch = _useContext.authDispatch;
+
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 9
     }
-  }, order.total, "\u20AC");
+  }, authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***', "\u20AC");
 };
 
 var StatusCell = function StatusCell(_ref4) {
@@ -57841,9 +57846,9 @@ var StatusCell = function StatusCell(_ref4) {
       status = _useState[0],
       setStatus = _useState[1];
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_12__["AuthContext"]),
-      authState = _useContext.authState,
-      authDispatch = _useContext.authDispatch;
+  var _useContext2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_12__["AuthContext"]),
+      authState = _useContext2.authState,
+      authDispatch = _useContext2.authDispatch;
 
   var handleChange = function handleChange(event) {
     var status, rep;
@@ -57852,10 +57857,9 @@ var StatusCell = function StatusCell(_ref4) {
         switch (_context.prev = _context.next) {
           case 0:
             status = event.target.value;
-            console.log('state', authState.user.email);
 
             if (!(authState.user.email != 'valerie@fleuriland.fr')) {
-              _context.next = 5;
+              _context.next = 4;
               break;
             }
 
@@ -57868,11 +57872,11 @@ var StatusCell = function StatusCell(_ref4) {
             });
             return _context.abrupt("return");
 
-          case 5:
-            _context.next = 7;
+          case 4:
+            _context.next = 6;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.put("https://fleurilanddashboard.now.sh/api/updateOrder?id=".concat(order.id, "&status=").concat(status)));
 
-          case 7:
+          case 6:
             rep = _context.sent;
 
             if (rep.data.status == event.target.value) {
@@ -57892,7 +57896,7 @@ var StatusCell = function StatusCell(_ref4) {
               }
             });
 
-          case 9:
+          case 8:
           case "end":
             return _context.stop();
         }
@@ -58760,7 +58764,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -58783,5 +58787,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

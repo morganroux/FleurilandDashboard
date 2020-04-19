@@ -46,8 +46,9 @@ const NameCell: React.FC<OrderItemProps> = ({ order }) => {
 }
 
 const PriceCell: React.FC<OrderItemProps> = ({ order }) => {
+    const {authState, authDispatch} = useContext(AuthContext);
     return (
-        <TableCell>{order.total}€</TableCell>
+        <TableCell>{authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***'}€</TableCell>
     );
 }
 
@@ -57,7 +58,6 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
 
     const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
         const status = event.target.value;
-        console.log('state', authState.user.email);
         if (authState.user.email != 'valerie@fleuriland.fr') {
            
             enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, { 
