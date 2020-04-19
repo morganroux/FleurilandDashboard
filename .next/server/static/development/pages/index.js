@@ -355,7 +355,10 @@ const useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODU
       background: '#39ac73',
       color: 'white',
       marginTop: '1vh',
-      height: '60px'
+      height: '60px',
+      "&:hover": {
+        background: '#0086b3'
+      }
     },
     form: {
       display: "flex",
@@ -397,7 +400,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/VpnKey */ "@material-ui/icons/VpnKey");
 /* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
+/* harmony import */ var _material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/Visibility */ "@material-ui/icons/Visibility");
+/* harmony import */ var _material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/VisibilityOff */ "@material-ui/icons/VisibilityOff");
+/* harmony import */ var _material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/LoginPage/LoginPage.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -407,8 +414,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
 const LoginPage = () => {
-  const classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_5__["useStyleLoginPage"])();
+  const classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_7__["useStyleLoginPage"])();
   const {
     0: email,
     1: setEmail
@@ -421,6 +430,10 @@ const LoginPage = () => {
     0: error,
     1: setError
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  const {
+    0: showPassword,
+    1: setShowPassword
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
 
   const hanldeGoogleClick = () => {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_1__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_1__["googleAuthProvider"]);
@@ -448,7 +461,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 40,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
@@ -456,7 +469,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 41,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Paper"], {
@@ -465,7 +478,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 42,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
@@ -474,7 +487,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 21
     }
   }, "Fleuriland"), __jsx("form", {
@@ -484,7 +497,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
@@ -492,7 +505,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 45,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
@@ -508,14 +521,17 @@ const LoginPage = () => {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53,
+          lineNumber: 55,
           columnNumber: 35
         }
       }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        style: {
+          color: 'rgba(0, 0, 0, 0.54)'
+        },
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54,
+          lineNumber: 56,
           columnNumber: 37
         }
       }))
@@ -523,7 +539,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 46,
       columnNumber: 25
     }
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["TextField"], {
@@ -531,6 +547,7 @@ const LoginPage = () => {
     value: pwd,
     onChange: event => setPwd(event.target.value),
     id: "password",
+    type: showPassword ? "text" : "password",
     label: "Password",
     variant: "outlined",
     InputProps: {
@@ -539,22 +556,57 @@ const LoginPage = () => {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 71,
           columnNumber: 35
         }
       }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        style: {
+          color: 'rgba(0, 0, 0, 0.54)'
+        },
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 72,
           columnNumber: 37
         }
-      }))
+      })),
+      endAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["InputAdornment"], {
+        position: "end",
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76,
+          columnNumber: 37
+        }
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["IconButton"], {
+        "aria-label": "toggle password visibility",
+        onClick: () => setShowPassword(!showPassword),
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77,
+          columnNumber: 39
+        }
+      }, showPassword ? __jsx(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81,
+          columnNumber: 57
+        }
+      }) : __jsx(_material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        __self: undefined,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81,
+          columnNumber: 74
+        }
+      })))
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 25
     }
   }), !!error && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
@@ -563,7 +615,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 87,
       columnNumber: 37
     }
   }, error), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -572,14 +624,14 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 88,
       columnNumber: 25
     }
   }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 92,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
@@ -588,7 +640,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 93,
       columnNumber: 25
     }
   }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
@@ -596,7 +648,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 94,
       columnNumber: 24
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -606,7 +658,7 @@ const LoginPage = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 95,
       columnNumber: 29
     }
   }, "Google"))))));
@@ -1886,6 +1938,28 @@ module.exports = require("@material-ui/icons/MailOutline");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/Search");
+
+/***/ }),
+
+/***/ "@material-ui/icons/Visibility":
+/*!************************************************!*\
+  !*** external "@material-ui/icons/Visibility" ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/Visibility");
+
+/***/ }),
+
+/***/ "@material-ui/icons/VisibilityOff":
+/*!***************************************************!*\
+  !*** external "@material-ui/icons/VisibilityOff" ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/VisibilityOff");
 
 /***/ }),
 

@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import Home from '../../components/Home/Home';
 import { firebase, googleAuthProvider } from '../../helper/firebase';
-import { Container, Box, Button, Paper, Typography, TextField, InputAdornment } from '@material-ui/core';
+import { Container, Box, Button, Paper, Typography, TextField, InputAdornment, IconButton } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import { AuthContext,  } from '../../context/auth/auth.context';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { useStyleLoginPage } from './LoginPage.style';
 
 const LoginPage: React.FC = () => {
@@ -12,6 +13,7 @@ const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
 
     const hanldeGoogleClick =  () => {
     firebase.auth().signInWithPopup(googleAuthProvider);
@@ -51,7 +53,7 @@ const LoginPage: React.FC = () => {
                             InputProps={{
                                 startAdornment: (
                                   <InputAdornment position="start">
-                                    <MailOutlineIcon />
+                                    <MailOutlineIcon style={{color:'rgba(0, 0, 0, 0.54)'}}/>
                                   </InputAdornment>
                                 ),
                             }}
@@ -61,14 +63,25 @@ const LoginPage: React.FC = () => {
                             value={pwd}
                             onChange={(event => setPwd(event.target.value))}
                             id="password" 
+                            type={showPassword ?"text" : "password"}
                             label="Password" 
                             variant="outlined" 
                             InputProps={{
                                 startAdornment: (
                                   <InputAdornment position="start">
-                                    <VpnKeyIcon />
+                                    <VpnKeyIcon style={{color:'rgba(0, 0, 0, 0.54)'}}/>
                                   </InputAdornment>
                                 ),
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                      <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                      >
+                                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                                      </IconButton>
+                                    </InputAdornment>
+                                )
                             }}
                         />
                         {!!error && <Typography variant="body1" className={`${classes.typo} ${classes.error}`}>{error}</Typography>}

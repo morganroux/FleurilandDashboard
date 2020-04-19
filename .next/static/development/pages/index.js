@@ -39412,6 +39412,64 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/Visibility.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Visibility.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+}), 'Visibility');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/VisibilityOff.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/VisibilityOff.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
+}), 'VisibilityOff');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/VpnKey.js":
 /*!***************************************************!*\
   !*** ./node_modules/@material-ui/icons/VpnKey.js ***!
@@ -57293,7 +57351,10 @@ var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
       background: '#39ac73',
       color: 'white',
       marginTop: '1vh',
-      height: '60px'
+      height: '60px',
+      "&:hover": {
+        background: '#0086b3'
+      }
     },
     form: {
       display: "flex",
@@ -57336,7 +57397,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/VpnKey */ "./node_modules/@material-ui/icons/VpnKey.js");
 /* harmony import */ var _material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
+/* harmony import */ var _material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Visibility */ "./node_modules/@material-ui/icons/Visibility.js");
+/* harmony import */ var _material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/VisibilityOff */ "./node_modules/@material-ui/icons/VisibilityOff.js");
+/* harmony import */ var _material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _LoginPage_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./LoginPage.style */ "./src/components/LoginPage/LoginPage.style.tsx");
 
 
 var _this = undefined,
@@ -57350,8 +57415,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
+
 var LoginPage = function LoginPage() {
-  var classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_6__["useStyleLoginPage"])();
+  var classes = Object(_LoginPage_style__WEBPACK_IMPORTED_MODULE_8__["useStyleLoginPage"])();
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
       email = _useState[0],
@@ -57364,6 +57431,10 @@ var LoginPage = function LoginPage() {
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
       error = _useState3[0],
       setError = _useState3[1];
+
+  var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
+      showPassword = _useState4[0],
+      setShowPassword = _useState4[1];
 
   var hanldeGoogleClick = function hanldeGoogleClick() {
     _helper_firebase__WEBPACK_IMPORTED_MODULE_2__["firebase"].auth().signInWithPopup(_helper_firebase__WEBPACK_IMPORTED_MODULE_2__["googleAuthProvider"]);
@@ -57402,7 +57473,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 40,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -57410,7 +57481,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 41,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Paper"], {
@@ -57419,7 +57490,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 42,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
@@ -57428,7 +57499,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 21
     }
   }, "Fleuriland"), __jsx("form", {
@@ -57438,7 +57509,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
@@ -57446,7 +57517,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 45,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["TextField"], {
@@ -57464,14 +57535,17 @@ var LoginPage = function LoginPage() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53,
+          lineNumber: 55,
           columnNumber: 35
         }
       }, __jsx(_material_ui_icons_MailOutline__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        style: {
+          color: 'rgba(0, 0, 0, 0.54)'
+        },
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54,
+          lineNumber: 56,
           columnNumber: 37
         }
       }))
@@ -57479,7 +57553,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 46,
       columnNumber: 25
     }
   }), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["TextField"], {
@@ -57489,6 +57563,7 @@ var LoginPage = function LoginPage() {
       return setPwd(event.target.value);
     },
     id: "password",
+    type: showPassword ? "text" : "password",
     label: "Password",
     variant: "outlined",
     InputProps: {
@@ -57497,22 +57572,59 @@ var LoginPage = function LoginPage() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68,
+          lineNumber: 71,
           columnNumber: 35
         }
       }, __jsx(_material_ui_icons_VpnKey__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        style: {
+          color: 'rgba(0, 0, 0, 0.54)'
+        },
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69,
+          lineNumber: 72,
           columnNumber: 37
         }
-      }))
+      })),
+      endAdornment: __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["InputAdornment"], {
+        position: "end",
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76,
+          columnNumber: 37
+        }
+      }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["IconButton"], {
+        "aria-label": "toggle password visibility",
+        onClick: function onClick() {
+          return setShowPassword(!showPassword);
+        },
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77,
+          columnNumber: 39
+        }
+      }, showPassword ? __jsx(_material_ui_icons_Visibility__WEBPACK_IMPORTED_MODULE_6___default.a, {
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81,
+          columnNumber: 57
+        }
+      }) : __jsx(_material_ui_icons_VisibilityOff__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81,
+          columnNumber: 74
+        }
+      })))
     },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 25
     }
   }), !!error && __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
@@ -57521,7 +57633,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 87,
       columnNumber: 37
     }
   }, error), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -57530,14 +57642,14 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 88,
       columnNumber: 25
     }
   }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Container"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 92,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
@@ -57546,7 +57658,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 93,
       columnNumber: 25
     }
   }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Box"], {
@@ -57554,7 +57666,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 94,
       columnNumber: 24
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -57564,7 +57676,7 @@ var LoginPage = function LoginPage() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 95,
       columnNumber: 29
     }
   }, "Google"))))));

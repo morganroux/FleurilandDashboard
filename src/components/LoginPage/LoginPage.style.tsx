@@ -39,10 +39,13 @@ export const useStyleLoginPage = makeStyles((theme: Theme) => {
             color:'red'
         },
         button: {
-                background: '#39ac73',
-                color: 'white',
-                marginTop: '1vh',
-                height: '60px'
+            background: '#39ac73',
+            color: 'white',
+            marginTop: '1vh',
+            height: '60px',
+            "&:hover": {
+                background:'#0086b3'
+            }
         },
         form: {
             display: "flex",
