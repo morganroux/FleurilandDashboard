@@ -6,7 +6,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import OrderItem from './OrderItem';
-import { sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod } from './sorters';
+import { sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod } from './sorters';
 import { TableSortLabel } from '@material-ui/core';
 
 interface TableProps {
@@ -22,7 +22,7 @@ interface HeadProps {
 }
 
 const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrderDir}) => {
-    const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande", "Expédition"];
+    const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande", "Ville", "Expédition"];
     const createSortHandler = (id) => {
         console.log(id);
         if (orderBy == id)
@@ -58,7 +58,7 @@ const OrderTable: React.FC<TableProps> = (props) => {
     const { orders, searchtext } = props;
     const [orderBy, setOrderBy] = useState<number>(0);
     const [orderDir, setOrderDir] = useState<"desc" | "asc">('desc');
-    const sorters = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod];
+    const sorters = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod];
     const getSortHandler = (orderBy, orderDir) => { return (
         (elmt1: any, elmt2: any) =>  {
 

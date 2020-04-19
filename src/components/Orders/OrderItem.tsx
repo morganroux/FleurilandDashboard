@@ -24,6 +24,7 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
             <PriceCell {...props }/>
             <StatusCell {...props }/>
             <DateCell {...props} />
+            <CityCell {...props} />
             <MethodCell {...props }/>
             </TableRow>
             )
@@ -57,7 +58,7 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
     const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
         const status = event.target.value;
         console.log('state', authState.user.email);
-        if (authState.user.email == 'test@test.fr') {
+        if (authState.user.email != 'valerie@fleuriland.fr') {
            
             enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, { 
                 variant: 'warning',
@@ -98,6 +99,13 @@ const DateCell: React.FC<OrderItemProps> = ({ order }) => {
     return (
         <TableCell>{`${dd}-${mm}-${yyyy} ${hh}:${min}`}</TableCell>
     );
+}
+
+const CityCell: React.FC<OrderItemProps> = ({ order }) => {
+    const city = order.shipping.city.charAt(0).toUpperCase() + order.shipping.city.slice(1).toLowerCase();
+    return (
+        <TableCell>{city}</TableCell>
+    )
 }
 
 const MethodCell: React.FC<OrderItemProps> = ({ order }) => {

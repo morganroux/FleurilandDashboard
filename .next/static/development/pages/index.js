@@ -57252,34 +57252,39 @@ var Home = function Home() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStyleLoginPage", function() { return useStyleLoginPage; });
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 
-var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(function (theme) {
-  return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
+
+var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(function (theme) {
+  var _container, _paper;
+
+  return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["createStyles"])({
     root: {
       background: 'linear-gradient(135deg, #00b300 10%, #39ac73 60%, #002db3 99%)'
     },
-    container: {
+    container: (_container = {
       maxWidth: 'sm',
       height: '100vh',
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "center"
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_container, theme.breakpoints.down('sm'), {
+      paddingTop: '20vh'
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_container, theme.breakpoints.up('md'), {
       paddingTop: '5vh'
-    },
-    paper: {
+    }), _container),
+    paper: (_paper = {
       display: "flex",
-      // justifyContent: "center",
       flexDirection: 'column',
-      justifyContent: 'space-evenly',
-      height: '90vh',
-      width: '35vw',
-      minWidth: '300px'
-    },
+      justifyContent: 'space-evenly'
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_paper, theme.breakpoints.down('sm'), {
+      height: '60vh'
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_paper, theme.breakpoints.up('md'), {
+      height: '90vh'
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_paper, "minHeight", '400px'), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_paper, "width", '35vw'), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_paper, "minWidth", '300px'), _paper),
     typo: {
       display: "flex",
-      justifyContent: "center" // paddingTop: '15vh',
-      // paddingBottom: '10vh'
-
+      justifyContent: "center"
     },
     error: {
       color: 'red'
@@ -57287,8 +57292,8 @@ var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
     button: {
       background: '#39ac73',
       color: 'white',
-      marginTop: '1vw',
-      height: '4vw'
+      marginTop: '1vh',
+      height: '60px'
     },
     form: {
       display: "flex",
@@ -57298,14 +57303,14 @@ var useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
       paddingRight: '5vw'
     },
     textfield: {
-      paddingBottom: '1vw'
+      paddingBottom: '20px'
     },
     providers: {
       display: "flex",
       justifyContent: "center"
     },
     google: {
-      marginTop: '1vh'
+      marginTop: '20px'
     }
   });
 });
@@ -57661,11 +57666,18 @@ var OrderItem = function OrderItem(props) {
       lineNumber: 26,
       columnNumber: 13
     }
-  })), __jsx(MethodCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+  })), __jsx(CityCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27,
+      columnNumber: 13
+    }
+  })), __jsx(MethodCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
       columnNumber: 13
     }
   })));
@@ -57677,7 +57689,7 @@ var IdCell = function IdCell(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, order.id);
@@ -57691,7 +57703,7 @@ var NameCell = function NameCell(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, lastName, " ", firstName);
@@ -57703,7 +57715,7 @@ var PriceCell = function PriceCell(_ref3) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 9
     }
   }, order.total, "\u20AC");
@@ -57730,7 +57742,7 @@ var StatusCell = function StatusCell(_ref4) {
             status = event.target.value;
             console.log('state', authState.user.email);
 
-            if (!(authState.user.email == 'test@test.fr')) {
+            if (!(authState.user.email != 'valerie@fleuriland.fr')) {
               _context.next = 5;
               break;
             }
@@ -57746,7 +57758,7 @@ var StatusCell = function StatusCell(_ref4) {
 
           case 5:
             _context.next = 7;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.put("http://localhost:3000/api/updateOrder?id=".concat(order.id, "&status=").concat(status)));
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_6___default.a.put("https://fleurilanddashboard.now.sh/api/updateOrder?id=".concat(order.id, "&status=").concat(status)));
 
           case 7:
             rep = _context.sent;
@@ -57783,7 +57795,7 @@ var StatusCell = function StatusCell(_ref4) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -57792,7 +57804,7 @@ var StatusCell = function StatusCell(_ref4) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 13
     }
   }));
@@ -57810,21 +57822,34 @@ var DateCell = function DateCell(_ref5) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 9
     }
   }, "".concat(dd, "-").concat(mm, "-").concat(yyyy, " ").concat(hh, ":").concat(min));
 };
 
-var MethodCell = function MethodCell(_ref6) {
+var CityCell = function CityCell(_ref6) {
   var order = _ref6.order;
+  var city = order.shipping.city.charAt(0).toUpperCase() + order.shipping.city.slice(1).toLowerCase();
+  return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 9
+    }
+  }, city);
+};
+
+var MethodCell = function MethodCell(_ref7) {
+  var order = _ref7.order;
   var method = order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     align: "center",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 114,
       columnNumber: 9
     }
   }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -57836,14 +57861,14 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 116,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 121,
       columnNumber: 21
     }
   }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -57851,7 +57876,7 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 123,
       columnNumber: 33
     }
   }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -57859,7 +57884,7 @@ var MethodCell = function MethodCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 126,
       columnNumber: 29
     }
   }))));
@@ -57910,7 +57935,7 @@ var OrderHead = function OrderHead(_ref) {
       orderDir = _ref.orderDir,
       setOrderBy = _ref.setOrderBy,
       setOrderDir = _ref.setOrderDir;
-  var heads = ["N°", "Nom", "Total", "Status", "Date de commande", "Expédition"];
+  var heads = ["N°", "Nom", "Total", "Status", "Date de commande", "Ville", "Expédition"];
 
   var createSortHandler = function createSortHandler(id) {
     console.log(id);
@@ -57972,7 +57997,7 @@ var OrderTable = function OrderTable(props) {
       orderDir = _useState2[0],
       setOrderDir = _useState2[1];
 
-  var sorters = [_sorters__WEBPACK_IMPORTED_MODULE_8__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByMethod"]];
+  var sorters = [_sorters__WEBPACK_IMPORTED_MODULE_8__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByCity"], _sorters__WEBPACK_IMPORTED_MODULE_8__["sortByMethod"]];
 
   var getSortHandler = function getSortHandler(orderBy, orderDir) {
     return function (elmt1, elmt2) {
@@ -58167,7 +58192,7 @@ var Orders = function Orders() {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:3000/api/orders"));
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/orders"));
 
             case 2:
               newOrders = _context.sent;
@@ -58379,7 +58404,7 @@ var StatusSelector = function StatusSelector(props) {
 /*!*******************************************!*\
   !*** ./src/components/Orders/sorters.tsx ***!
   \*******************************************/
-/*! exports provided: sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod */
+/*! exports provided: sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58389,6 +58414,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByTotal", function() { return sortByTotal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByStatus", function() { return sortByStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByDate", function() { return sortByDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByCity", function() { return sortByCity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByMethod", function() { return sortByMethod; });
 var sortById = function sortById(elmt1, elmt2) {
   return elmt1.id <= elmt2.id ? -1 : 1;
@@ -58411,6 +58437,9 @@ var sortByStatus = function sortByStatus(elmt1, elmt2) {
 };
 var sortByDate = function sortByDate(elmt1, elmt2) {
   return elmt1.date_created <= elmt2.date_created ? -1 : 1;
+};
+var sortByCity = function sortByCity(elmt1, elmt2) {
+  return elmt1.shipping.city.toLowerCase() <= elmt2.shipping.city.toLowerCase() ? -1 : 1;
 };
 var sortByMethod = function sortByMethod(elmt1, elmt2) {
   var method1 = elmt1.shipping_lines[0] ? elmt1.shipping_lines[0].method_title : 'Aucune méthode renseignée';
@@ -58619,7 +58648,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -58642,5 +58671,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

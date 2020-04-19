@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -323,22 +323,30 @@ const useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODU
       height: '100vh',
       display: "flex",
       justifyContent: "center",
-      paddingTop: '5vh'
+      [theme.breakpoints.down('sm')]: {
+        paddingTop: '20vh'
+      },
+      [theme.breakpoints.up('md')]: {
+        paddingTop: '5vh'
+      }
     },
     paper: {
       display: "flex",
-      // justifyContent: "center",
       flexDirection: 'column',
       justifyContent: 'space-evenly',
-      height: '90vh',
+      [theme.breakpoints.down('sm')]: {
+        height: '60vh'
+      },
+      [theme.breakpoints.up('md')]: {
+        height: '90vh'
+      },
+      minHeight: '400px',
       width: '35vw',
       minWidth: '300px'
     },
     typo: {
       display: "flex",
-      justifyContent: "center" // paddingTop: '15vh',
-      // paddingBottom: '10vh'
-
+      justifyContent: "center"
     },
     error: {
       color: 'red'
@@ -346,8 +354,8 @@ const useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODU
     button: {
       background: '#39ac73',
       color: 'white',
-      marginTop: '1vw',
-      height: '4vw'
+      marginTop: '1vh',
+      height: '60px'
     },
     form: {
       display: "flex",
@@ -357,14 +365,14 @@ const useStyleLoginPage = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODU
       paddingRight: '5vw'
     },
     textfield: {
-      paddingBottom: '1vw'
+      paddingBottom: '20px'
     },
     providers: {
       display: "flex",
       justifyContent: "center"
     },
     google: {
-      marginTop: '1vh'
+      marginTop: '20px'
     }
   });
 });
@@ -701,11 +709,18 @@ const OrderItem = props => {
       lineNumber: 26,
       columnNumber: 13
     }
-  })), __jsx(MethodCell, _extends({}, props, {
+  })), __jsx(CityCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27,
+      columnNumber: 13
+    }
+  })), __jsx(MethodCell, _extends({}, props, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
       columnNumber: 13
     }
   })));
@@ -718,7 +733,7 @@ const IdCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 9
     }
   }, order.id);
@@ -733,7 +748,7 @@ const NameCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, lastName, " ", firstName);
@@ -746,7 +761,7 @@ const PriceCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 9
     }
   }, order.total, "\u20AC");
@@ -769,7 +784,7 @@ const StatusCell = ({
     const status = event.target.value;
     console.log('state', authState.user.email);
 
-    if (authState.user.email == 'test@test.fr') {
+    if (authState.user.email != 'valerie@fleuriland.fr') {
       enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, {
         variant: 'warning',
         anchorOrigin: {
@@ -780,7 +795,7 @@ const StatusCell = ({
       return;
     }
 
-    const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`http://localhost:3000/api/updateOrder?id=${order.id}&status=${status}`);
+    const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`https://fleurilanddashboard.now.sh/api/updateOrder?id=${order.id}&status=${status}`);
 
     if (rep.data.status == event.target.value) {
       setStatus(event.target.value);
@@ -807,7 +822,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -816,7 +831,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 13
     }
   }));
@@ -835,10 +850,24 @@ const DateCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 9
     }
   }, `${dd}-${mm}-${yyyy} ${hh}:${min}`);
+};
+
+const CityCell = ({
+  order
+}) => {
+  const city = order.shipping.city.charAt(0).toUpperCase() + order.shipping.city.slice(1).toLowerCase();
+  return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 9
+    }
+  }, city);
 };
 
 const MethodCell = ({
@@ -850,7 +879,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 114,
       columnNumber: 9
     }
   }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -862,14 +891,14 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 116,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 121,
       columnNumber: 21
     }
   }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -877,7 +906,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 123,
       columnNumber: 33
     }
   }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5___default.a, {
@@ -885,7 +914,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 126,
       columnNumber: 29
     }
   }))));
@@ -941,7 +970,7 @@ const OrderHead = ({
   setOrderBy,
   setOrderDir
 }) => {
-  const heads = ["N°", "Nom", "Total", "Status", "Date de commande", "Expédition"];
+  const heads = ["N°", "Nom", "Total", "Status", "Date de commande", "Ville", "Expédition"];
 
   const createSortHandler = id => {
     console.log(id);
@@ -1000,7 +1029,7 @@ const OrderTable = props => {
     0: orderDir,
     1: setOrderDir
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('desc');
-  const sorters = [_sorters__WEBPACK_IMPORTED_MODULE_7__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByMethod"]];
+  const sorters = [_sorters__WEBPACK_IMPORTED_MODULE_7__["sortById"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByName"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByTotal"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByStatus"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByDate"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByCity"], _sorters__WEBPACK_IMPORTED_MODULE_7__["sortByMethod"]];
 
   const getSortHandler = (orderBy, orderDir) => {
     return (elmt1, elmt2) => {
@@ -1187,7 +1216,7 @@ const Orders = () => {
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function loadOrders() {
-      const newOrders = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:3000/api/orders");
+      const newOrders = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/orders");
       setOrders(newOrders.data);
       setIsLoading(false);
     }
@@ -1387,7 +1416,7 @@ const StatusSelector = props => {
 /*!*******************************************!*\
   !*** ./src/components/Orders/sorters.tsx ***!
   \*******************************************/
-/*! exports provided: sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByMethod */
+/*! exports provided: sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1397,6 +1426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByTotal", function() { return sortByTotal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByStatus", function() { return sortByStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByDate", function() { return sortByDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByCity", function() { return sortByCity; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sortByMethod", function() { return sortByMethod; });
 const sortById = (elmt1, elmt2) => elmt1.id <= elmt2.id ? -1 : 1;
 const sortByName = (elmt1, elmt2) => {
@@ -1412,6 +1442,7 @@ const sortByName = (elmt1, elmt2) => {
 const sortByTotal = (elmt1, elmt2) => parseFloat(elmt1.total) <= parseFloat(elmt2.total) ? -1 : 1;
 const sortByStatus = (elmt1, elmt2) => elmt1.status <= elmt2.status ? -1 : 1;
 const sortByDate = (elmt1, elmt2) => elmt1.date_created <= elmt2.date_created ? -1 : 1;
+const sortByCity = (elmt1, elmt2) => elmt1.shipping.city.toLowerCase() <= elmt2.shipping.city.toLowerCase() ? -1 : 1;
 const sortByMethod = (elmt1, elmt2) => {
   const method1 = elmt1.shipping_lines[0] ? elmt1.shipping_lines[0].method_title : 'Aucune méthode renseignée';
   const method2 = elmt2.shipping_lines[0] ? elmt2.shipping_lines[0].method_title : 'Aucune méthode renseignée';
@@ -1615,7 +1646,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/

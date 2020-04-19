@@ -10,32 +10,39 @@ export const useStyleLoginPage = makeStyles((theme: Theme) => {
             height: '100vh',
             display: "flex",
             justifyContent: "center",
-            paddingTop: '5vh',
+            [theme.breakpoints.down('sm')]: {
+                paddingTop: '20vh',
+              },
+            [theme.breakpoints.up('md')]: {
+                paddingTop: '5vh',
+              },
         },
         paper: {
             display: "flex",
-            // justifyContent: "center",
             flexDirection: 'column',
             justifyContent: 'space-evenly',
-            height: '90vh',
+            [theme.breakpoints.down('sm')]: {
+                height: '60vh',
+              },
+            [theme.breakpoints.up('md')]: {
+                height: '90vh',
+              },
+              minHeight: '400px',
             width: '35vw',
             minWidth: '300px',
         },
         typo : {
             display: "flex",
             justifyContent: "center",
-            // paddingTop: '15vh',
-            // paddingBottom: '10vh'
         },
         error: {
             color:'red'
         },
         button: {
-            
                 background: '#39ac73',
                 color: 'white',
-                marginTop: '1vw',
-                height: '4vw'
+                marginTop: '1vh',
+                height: '60px'
         },
         form: {
             display: "flex",
@@ -45,14 +52,14 @@ export const useStyleLoginPage = makeStyles((theme: Theme) => {
             paddingRight: '5vw'
         },
         textfield: {
-            paddingBottom: '1vw'
+            paddingBottom: '20px'
         },
         providers: {
             display: "flex",
             justifyContent: "center",
         },
         google:{
-            marginTop: '1vh'
+            marginTop: '20px'
         }
     })
 })

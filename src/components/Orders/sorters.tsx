@@ -19,6 +19,8 @@ export const sortByStatus = (elmt1, elmt2) => elmt1.status <= elmt2.status ? -1 
 
 export const sortByDate = (elmt1, elmt2) => elmt1.date_created <= elmt2.date_created ? -1 : 1;
 
+export const sortByCity = (elmt1, elmt2) => elmt1.shipping.city.toLowerCase() <= elmt2.shipping.city.toLowerCase() ? -1 : 1;
+
 export const sortByMethod = (elmt1, elmt2) => {
     const method1 = elmt1.shipping_lines[0] ? elmt1.shipping_lines[0].method_title : 'Aucune méthode renseignée';
     const method2 = elmt2.shipping_lines[0] ? elmt2.shipping_lines[0].method_title : 'Aucune méthode renseignée';
