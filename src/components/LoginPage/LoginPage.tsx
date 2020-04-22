@@ -89,7 +89,7 @@ const LoginPage: React.FC = () => {
                         
                     </Container>
                     </form>
-                    <Container>
+                    {/* <Container>
                         <Typography variant="body1" className={classes.typo}>Or login with : </Typography> 
                        <Box className= {classes.providers}>
                             <Button 
@@ -99,7 +99,7 @@ const LoginPage: React.FC = () => {
                             >Google
                             </Button>
                         </Box>
-                    </Container>
+                    </Container> */}
                     
                 </Paper>
             </Container>
