@@ -8,6 +8,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import Fade from '@material-ui/core/Fade';
 import { useStylesOrders } from './Orders.style';
 import { Toolbar, IconButton, Tooltip, InputBase } from '@material-ui/core';
+import { OrderProvider } from '../../context/order/order.context';
 
 const Orders: React.FC = () => {
     const [orders, setOrders] = useState([]);
@@ -26,6 +27,7 @@ const Orders: React.FC = () => {
 
     return (
         <div className = {classes.root}>
+        <OrderProvider>
             <Toolbar className = {classes.toolbar}>
                 <Typography className = {classes.title} variant="h4" noWrap>Commandes</Typography>
                 <div className = {classes.search}>
@@ -45,6 +47,7 @@ const Orders: React.FC = () => {
             <Fade in={!isLoading} timeout={500}>
                 <OrderTable orders={orders} searchtext={searchText}/>
             </Fade>
+        </OrderProvider>
         </div>
     )
 }

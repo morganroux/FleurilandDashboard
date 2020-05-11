@@ -10,6 +10,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Fade from '@material-ui/core/Fade';
 import { withSnackbar, WithSnackbarProps } from 'notistack';
 import { AuthContext } from '../../context/auth/auth.context';
+import { OrderContext } from '../../context/order/order.context';
 
 interface OrderItemProps extends WithSnackbarProps {
     order: any,
@@ -39,15 +40,18 @@ const IdCell: React.FC<OrderItemProps> = ({ order }) => {
 }
 
 const NameCell: React.FC<OrderItemProps> = ({ order }) => {
+    const { setOrder, setOpen }  = useContext(OrderContext);
     const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
     const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
     return (
         <TableCell>
-            <Link onClick={(event) => event.preventDefault()}>
+            <Link onClick={() => {
+                setOrder(order);
+                setOpen(true)
+            }}>
                 {lastName} {firstName}
             </Link>
         </TableCell>
-        
     );
 }
 

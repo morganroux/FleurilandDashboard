@@ -57652,6 +57652,70 @@ var LoginPage = function LoginPage() {
 
 /***/ }),
 
+/***/ "./src/components/Orders/OrderDetailsDialog.tsx":
+/*!******************************************************!*\
+  !*** ./src/components/Orders/OrderDetailsDialog.tsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "./node_modules/@material-ui/core/esm/DialogTitle/index.js");
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js");
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "./node_modules/@material-ui/core/esm/Card/index.js");
+/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
+var _this = undefined,
+    _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderDetailsDialog.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+var OrderDetailsDialog = function OrderDetailsDialog() {
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_4__["OrderContext"]),
+      order = _useContext.order,
+      setOpen = _useContext.setOpen,
+      open = _useContext.open;
+
+  var name = !!order && order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
+  return __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    onClose: function onClose() {
+      return setOpen(false);
+    },
+    open: open,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, "D\xE9tail commande"), __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 9
+    }
+  }, "Nice shot ", name));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (OrderDetailsDialog);
+
+/***/ }),
+
 /***/ "./src/components/Orders/OrderItem.tsx":
 /*!*********************************************!*\
   !*** ./src/components/Orders/OrderItem.tsx ***!
@@ -57681,6 +57745,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! notistack */ "./node_modules/notistack/build/index.js");
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
+/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
 
 
 
@@ -57701,6 +57766,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
+
 var OrderItem = function OrderItem(props) {
   var order = props.order;
   return order && __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -57708,56 +57774,56 @@ var OrderItem = function OrderItem(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 13
     }
   }, __jsx(IdCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 13
     }
   })), __jsx(NameCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 13
     }
   })), __jsx(PriceCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 13
     }
   })), __jsx(StatusCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   })), __jsx(DateCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 13
     }
   })), __jsx(CityCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 13
     }
   })), __jsx(MethodCell, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 13
     }
   })));
@@ -57769,7 +57835,7 @@ var IdCell = function IdCell(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 9
     }
   }, order.id);
@@ -57777,23 +57843,29 @@ var IdCell = function IdCell(_ref) {
 
 var NameCell = function NameCell(_ref2) {
   var order = _ref2.order;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_14__["OrderContext"]),
+      setOrder = _useContext.setOrder,
+      setOpen = _useContext.setOpen;
+
   var firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
   var lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    onClick: function onClick(event) {
-      return event.preventDefault();
+    onClick: function onClick() {
+      setOrder(order);
+      setOpen(true);
     },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 13
     }
   }, lastName, " ", firstName));
@@ -57802,15 +57874,15 @@ var NameCell = function NameCell(_ref2) {
 var PriceCell = function PriceCell(_ref3) {
   var order = _ref3.order;
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_13__["AuthContext"]),
-      authState = _useContext.authState,
-      authDispatch = _useContext.authDispatch;
+  var _useContext2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_13__["AuthContext"]),
+      authState = _useContext2.authState,
+      authDispatch = _useContext2.authDispatch;
 
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 61,
       columnNumber: 9
     }
   }, authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***', "\u20AC");
@@ -57824,9 +57896,9 @@ var StatusCell = function StatusCell(_ref4) {
       status = _useState[0],
       setStatus = _useState[1];
 
-  var _useContext2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_13__["AuthContext"]),
-      authState = _useContext2.authState,
-      authDispatch = _useContext2.authDispatch;
+  var _useContext3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_13__["AuthContext"]),
+      authState = _useContext3.authState,
+      authDispatch = _useContext3.authDispatch;
 
   var handleChange = function handleChange(event) {
     var status, rep;
@@ -57889,7 +57961,7 @@ var StatusCell = function StatusCell(_ref4) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 95,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -57898,7 +57970,7 @@ var StatusCell = function StatusCell(_ref4) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 96,
       columnNumber: 13
     }
   }));
@@ -57916,7 +57988,7 @@ var DateCell = function DateCell(_ref5) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 109,
       columnNumber: 9
     }
   }, "".concat(dd, "-").concat(mm, "-").concat(yyyy, " ").concat(hh, ":").concat(min));
@@ -57929,7 +58001,7 @@ var CityCell = function CityCell(_ref6) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 116,
       columnNumber: 9
     }
   }, city);
@@ -57943,7 +58015,7 @@ var MethodCell = function MethodCell(_ref7) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 123,
       columnNumber: 9
     }
   }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -57955,14 +58027,14 @@ var MethodCell = function MethodCell(_ref7) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 125,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 130,
       columnNumber: 21
     }
   }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_9___default.a, {
@@ -57970,7 +58042,7 @@ var MethodCell = function MethodCell(_ref7) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 132,
       columnNumber: 33
     }
   }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -57978,7 +58050,7 @@ var MethodCell = function MethodCell(_ref7) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 135,
       columnNumber: 29
     }
   }))));
@@ -58008,12 +58080,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _OrderItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./OrderItem */ "./src/components/Orders/OrderItem.tsx");
 /* harmony import */ var _sorters__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sorters */ "./src/components/Orders/sorters.tsx");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _OrderDetailsDialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./OrderDetailsDialog */ "./src/components/Orders/OrderDetailsDialog.tsx");
+/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
 
 
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderTable.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
 
 
 
@@ -58043,14 +58119,14 @@ var OrderHead = function OrderHead(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 38,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 39,
       columnNumber: 13
     }
   }, heads.map(function (name, id) {
@@ -58060,7 +58136,7 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
+        lineNumber: 41,
         columnNumber: 17
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["TableSortLabel"], {
@@ -58072,7 +58148,7 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 45,
         columnNumber: 21
       }
     }, name));
@@ -58082,6 +58158,10 @@ var OrderHead = function OrderHead(_ref) {
 var OrderTable = function OrderTable(props) {
   var orders = props.orders,
       searchtext = props.searchtext;
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_11__["OrderContext"]),
+      open = _useContext.open,
+      setOpen = _useContext.setOpen;
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
       orderBy = _useState[0],
@@ -58105,7 +58185,7 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 73,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -58114,8 +58194,8 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
-      columnNumber: 9
+      lineNumber: 74,
+      columnNumber: 13
     }
   }, __jsx(OrderHead, {
     orderBy: orderBy,
@@ -58125,15 +58205,15 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
-      columnNumber: 13
+      lineNumber: 75,
+      columnNumber: 17
     }
   }), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 13
+      lineNumber: 76,
+      columnNumber: 17
     }
   }, orders.filter(function (order) {
     var text = searchtext.toLowerCase();
@@ -58148,11 +58228,28 @@ var OrderTable = function OrderTable(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 84,
-        columnNumber: 21
+        lineNumber: 87,
+        columnNumber: 25
       }
     });
-  }))));
+  }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Button"], {
+    onClick: function onClick() {
+      return setOpen(true);
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94,
+      columnNumber: 13
+    }
+  }, "Test"), __jsx(_OrderDetailsDialog__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95,
+      columnNumber: 13
+    }
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderTable);
@@ -58247,12 +58344,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Fade */ "./node_modules/@material-ui/core/esm/Fade/index.js");
 /* harmony import */ var _Orders_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Orders.style */ "./src/components/Orders/Orders.style.tsx");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
 
 
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/Orders.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -58308,7 +58407,14 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
+      columnNumber: 9
+    }
+  }, __jsx(_context_order_order_context__WEBPACK_IMPORTED_MODULE_10__["OrderProvider"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Toolbar"], {
@@ -58316,7 +58422,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 31,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -58326,7 +58432,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 32,
       columnNumber: 17
     }
   }, "Commandes"), __jsx("div", {
@@ -58334,7 +58440,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 33,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Tooltip"], {
@@ -58342,21 +58448,21 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 34,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["IconButton"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 35,
       columnNumber: 25
     }
   }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_6___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 36,
       columnNumber: 29
     }
   }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["InputBase"], {
@@ -58369,14 +58475,14 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 39,
       columnNumber: 21
     }
   }))), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 46,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -58385,7 +58491,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -58394,10 +58500,10 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 17
     }
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Orders);
@@ -58617,6 +58723,54 @@ var AuthProvider = function AuthProvider(_ref) {
 
 /***/ }),
 
+/***/ "./src/context/order/order.context.tsx":
+/*!*********************************************!*\
+  !*** ./src/context/order/order.context.tsx ***!
+  \*********************************************/
+/*! exports provided: OrderContext, OrderProvider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderContext", function() { return OrderContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderProvider", function() { return OrderProvider; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _this = undefined,
+    _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/context/order/order.context.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var OrderContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
+var OrderProvider = function OrderProvider(_ref) {
+  var children = _ref.children;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+      order = _useState[0],
+      setOrder = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      open = _useState2[0],
+      setOpen = _useState2[1];
+
+  return __jsx(OrderContext.Provider, {
+    value: {
+      order: order,
+      setOrder: setOrder,
+      open: open,
+      setOpen: setOpen
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 5
+    }
+  }, children);
+};
+
+/***/ }),
+
 /***/ "./src/helper/firebase.tsx":
 /*!*********************************!*\
   !*** ./src/helper/firebase.tsx ***!
@@ -58742,7 +58896,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -58765,5 +58919,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

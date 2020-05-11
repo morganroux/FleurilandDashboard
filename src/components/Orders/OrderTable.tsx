@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -7,7 +7,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import OrderItem from './OrderItem';
 import { sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod } from './sorters';
-import { TableSortLabel } from '@material-ui/core';
+import { TableSortLabel, Button } from '@material-ui/core';
+import OrderDetailsDialog from './OrderDetailsDialog';
+import { OrderContext } from '../../context/order/order.context';
 
 interface TableProps {
     orders:any
@@ -56,6 +58,7 @@ const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrder
 
 const OrderTable: React.FC<TableProps> = (props) => {
     const { orders, searchtext } = props;
+    const {open, setOpen} = useContext(OrderContext);
     const [orderBy, setOrderBy] = useState<number>(0);
     const [orderDir, setOrderDir] = useState<"desc" | "asc">('desc');
     const sorters = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod];
@@ -68,26 +71,28 @@ const OrderTable: React.FC<TableProps> = (props) => {
     )}
     return (
         <div {...props}>
-        <Table stickyHeader size="small">
-            <OrderHead orderBy={orderBy} orderDir={orderDir} setOrderBy={setOrderBy} setOrderDir={setOrderDir}/>
-            <TableBody>
-                {orders.filter((order) => {
-                    const text = searchtext.toLowerCase();
-                    const firstName = order.billing.first_name.toLowerCase();
-                    const lastName = order.billing.last_name.toLowerCase();
-                    const id = order.id.toString();
-                    return (
-                        id.includes(text) || lastName.includes(text) || firstName.includes(text)
-                    );
-                }).sort(getSortHandler(orderBy, orderDir)).map((order) => {
-                    return (
-                    <OrderItem 
-                        key = {order.id}
-                        order={order}
-                    />)}
-                )}
-            </TableBody>
-        </Table>
+            <Table stickyHeader size="small">
+                <OrderHead orderBy={orderBy} orderDir={orderDir} setOrderBy={setOrderBy} setOrderDir={setOrderDir}/>
+                <TableBody>
+                    {orders.filter((order) => {
+                        const text = searchtext.toLowerCase();
+                        const firstName = order.billing.first_name.toLowerCase();
+                        const lastName = order.billing.last_name.toLowerCase();
+                        const id = order.id.toString();
+                        return (
+                            id.includes(text) || lastName.includes(text) || firstName.includes(text)
+                        );
+                    }).sort(getSortHandler(orderBy, orderDir)).map((order) => {
+                        return (
+                        <OrderItem 
+                            key = {order.id}
+                            order={order}
+                        />)}
+                    )}
+                </TableBody>
+            </Table>
+            <Button onClick={()=>setOpen(true)}>Test</Button>
+            <OrderDetailsDialog/>                           
         </div>
 )}
    
