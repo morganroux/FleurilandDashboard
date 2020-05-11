@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import Link from '@material-ui/core/Link';
 import StatusSelector from './StatusSelector';
 import axios from 'axios';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
@@ -41,7 +42,12 @@ const NameCell: React.FC<OrderItemProps> = ({ order }) => {
     const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
     const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
     return (
-        <TableCell>{lastName} {firstName}</TableCell>
+        <TableCell>
+            <Link onClick={(event) => event.preventDefault()}>
+                {lastName} {firstName}
+            </Link>
+        </TableCell>
+        
     );
 }
 
@@ -66,8 +72,7 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
             });
             return;
         }
-
-        const rep = await axios.put(`https://fleurilanddashboard.now.sh/api/updateOrder?id=${order.id}&status=${status}`);
+        const rep = await axios.put(`api/updateOrder?id=${order.id}&status=${status}`);
         if (rep.data.status == event.target.value) {
             setStatus(event.target.value as string);
             enqueueSnackbar('Mise à jour réussie', { 

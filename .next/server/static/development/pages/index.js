@@ -627,41 +627,7 @@ const LoginPage = () => {
       lineNumber: 88,
       columnNumber: 25
     }
-  }, "Login"))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Container"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 21
-    }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
-    variant: "body1",
-    className: classes.typo,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 93,
-      columnNumber: 25
-    }
-  }, "Or login with : "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Box"], {
-    className: classes.providers,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 94,
-      columnNumber: 24
-    }
-  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    className: classes.google,
-    variant: "outlined",
-    onClick: hanldeGoogleClick,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 29
-    }
-  }, "Google"))))));
+  }, "Login"))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginPage);
@@ -683,24 +649,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TableRow */ "@material-ui/core/TableRow");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _StatusSelector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./StatusSelector */ "./src/components/Orders/StatusSelector.tsx");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "@material-ui/icons/LocalShipping");
-/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/HouseOutlined */ "@material-ui/icons/HouseOutlined");
-/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Tooltip */ "@material-ui/core/Tooltip");
-/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
-/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! notistack */ "notistack");
-/* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
+/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Link */ "@material-ui/core/Link");
+/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _StatusSelector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StatusSelector */ "./src/components/Orders/StatusSelector.tsx");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/LocalShipping */ "@material-ui/icons/LocalShipping");
+/* harmony import */ var _material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/HouseOutlined */ "@material-ui/icons/HouseOutlined");
+/* harmony import */ var _material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Tooltip */ "@material-ui/core/Tooltip");
+/* harmony import */ var _material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Fade */ "@material-ui/core/Fade");
+/* harmony import */ var _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! notistack */ "notistack");
+/* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -723,56 +692,56 @@ const OrderItem = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 13
     }
   }, __jsx(IdCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 13
     }
   })), __jsx(NameCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 13
     }
   })), __jsx(PriceCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 13
     }
   })), __jsx(StatusCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 13
     }
   })), __jsx(DateCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   })), __jsx(CityCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 13
     }
   })), __jsx(MethodCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 13
     }
   })));
@@ -785,7 +754,7 @@ const IdCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, order.id);
@@ -800,10 +769,18 @@ const NameCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 45,
       columnNumber: 9
     }
-  }, lastName, " ", firstName);
+  }, __jsx(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    onClick: event => event.preventDefault(),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 13
+    }
+  }, lastName, " ", firstName));
 };
 
 const PriceCell = ({
@@ -812,12 +789,12 @@ const PriceCell = ({
   const {
     authState,
     authDispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__["AuthContext"]);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_11__["AuthContext"]);
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 57,
       columnNumber: 9
     }
   }, authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***', "\u20AC");
@@ -834,7 +811,7 @@ const StatusCell = ({
   const {
     authState,
     authDispatch
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_10__["AuthContext"]);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_auth_auth_context__WEBPACK_IMPORTED_MODULE_11__["AuthContext"]);
 
   const handleChange = async event => {
     const status = event.target.value;
@@ -850,7 +827,7 @@ const StatusCell = ({
       return;
     }
 
-    const rep = await axios__WEBPACK_IMPORTED_MODULE_4___default.a.put(`https://fleurilanddashboard.now.sh/api/updateOrder?id=${order.id}&status=${status}`);
+    const rep = await axios__WEBPACK_IMPORTED_MODULE_5___default.a.put(`api/updateOrder?id=${order.id}&status=${status}`);
 
     if (rep.data.status == event.target.value) {
       setStatus(event.target.value);
@@ -877,16 +854,16 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 91,
       columnNumber: 9
     }
-  }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
     status: status,
     handleChange: handleChange,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 92,
       columnNumber: 13
     }
   }));
@@ -905,7 +882,7 @@ const DateCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 105,
       columnNumber: 9
     }
   }, `${dd}-${mm}-${yyyy} ${hh}:${min}`);
@@ -919,7 +896,7 @@ const CityCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 112,
       columnNumber: 9
     }
   }, city);
@@ -934,48 +911,48 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 119,
       columnNumber: 9
     }
-  }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8___default.a, {
     title: method,
-    TransitionComponent: _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_8___default.a,
+    TransitionComponent: _material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_9___default.a,
     TransitionProps: {
       timeout: 600
     },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 121,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 126,
       columnNumber: 21
     }
-  }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
     fontSize: "large",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 128,
       columnNumber: 33
     }
-  }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default.a, {
     fontSize: "large",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 131,
       columnNumber: 29
     }
   }))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(notistack__WEBPACK_IMPORTED_MODULE_9__["withSnackbar"])(OrderItem));
+/* harmony default export */ __webpack_exports__["default"] = (Object(notistack__WEBPACK_IMPORTED_MODULE_10__["withSnackbar"])(OrderItem));
 
 /***/ }),
 
@@ -1271,7 +1248,7 @@ const Orders = () => {
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     async function loadOrders() {
-      const newOrders = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/orders");
+      const newOrders = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`api/orders`);
       setOrders(newOrders.data);
       setIsLoading(false);
     }
@@ -1776,6 +1753,17 @@ module.exports = require("@material-ui/core/Drawer");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/Fade");
+
+/***/ }),
+
+/***/ "@material-ui/core/Link":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/Link" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Link");
 
 /***/ }),
 
