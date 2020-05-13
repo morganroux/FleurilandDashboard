@@ -31,6 +31,12 @@ export const useStylesDetailsDialog = makeStyles((theme: Theme) => {
       contact: {
         padding: theme.spacing(3),
         margin : theme.spacing(2),
+        display: "flex",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      },
+      address: {
+        flexGrow: 1,
       },
       details: {
         padding: theme.spacing(3),
