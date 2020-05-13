@@ -24,7 +24,7 @@ interface HeadProps {
     setOrderDir
 }
 
-const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrderDir}: HeadProps) => {
+const OrderTableHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrderDir}: HeadProps) => {
     const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande", "Ville", "Expédition"];
     const createSortHandler = (id: number) => {
         if (orderBy == id)
@@ -72,7 +72,7 @@ const OrderTable: React.FC<TableProps> = (props) => {
     return (
         <div {...props}>
             <Table stickyHeader size="small">
-                <OrderHead orderBy={orderBy} orderDir={orderDir} setOrderBy={setOrderBy} setOrderDir={setOrderDir}/>
+                <OrderTableHead orderBy={orderBy} orderDir={orderDir} setOrderBy={setOrderBy} setOrderDir={setOrderDir}/>
                 <TableBody>
                     {orders.filter((order: Order) => {
                         const text: string = searchtext.toLowerCase();

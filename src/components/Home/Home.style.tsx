@@ -25,12 +25,12 @@ const useStyles = makeStyles((theme: Theme) => {
         overflow: 'auto',
       },
       toolbar: {
-        background: '#edf2f7',
+        background: 'WhiteSmoke', //'#edf2f7',
         justifyContent: 'space-between',
         paddingRight: theme.spacing(3),
       },
       icon: {
-        fill: '#edf2f7'
+        fill: 'WhiteSmoke', //'#edf2f7',
       },
       content: {
         flexGrow: 1,

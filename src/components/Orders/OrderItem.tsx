@@ -12,6 +12,7 @@ import { withSnackbar, WithSnackbarProps } from 'notistack';
 import { AuthContext, AuthContextProps } from '../../context/auth/auth.context';
 import { OrderContext, OrderContextProps } from '../../context/order/order.context';
 import { Order } from '../../types/woocommerce.d';
+import { useStylesOrderItem } from './OrderItem.style';
 
 interface OrderItemProps extends WithSnackbarProps {
     order: Order,
@@ -35,23 +36,28 @@ const OrderItem: React.FC<OrderItemProps> = (props) => {
 }
 
 const IdCell: React.FC<OrderItemProps> = ({ order }) => {
+    const classes = useStylesOrderItem();
+    const { setOrder, setOpen }: OrderContextProps  = useContext(OrderContext);
     return (
-        <TableCell>{order.id}</TableCell>
+        <TableCell>
+            <Link 
+                className={classes.link}
+                onClick={() => {
+                setOrder(order);
+                setOpen(true)
+            }}>
+                {order.id}
+            </Link>
+        </TableCell>
     );
 }
 
 const NameCell: React.FC<OrderItemProps> = ({ order }) => {
-    const { setOrder, setOpen }: OrderContextProps  = useContext(OrderContext);
     const firstName: string = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
     const lastName: string = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
     return (
-        <TableCell>
-            <Link onClick={() => {
-                setOrder(order);
-                setOpen(true)
-            }}>
+        <TableCell>      
                 {lastName} {firstName}
-            </Link>
         </TableCell>
     );
 }
@@ -93,7 +99,8 @@ const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
     };
  
     return (
-        <TableCell style={{ borderRadius:10 }}>
+        <TableCell>
+             {/* style={{ borderRadius:10 }}> */}
             <StatusSelector status={status} handleChange={handleChange}/>
         </TableCell>
     );

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -129,12 +129,14 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["
       overflow: 'auto'
     },
     toolbar: {
-      background: '#edf2f7',
+      background: 'WhiteSmoke',
+      //'#edf2f7',
       justifyContent: 'space-between',
       paddingRight: theme.spacing(3)
     },
     icon: {
-      fill: '#edf2f7'
+      fill: 'WhiteSmoke' //'#edf2f7',
+
     },
     content: {
       flexGrow: 1
@@ -643,13 +645,18 @@ __webpack_require__.r(__webpack_exports__);
 
 const useStylesDetailsDialog = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
   return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
-    dialog: {},
+    dialogContent: {
+      background: 'WhiteSmoke'
+    },
     container: {
       paddingBottom: theme.spacing(3),
       paddingTop: theme.spacing(3),
       display: "flex",
       flexDirection: 'column',
       justifyContent: 'space-evenly'
+    },
+    tableContainer: {
+      marginTop: theme.spacing(1)
     },
     mainTitle: {
       paddingLeft: theme.spacing(2),
@@ -700,6 +707,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 const formatStr = str => {
   return !!str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
 };
@@ -728,14 +736,14 @@ const OrderDetailsDialog = () => {
     onClose: () => setOpen(false),
     fullWidth: true,
     maxWidth: "md",
-    className: classes.dialog,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["DialogContent"], {
+    className: classes.dialogContent,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -766,7 +774,7 @@ const OrderDetailsDialog = () => {
       lineNumber: 33,
       columnNumber: 19
     }
-  }, "Commandes #", order.id, " "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+  }, "Commande #", order.id, " "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
     elevation: 3,
     className: classes.main,
     __self: undefined,
@@ -868,21 +876,84 @@ const OrderDetailsDialog = () => {
       lineNumber: 49,
       columnNumber: 21
     }
-  }, "Details de la commande"), productList.map((product, id) => {
-    return __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
-      variant: "body1",
+  }, "D\xE9tails de la commande"), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Paper"], {
+    className: classes.tableContainer,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Table"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 21
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableBody"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 23
+    }
+  }, productList.map((product, id) => {
+    return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableRow"], {
       key: id,
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
-        columnNumber: 23
+        lineNumber: 56,
+        columnNumber: 29
       }
-    }, "- ", product.quantity, "x ", product.name);
-  }))))));
+    }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableCell"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57,
+        columnNumber: 31
+      }
+    }, product.quantity), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableCell"], {
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58,
+        columnNumber: 31
+      }
+    }, product.name));
+  })))))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderDetailsDialog);
+
+/***/ }),
+
+/***/ "./src/components/Orders/OrderItem.style.tsx":
+/*!***************************************************!*\
+  !*** ./src/components/Orders/OrderItem.style.tsx ***!
+  \***************************************************/
+/*! exports provided: useStylesOrderItem */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useStylesOrderItem", function() { return useStylesOrderItem; });
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__);
+
+const useStylesOrderItem = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["makeStyles"])(theme => {
+  return Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__["createStyles"])({
+    link: {
+      // '&:hover': {
+      //     cursor: 'pointer'
+      // }
+      cursor: 'pointer',
+      color: 'black',
+      fontWeight: 'bold'
+    }
+  });
+});
 
 /***/ }),
 
@@ -918,10 +989,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var notistack__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(notistack__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _context_auth_auth_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../context/auth/auth.context */ "./src/context/auth/auth.context.tsx");
 /* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
+/* harmony import */ var _OrderItem_style__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./OrderItem.style */ "./src/components/Orders/OrderItem.style.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderItem.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 
 
 
@@ -946,56 +1019,56 @@ const OrderItem = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 13
     }
   }, __jsx(IdCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 13
     }
   })), __jsx(NameCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 13
     }
   })), __jsx(PriceCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 13
     }
   })), __jsx(StatusCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 13
     }
   })), __jsx(DateCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 13
     }
   })), __jsx(CityCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 13
     }
   })), __jsx(MethodCell, _extends({}, props, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 13
     }
   })));
@@ -1004,33 +1077,20 @@ const OrderItem = props => {
 const IdCell = ({
   order
 }) => {
-  return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 9
-    }
-  }, order.id);
-};
-
-const NameCell = ({
-  order
-}) => {
+  const classes = Object(_OrderItem_style__WEBPACK_IMPORTED_MODULE_13__["useStylesOrderItem"])();
   const {
     setOrder,
     setOpen
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_12__["OrderContext"]);
-  const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
-  const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 42,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_Link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    className: classes.link,
     onClick: () => {
       setOrder(order);
       setOpen(true);
@@ -1038,10 +1098,25 @@ const NameCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 43,
       columnNumber: 13
     }
-  }, lastName, " ", firstName));
+  }, order.id));
+};
+
+const NameCell = ({
+  order
+}) => {
+  const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
+  const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
+  return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59,
+      columnNumber: 9
+    }
+  }, lastName, " ", firstName);
 };
 
 const PriceCell = ({
@@ -1054,7 +1129,7 @@ const PriceCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 68,
       columnNumber: 9
     }
   }, authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***', "\u20AC");
@@ -1107,13 +1182,10 @@ const StatusCell = ({
   };
 
   return __jsx(_material_ui_core_TableCell__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    style: {
-      borderRadius: 10
-    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 102,
       columnNumber: 9
     }
   }, __jsx(_StatusSelector__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1122,7 +1194,7 @@ const StatusCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 104,
       columnNumber: 13
     }
   }));
@@ -1141,7 +1213,7 @@ const DateCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 117,
       columnNumber: 9
     }
   }, `${dd}-${mm}-${yyyy} ${hh}:${min}`);
@@ -1155,7 +1227,7 @@ const CityCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 124,
       columnNumber: 9
     }
   }, city);
@@ -1170,7 +1242,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 131,
       columnNumber: 9
     }
   }, !!method && __jsx(_material_ui_core_Tooltip__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -1182,14 +1254,14 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 133,
       columnNumber: 17
     }
   }, __jsx("div", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 138,
       columnNumber: 21
     }
   }, method == "Retrait en point de vente" && __jsx(_material_ui_icons_HouseOutlined__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1197,7 +1269,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 140,
       columnNumber: 33
     }
   }), method == "Livraison chez vous" && __jsx(_material_ui_icons_LocalShipping__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1205,7 +1277,7 @@ const MethodCell = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 143,
       columnNumber: 29
     }
   }))));
@@ -1259,7 +1331,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-const OrderHead = ({
+const OrderTableHead = ({
   orderBy,
   orderDir,
   setOrderBy,
@@ -1351,7 +1423,7 @@ const OrderTable = props => {
       lineNumber: 74,
       columnNumber: 13
     }
-  }, __jsx(OrderHead, {
+  }, __jsx(OrderTableHead, {
     orderBy: orderBy,
     orderDir: orderDir,
     setOrderBy: setOrderBy,
@@ -1438,7 +1510,7 @@ const useStylesOrders = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE
     search: {},
     searchtextfield: {
       paddingLeft: theme.spacing(1),
-      background: '#edf2f7'
+      background: 'WhiteSmoke'
     }
   });
 });
@@ -2015,7 +2087,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!***********************************!*\
   !*** multi ./src/pages/index.tsx ***!
   \***********************************/

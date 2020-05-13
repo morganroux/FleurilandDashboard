@@ -3,8 +3,8 @@ import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/sty
 export const useStylesDetailsDialog = makeStyles((theme: Theme) => {
     return (
     createStyles({
-      dialog: {
-        
+      dialogContent: {
+        background: 'WhiteSmoke'
       },
       container: {
         paddingBottom: theme.spacing(3),
@@ -12,6 +12,10 @@ export const useStylesDetailsDialog = makeStyles((theme: Theme) => {
         display: "flex",
         flexDirection: 'column',
         justifyContent: 'space-evenly',
+        
+      },
+      tableContainer: {
+        marginTop: theme.spacing(1),
       },
       mainTitle: {
         paddingLeft: theme.spacing(2),
@@ -22,15 +26,15 @@ export const useStylesDetailsDialog = makeStyles((theme: Theme) => {
       }, 
       main: {
         padding: theme.spacing(3),
-        margin : theme.spacing(2)
+        margin : theme.spacing(2),
       },
       contact: {
         padding: theme.spacing(3),
-        margin : theme.spacing(2)
+        margin : theme.spacing(2),
       },
       details: {
         padding: theme.spacing(3),
-        margin : theme.spacing(2)
+        margin : theme.spacing(2),
       }
     }))
 });
