@@ -18,8 +18,9 @@ export const useStylesDetailsDialog = makeStyles((theme: Theme) => {
         marginTop: theme.spacing(1),
       },
       mainTitle: {
-        paddingLeft: theme.spacing(2),
-        paddingBottom : theme.spacing(2)
+        display: "flex",
+        flexDirection: 'row',
+        justifyContent: 'space-between',
       },
       title: {
           paddingBottom : theme.spacing(1)

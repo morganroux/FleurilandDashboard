@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import { OrderContext, OrderContextProps } from '../../context/order/order.context';
 import { LineItem, Billing } from '../../types/woocommerce.d';
 import { useStylesDetailsDialog } from './OrderDetailsDialog.style';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import ErrorIcon from '@material-ui/icons/Error';
 
 const formatStr = (str: String) : String => {
   return !!str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
@@ -31,12 +33,21 @@ const OrderDetailsDialog: React.FC = () =>  {
             <Container className={classes.container}>
               {order && 
                 <div>
-                  <Typography variant="h4" className={classes.mainTitle}>Commande #{order.id} </Typography>
+                  {/* <Typography variant="h4" className={classes.mainTitle}>Commande #{order.id} </Typography> */}
                   <Card elevation={3} className={classes.main}>
-                    <Typography variant="h4" className={classes.title}>{formatStr(bill.first_name)} {formatStr(bill.last_name)}</Typography>
+                    <div className={classes.mainTitle}>
+                      <Typography variant="h4" className={classes.title}>Commande #{order.id} </Typography>
+                      { (order.payment_method_title == "Paiement à la livraison") && (order.status == "processing")  ? (
+                      <ErrorIcon style={{color:"orange", fontSize:40}}/>
+                      ) : (
+                      <CheckCircleIcon style={{color:"green", fontSize:40}}/> 
+                      
+                      )}
+                    </div>
+                    {/* <Typography variant="h4" className={classes.title}>{formatStr(bill.first_name)} {formatStr(bill.last_name)}</Typography> */}
                     <Typography variant="body1">Méthode : {method}</Typography>
                     <Typography variant="body1">Paiement : {order.payment_method_title}</Typography>
-                    <Typography variant="body1">Total : {order.total}€</Typography>
+                    <Typography variant="body1" style={{fontWeight:'bold'}}>Total : {order.total}€</Typography>
                   </Card>
                   <Card elevation={3} className={classes.contact}>
                     <div className= {classes.address}>

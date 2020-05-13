@@ -39294,6 +39294,64 @@ var withWidth = function withWidth() {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/CheckCircle.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/CheckCircle.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+}), 'CheckCircle');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Error.js":
+/*!**************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Error.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+}), 'Error');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/HouseOutlined.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@material-ui/icons/HouseOutlined.js ***!
@@ -57676,8 +57734,9 @@ var useStylesDetailsDialog = Object(_material_ui_core_styles__WEBPACK_IMPORTED_M
       marginTop: theme.spacing(1)
     },
     mainTitle: {
-      paddingLeft: theme.spacing(2),
-      paddingBottom: theme.spacing(2)
+      display: "flex",
+      flexDirection: 'row',
+      justifyContent: 'space-between'
     },
     title: {
       paddingBottom: theme.spacing(1)
@@ -57720,10 +57779,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 /* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
 /* harmony import */ var _OrderDetailsDialog_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./OrderDetailsDialog.style */ "./src/components/OrderDetailsDialog/OrderDetailsDialog.style.tsx");
+/* harmony import */ var _material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/CheckCircle */ "./node_modules/@material-ui/icons/CheckCircle.js");
+/* harmony import */ var _material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/icons/Error */ "./node_modules/@material-ui/icons/Error.js");
+/* harmony import */ var _material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_6__);
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/OrderDetailsDialog/OrderDetailsDialog.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -57756,7 +57821,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 25,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["DialogContent"], {
@@ -57764,7 +57829,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 32,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Container"], {
@@ -57772,33 +57837,32 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 33,
       columnNumber: 13
     }
   }, order && __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 35,
       columnNumber: 17
     }
-  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    variant: "h4",
-    className: classes.mainTitle,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 34,
-      columnNumber: 19
-    }
-  }, "Commande #", order.id, " "), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
     elevation: 3,
     className: classes.main,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 19
+    }
+  }, __jsx("div", {
+    className: classes.mainTitle,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 21
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "h4",
@@ -57806,15 +57870,37 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
-      columnNumber: 21
+      lineNumber: 39,
+      columnNumber: 23
     }
-  }, formatStr(bill.first_name), " ", formatStr(bill.last_name)), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, "Commande #", order.id, " "), order.payment_method_title == "Paiement à la livraison" && order.status == "processing" ? __jsx(_material_ui_icons_Error__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    style: {
+      color: "orange",
+      fontSize: 40
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 23
+    }
+  }) : __jsx(_material_ui_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    style: {
+      color: "green",
+      fontSize: 40
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 23
+    }
+  })), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "body1",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 48,
       columnNumber: 21
     }
   }, "M\xE9thode : ", method), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57822,15 +57908,18 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 49,
       columnNumber: 21
     }
   }, "Paiement : ", order.payment_method_title), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "body1",
+    style: {
+      fontWeight: 'bold'
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 50,
       columnNumber: 21
     }
   }, "Total : ", order.total, "\u20AC")), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
@@ -57839,7 +57928,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 52,
       columnNumber: 19
     }
   }, __jsx("div", {
@@ -57847,7 +57936,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 53,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57856,7 +57945,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 54,
       columnNumber: 23
     }
   }, "Facturation"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57867,7 +57956,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 55,
       columnNumber: 23
     }
   }, formatStr(bill.first_name), " ", formatStr(bill.last_name)), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57875,7 +57964,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 56,
       columnNumber: 23
     }
   }, "".concat(bill.address_1.toLowerCase()).concat(!!bill.address_2 ? " ".concat(bill.address_2.toLowerCase(), " ") : ' ', "- ").concat(bill.postcode, " ").concat(formatStr(bill.city))), bill.email && __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57883,7 +57972,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 59,
       columnNumber: 38
     }
   }, bill.email.toLowerCase()), bill.phone && __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57891,7 +57980,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 60,
       columnNumber: 38
     }
   }, bill.phone)), method == "Livraison chez vous" && __jsx("div", {
@@ -57899,7 +57988,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 63,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57908,7 +57997,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 64,
       columnNumber: 23
     }
   }, "Livraison"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57919,7 +58008,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 65,
       columnNumber: 23
     }
   }, formatStr(ship.first_name), " ", formatStr(ship.last_name)), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57927,7 +58016,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 66,
       columnNumber: 23
     }
   }, "".concat(ship.address_1.toLowerCase()).concat(!!ship.address_2 ? " ".concat(ship.address_2.toLowerCase(), " ") : ' ', "- ").concat(ship.postcode, " ").concat(formatStr(ship.city))))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Card"], {
@@ -57936,7 +58025,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 72,
       columnNumber: 19
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57945,7 +58034,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 73,
       columnNumber: 21
     }
   }, "D\xE9tails de la commande"), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Paper"], {
@@ -57953,21 +58042,21 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 74,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Table"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 76,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableBody"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 77,
       columnNumber: 23
     }
   }, productList.map(function (product, id) {
@@ -57976,21 +58065,21 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 69,
+        lineNumber: 80,
         columnNumber: 29
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableCell"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70,
+        lineNumber: 81,
         columnNumber: 31
       }
     }, product.quantity), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TableCell"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71,
+        lineNumber: 82,
         columnNumber: 31
       }
     }, product.name));
@@ -59207,7 +59296,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -59230,5 +59319,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
