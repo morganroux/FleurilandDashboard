@@ -9,15 +9,16 @@ import Fade from '@material-ui/core/Fade';
 import { useStylesOrders } from './Orders.style';
 import { Toolbar, IconButton, Tooltip, InputBase } from '@material-ui/core';
 import { OrderProvider } from '../../context/order/order.context';
+import { Order, LineItem, Billing } from '../../types/woocommerce.d';
 
 const Orders: React.FC = () => {
-    const [orders, setOrders] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [orders, setOrders] = useState<Array<Order>>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     const classes = useStylesOrders();
     const [searchText, setSearchText] = useState<string>("");
 
     useEffect(() => {
-        async function loadOrders() {
+        const loadOrders = async () => {
             const newOrders = await axios.get(`api/orders`);
             setOrders(newOrders.data);
             console.log(newOrders.data)

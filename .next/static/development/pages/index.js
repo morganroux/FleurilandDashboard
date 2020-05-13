@@ -57705,35 +57705,35 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 20,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["DialogTitle"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 24,
       columnNumber: 9
     }
   }, "D\xE9tail commande"), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Container"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 26,
       columnNumber: 13
     }
   }, order && __jsx("div", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 28,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57741,7 +57741,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 29,
       columnNumber: 19
     }
   }, formatStr(first_name), " ", formatStr(last_name)), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57749,7 +57749,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 30,
       columnNumber: 19
     }
   }, "M\xE9thode : ", method), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57757,7 +57757,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 31,
       columnNumber: 19
     }
   }, "Paiement : ", order.payment_method_title), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57765,7 +57765,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 32,
       columnNumber: 19
     }
   }, "Total : ", order.total, "\u20AC"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57773,7 +57773,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 33,
       columnNumber: 19
     }
   }, "Contact"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57781,7 +57781,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 34,
       columnNumber: 19
     }
   }, address_1), !!address_2 && __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57789,7 +57789,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 35,
       columnNumber: 35
     }
   }, address_2), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57797,7 +57797,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 36,
       columnNumber: 19
     }
   }, postcode), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57805,7 +57805,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 37,
       columnNumber: 19
     }
   }, city), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57813,7 +57813,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 38,
       columnNumber: 19
     }
   }, email), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57821,7 +57821,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 39,
       columnNumber: 19
     }
   }, phone), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -57829,7 +57829,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 41,
       columnNumber: 19
     }
   }, "Details de la commande"), productList.map(function (product, id) {
@@ -57839,7 +57839,7 @@ var OrderDetailsDialog = function OrderDetailsDialog() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 44,
         columnNumber: 21
       }
     }, "- ", product.quantity, "x ", product.name);
@@ -58253,14 +58253,14 @@ var OrderHead = function OrderHead(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 13
     }
   }, heads.map(function (name, id) {
@@ -58270,7 +58270,7 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 42,
         columnNumber: 17
       }
     }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["TableSortLabel"], {
@@ -58282,7 +58282,7 @@ var OrderHead = function OrderHead(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 21
       }
     }, name));
@@ -58309,8 +58309,7 @@ var OrderTable = function OrderTable(props) {
 
   var getSortHandler = function getSortHandler(orderBy, orderDir) {
     return function (elmt1, elmt2) {
-      var ret = sorters[orderBy](elmt1, elmt2); //elmt1.id <= elmt2.id ? -1 : 1;
-
+      var ret = sorters[orderBy](elmt1, elmt2);
       return orderDir == 'asc' ? ret : -ret;
     };
   };
@@ -58319,7 +58318,7 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 74,
       columnNumber: 9
     }
   }), __jsx(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -58328,7 +58327,7 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 75,
       columnNumber: 13
     }
   }, __jsx(OrderHead, {
@@ -58339,14 +58338,14 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 76,
       columnNumber: 17
     }
   }), __jsx(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 77,
       columnNumber: 17
     }
   }, orders.filter(function (order) {
@@ -58362,7 +58361,7 @@ var OrderTable = function OrderTable(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 88,
         columnNumber: 25
       }
     });
@@ -58373,14 +58372,14 @@ var OrderTable = function OrderTable(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 95,
       columnNumber: 13
     }
   }, "Test"), __jsx(_OrderDetailsDialog__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 13
     }
   }));
@@ -58512,7 +58511,7 @@ var Orders = function Orders() {
       setSearchText = _useState3[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    function loadOrders() {
+    var loadOrders = function loadOrders() {
       var newOrders;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function loadOrders$(_context) {
         while (1) {
@@ -58533,7 +58532,7 @@ var Orders = function Orders() {
           }
         }
       }, null, null, null, Promise);
-    }
+    };
 
     loadOrders();
   }, []);
@@ -58542,14 +58541,14 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, __jsx(_context_order_order_context__WEBPACK_IMPORTED_MODULE_10__["OrderProvider"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Toolbar"], {
@@ -58557,7 +58556,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -58567,7 +58566,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 17
     }
   }, "Commandes"), __jsx("div", {
@@ -58575,7 +58574,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["Tooltip"], {
@@ -58583,21 +58582,21 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["IconButton"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 25
     }
   }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_6___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 29
     }
   }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__["InputBase"], {
@@ -58610,14 +58609,14 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 21
     }
   }))), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -58626,7 +58625,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 13
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -58635,7 +58634,7 @@ var Orders = function Orders() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 50,
       columnNumber: 17
     }
   }))));
@@ -58812,7 +58811,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var INITIAL_STATE = {
   auth: false,
-  user: ''
+  user: null
 };
 var AuthContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext({});
 
@@ -58827,7 +58826,7 @@ var authReducer = function authReducer(state, action) {
     case 'LOGOUT':
       return _objectSpread({}, state, {
         auth: false,
-        user: ''
+        user: null
       });
 
     default:
@@ -58850,7 +58849,7 @@ var AuthProvider = function AuthProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 44,
       columnNumber: 5
     }
   }, children);
@@ -58876,7 +58875,10 @@ var _this = undefined,
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
-var OrderContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
+var OrderContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
+  order: null,
+  open: false
+});
 var OrderProvider = function OrderProvider(_ref) {
   var children = _ref.children;
 
@@ -58898,7 +58900,7 @@ var OrderProvider = function OrderProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 18,
       columnNumber: 5
     }
   }, children);
@@ -59031,7 +59033,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMorgan%2FProgrammation%2FReactJS%2FFleurilandDashboard%2Fclient%2Fsrc%2Fpages%2Findex.tsx ***!
   \*********************************************************************************************************************************************************************/
@@ -59054,5 +59056,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

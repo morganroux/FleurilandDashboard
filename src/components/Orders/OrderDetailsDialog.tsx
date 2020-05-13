@@ -2,20 +2,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Dialog, DialogTitle, Card, Box, Container, Paper, Fade } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { OrderContext } from '../../context/order/order.context';
-import axios from 'axios';
+import { OrderContext, OrderContextProps } from '../../context/order/order.context';
+import { LineItem, Billing } from '../../types/woocommerce.d';
 
 const formatStr = (str: String) : String => {
   return !!str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
 }
 
 const OrderDetailsDialog = () =>  {
-    const { order, setOpen, open } = useContext(OrderContext);
- 
-    const {first_name, last_name, address_1, address_2, postcode, city, email, phone} = !!order && order.billing;
-    const productList = !!order ? order.line_items : [];
-    const method = !!order && order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+    const { order, setOpen, open } = useContext<OrderContextProps>(OrderContext);
+
+    const {first_name, last_name, address_1, address_2, postcode, city, email, phone}: Billing = !!order && order.billing; 
+    const productList: Array<LineItem> = !!order ? order.line_items : [];
+    const method: string = !!order && order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
 
     return (
       <Dialog 

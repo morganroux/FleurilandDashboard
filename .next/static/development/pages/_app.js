@@ -21697,7 +21697,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 var INITIAL_STATE = {
   auth: false,
-  user: ''
+  user: null
 };
 var AuthContext = react__WEBPACK_IMPORTED_MODULE_1___default.a.createContext({});
 
@@ -21712,7 +21712,7 @@ var authReducer = function authReducer(state, action) {
     case 'LOGOUT':
       return _objectSpread({}, state, {
         auth: false,
-        user: ''
+        user: null
       });
 
     default:
@@ -21735,7 +21735,7 @@ var AuthProvider = function AuthProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 44,
       columnNumber: 5
     }
   }, children);

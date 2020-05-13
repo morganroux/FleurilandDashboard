@@ -1,18 +1,24 @@
 import React, { useReducer } from 'react';
+import { firebase } from '../../helper/firebase';
+
+interface AuthState {
+  auth: boolean
+  user?: firebase.User
+}
 
 interface AuthContextProps {
-  auth: any
-  user: any
+  authState?: AuthState
+  authDispatch?: React.Dispatch<any>
 }
 
 const INITIAL_STATE = {
   auth: false,
-  user:''
+  user: null
 };
 
-export const AuthContext = React.createContext<Partial<any>>({});
+export const AuthContext = React.createContext<AuthContextProps>({});
 
-const authReducer = (state: any, action: any) => {
+const authReducer = (state: AuthState, action: any): AuthState => {
 
   switch (action.type) {
     case 'LOGIN':
@@ -25,7 +31,7 @@ const authReducer = (state: any, action: any) => {
         return {
           ...state,
           auth: false,
-          user: ''
+          user: null
         };
     default:
       return state;

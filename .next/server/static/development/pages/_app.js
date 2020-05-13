@@ -429,7 +429,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 const INITIAL_STATE = {
   auth: false,
-  user: ''
+  user: null
 };
 const AuthContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({});
 
@@ -444,7 +444,7 @@ const authReducer = (state, action) => {
     case 'LOGOUT':
       return _objectSpread({}, state, {
         auth: false,
-        user: ''
+        user: null
       });
 
     default:
@@ -467,7 +467,7 @@ const AuthProvider = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 44,
       columnNumber: 5
     }
   }, children);

@@ -6,13 +6,14 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import OrderItem from './OrderItem';
-import { sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod } from './sorters';
+import { sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod, Sorter } from './sorters';
 import { TableSortLabel, Button } from '@material-ui/core';
 import OrderDetailsDialog from './OrderDetailsDialog';
-import { OrderContext } from '../../context/order/order.context';
+import { OrderContext, OrderContextProps } from '../../context/order/order.context';
+import { Order } from '../../types/woocommerce.d';
 
 interface TableProps {
-    orders:any
+    orders:Array<Order>
     searchtext: string
 }
 
@@ -23,9 +24,9 @@ interface HeadProps {
     setOrderDir
 }
 
-const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrderDir}) => {
+const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrderDir}: HeadProps) => {
     const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande", "Ville", "Expédition"];
-    const createSortHandler = (id) => {
+    const createSortHandler = (id: number) => {
         console.log(id);
         if (orderBy == id)
             setOrderDir(orderDir == 'asc' ? 'desc' : 'asc');
@@ -58,14 +59,14 @@ const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrder
 
 const OrderTable: React.FC<TableProps> = (props) => {
     const { orders, searchtext } = props;
-    const {open, setOpen} = useContext(OrderContext);
+    const {open, setOpen}:OrderContextProps = useContext(OrderContext);
     const [orderBy, setOrderBy] = useState<number>(0);
     const [orderDir, setOrderDir] = useState<"desc" | "asc">('desc');
-    const sorters = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod];
-    const getSortHandler = (orderBy, orderDir) => { return (
-        (elmt1: any, elmt2: any) =>  {
+    const sorters: Array<Sorter> = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod];
+    const getSortHandler = (orderBy: number, orderDir: 'desc'|'asc') => { return (
+        (elmt1: Order, elmt2: Order) =>  {
 
-            const ret = sorters[orderBy](elmt1,elmt2); //elmt1.id <= elmt2.id ? -1 : 1;
+            const ret: number = sorters[orderBy](elmt1,elmt2);
             return (orderDir == 'asc' ? ret : -ret);
         }
     )}
