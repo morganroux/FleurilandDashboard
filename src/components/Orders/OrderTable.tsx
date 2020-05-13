@@ -58,16 +58,16 @@ const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrder
 }
 
 const OrderTable: React.FC<TableProps> = (props) => {
-    const { orders, searchtext } = props;
-    const {open, setOpen}:OrderContextProps = useContext(OrderContext);
+    const { orders, searchtext }: TableProps = props;
+    const { setOpen }: OrderContextProps = useContext(OrderContext);
     const [orderBy, setOrderBy] = useState<number>(0);
     const [orderDir, setOrderDir] = useState<"desc" | "asc">('desc');
     const sorters: Array<Sorter> = [sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod];
-    const getSortHandler = (orderBy: number, orderDir: 'desc'|'asc') => { return (
-        (elmt1: Order, elmt2: Order) =>  {
+    const getSortHandler = (orderBy: number, orderDir: 'desc'|'asc'): Sorter => { return (
+        (elmt1: Order, elmt2: Order): number =>  {
 
             const ret: number = sorters[orderBy](elmt1,elmt2);
-            return (orderDir == 'asc' ? ret : -ret);
+            return (orderDir == 'asc' ? ret: -ret);
         }
     )}
     return (
@@ -75,11 +75,11 @@ const OrderTable: React.FC<TableProps> = (props) => {
             <Table stickyHeader size="small">
                 <OrderHead orderBy={orderBy} orderDir={orderDir} setOrderBy={setOrderBy} setOrderDir={setOrderDir}/>
                 <TableBody>
-                    {orders.filter((order) => {
-                        const text = searchtext.toLowerCase();
-                        const firstName = order.billing.first_name.toLowerCase();
-                        const lastName = order.billing.last_name.toLowerCase();
-                        const id = order.id.toString();
+                    {orders.filter((order: Order) => {
+                        const text: string = searchtext.toLowerCase();
+                        const firstName: string = order.billing.first_name.toLowerCase();
+                        const lastName: string = order.billing.last_name.toLowerCase();
+                        const id: string = order.id.toString();
                         return (
                             id.includes(text) || lastName.includes(text) || firstName.includes(text)
                         );

@@ -9,7 +9,7 @@ const formatStr = (str: String) : String => {
   return !!str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
 }
 
-const OrderDetailsDialog = () =>  {
+const OrderDetailsDialog: React.FC = () =>  {
     const { order, setOpen, open } = useContext<OrderContextProps>(OrderContext);
 
     const {first_name, last_name, address_1, address_2, postcode, city, email, phone}: Billing = !!order && order.billing; 

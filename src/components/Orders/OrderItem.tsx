@@ -9,15 +9,16 @@ import HouseOutlinedIcon from '@material-ui/icons/HouseOutlined';
 import Tooltip from '@material-ui/core/Tooltip';
 import Fade from '@material-ui/core/Fade';
 import { withSnackbar, WithSnackbarProps } from 'notistack';
-import { AuthContext } from '../../context/auth/auth.context';
-import { OrderContext } from '../../context/order/order.context';
+import { AuthContext, AuthContextProps } from '../../context/auth/auth.context';
+import { OrderContext, OrderContextProps } from '../../context/order/order.context';
+import { Order } from '../../types/woocommerce.d';
 
 interface OrderItemProps extends WithSnackbarProps {
-    order: any,
+    order: Order,
 }
 
 const OrderItem: React.FC<OrderItemProps> = (props) => {
-    const { order } = props;
+    const { order }: OrderItemProps = props;
     return (
             order && (
             <TableRow key={order.id}>
@@ -40,9 +41,9 @@ const IdCell: React.FC<OrderItemProps> = ({ order }) => {
 }
 
 const NameCell: React.FC<OrderItemProps> = ({ order }) => {
-    const { setOrder, setOpen }  = useContext(OrderContext);
-    const firstName = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
-    const lastName = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
+    const { setOrder, setOpen }: OrderContextProps  = useContext(OrderContext);
+    const firstName: string = order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
+    const lastName: string = order.billing.last_name.charAt(0).toUpperCase() + order.billing.last_name.slice(1).toLowerCase();
     return (
         <TableCell>
             <Link onClick={() => {
@@ -56,18 +57,18 @@ const NameCell: React.FC<OrderItemProps> = ({ order }) => {
 }
 
 const PriceCell: React.FC<OrderItemProps> = ({ order }) => {
-    const {authState, authDispatch} = useContext(AuthContext);
+    const { authState }: AuthContextProps = useContext(AuthContext);
     return (
         <TableCell>{authState.user.email == 'valerie@fleuriland.fr' ? order.total : '***'}€</TableCell>
     );
 }
 
 const StatusCell: React.FC<OrderItemProps> = ({order, enqueueSnackbar}) => {
-    const [status, setStatus] = useState(order.status);
-    const {authState, authDispatch} = useContext(AuthContext);
+    const [status, setStatus] = useState<string>(order.status);
+    const { authState }: AuthContextProps = useContext(AuthContext);
 
-    const handleChange = async (event: React.ChangeEvent<{ value: unknown }>) => {
-        const status = event.target.value;
+    const handleChange = async (event: React.ChangeEvent<{ value: string }>): Promise<void> => {
+        const status: string = event.target.value;
         if (authState.user.email != 'valerie@fleuriland.fr') {
            
             enqueueSnackbar(`Vous n'avez pas l'autorisation d'apporter des modifications`, { 
@@ -111,14 +112,14 @@ const DateCell: React.FC<OrderItemProps> = ({ order }) => {
 }
 
 const CityCell: React.FC<OrderItemProps> = ({ order }) => {
-    const city = order.shipping.city.charAt(0).toUpperCase() + order.shipping.city.slice(1).toLowerCase();
+    const city: string = order.shipping.city.charAt(0).toUpperCase() + order.shipping.city.slice(1).toLowerCase();
     return (
         <TableCell>{city}</TableCell>
     )
 }
 
 const MethodCell: React.FC<OrderItemProps> = ({ order }) => {
-    const method = order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+    const method: string = order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
     return (
         <TableCell align="center">
             { (!!method) && (

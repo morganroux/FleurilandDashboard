@@ -7,13 +7,13 @@ import { useStylesStatusSelector, colors } from './Orders.style';
 
 type StatusSelectorProps = {
     status: string,
-    handleChange
+    handleChange: (event: React.ChangeEvent<{ value: string }>) => Promise<void>
 }
-
+ 
 const StatusSelector:React.FC<StatusSelectorProps> = (props) => {
     const classes = useStylesStatusSelector();
-    const colorStart = colors[props.status]['--background-start'];
-    const colorEnd = colors[props.status]['--background-end'];
+    const colorStart: string = colors[props.status]['--background-start'];
+    const colorEnd: string = colors[props.status]['--background-end'];
     return (
        
         <Select

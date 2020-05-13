@@ -16,11 +16,9 @@ import OrdersPage from '../Orders/Orders';
 import useStylesHome from './Home.style';
 import { Button } from '@material-ui/core';
 import { firebase } from '../../helper/firebase';
-import { AuthContext, AuthProvider } from '../../context/auth/auth.context';
 
 const Home: React.FC = () => {
   const classes = useStylesHome();
-  const {authState, authDispatch} = useContext(AuthContext);
 
   const handleLogout = () => {
     firebase.auth().signOut();

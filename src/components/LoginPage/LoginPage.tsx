@@ -10,10 +10,10 @@ import { useStyleLoginPage } from './LoginPage.style';
 
 const LoginPage: React.FC = () => {
     const classes = useStyleLoginPage();
-    const [email, setEmail] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [error, setError] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState<string>('');
+    const [pwd, setPwd] = useState<string>('');
+    const [error, setError] = useState<string>('');
+    const [showPassword, setShowPassword] = useState<boolean>(false);
 
     const hanldeGoogleClick =  () => {
     firebase.auth().signInWithPopup(googleAuthProvider);

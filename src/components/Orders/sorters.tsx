@@ -1,6 +1,6 @@
 import { Order } from "../../types/woocommerce.d";
 
-export type Sorter = (elmt1: Order, elmt2: Order) => -1| 1
+export type Sorter = (elmt1: Order, elmt2: Order) => number
 
 export const sortById: Sorter = (elmt1, elmt2) => elmt1.id <= elmt2.id ? -1 : 1;
 

@@ -1,12 +1,12 @@
 import React, { useReducer } from 'react';
 import { firebase } from '../../helper/firebase';
 
-interface AuthState {
+export interface AuthState {
   auth: boolean
   user?: firebase.User
 }
 
-interface AuthContextProps {
+export interface AuthContextProps {
   authState?: AuthState
   authDispatch?: React.Dispatch<any>
 }
