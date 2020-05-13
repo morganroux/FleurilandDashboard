@@ -8,7 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import OrderItem from './OrderItem';
 import { sortById, sortByName, sortByTotal, sortByStatus, sortByDate, sortByCity, sortByMethod, Sorter } from './sorters';
 import { TableSortLabel, Button } from '@material-ui/core';
-import OrderDetailsDialog from './OrderDetailsDialog';
+import OrderDetailsDialog from '../OrderDetailsDialog/OrderDetailsDialog';
 import { OrderContext, OrderContextProps } from '../../context/order/order.context';
 import { Order } from '../../types/woocommerce.d';
 
@@ -27,7 +27,6 @@ interface HeadProps {
 const OrderHead: React.FC<HeadProps> = ({orderBy, orderDir, setOrderBy, setOrderDir}: HeadProps) => {
     const heads:string[]= ["N°", "Nom", "Total", "Status", "Date de commande", "Ville", "Expédition"];
     const createSortHandler = (id: number) => {
-        console.log(id);
         if (orderBy == id)
             setOrderDir(orderDir == 'asc' ? 'desc' : 'asc');
         else {

@@ -21,7 +21,6 @@ const Orders: React.FC = () => {
         const loadOrders = async () => {
             const newOrders = await axios.get(`api/orders`);
             setOrders(newOrders.data);
-            console.log(newOrders.data)
             setIsLoading(false);
         }
         loadOrders();
