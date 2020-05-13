@@ -20,6 +20,7 @@ const Orders: React.FC = () => {
         async function loadOrders() {
             const newOrders = await axios.get(`api/orders`);
             setOrders(newOrders.data);
+            console.log(newOrders.data)
             setIsLoading(false);
         }
         loadOrders();

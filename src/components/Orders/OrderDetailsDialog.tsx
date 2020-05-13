@@ -1,27 +1,56 @@
 
 import React, { useContext, useEffect, useState } from 'react';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import Card from '@material-ui/core/Card'
+import { Dialog, DialogTitle, Card, Box, Container, Paper, Fade } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { OrderContext } from '../../context/order/order.context';
-const axios = require("axios");
+import axios from 'axios';
+
+const formatStr = (str: String) : String => {
+  return !!str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
+}
 
 const OrderDetailsDialog = () =>  {
     const { order, setOpen, open } = useContext(OrderContext);
-    const [isLoading, setIsLoading] = useState(true); 
-    const name = !!order && order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
-    const loadDetails = async () => {
-        const orderDetails = await axios.get(`api/orders/${order.id}`);
-        setIsLoading(false);
-        console.log(orderDetails)
-    }
+ 
+    const {first_name, last_name, address_1, address_2, postcode, city, email, phone} = !!order && order.billing;
+    const productList = !!order ? order.line_items : [];
+    const method = !!order && order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
 
     return (
-      <Dialog onClose={() => setOpen(false)} open={open} onEnter={loadDetails}>
+      <Dialog 
+        open={open}
+        onClose={() => setOpen(false)}
+      >
         <DialogTitle>Détail commande</DialogTitle>
-        <Card>
-            Nice shot {name}
-        </Card>
+        <Box>
+            <Container>
+              {order && 
+                <div>
+                  <Typography variant="h3">{formatStr(first_name)} {formatStr(last_name)}</Typography>
+                  <Typography variant="body1">Méthode : {method}</Typography>
+                  <Typography variant="body1">Paiement : {order.payment_method_title}</Typography>
+                  <Typography variant="body1">Total : {order.total}€</Typography>
+                  <Typography variant="h5">Contact</Typography>
+                  <Typography variant="body1">{address_1}</Typography>
+                  {!!address_2 && <Typography variant="body1">{address_2}</Typography>}
+                  <Typography variant="body1">{postcode}</Typography>
+                  <Typography variant="body1">{city}</Typography>
+                  <Typography variant="body1">{email}</Typography>
+                  <Typography variant="body1">{phone}</Typography>
+
+                  <Typography variant="h5">Details de la commande</Typography>
+                  {productList.map((product, id) => {
+                    return (
+                    <Typography variant="body1" key={id}>- {product.quantity}x {product.name}</Typography>
+                    )
+                  })}
+                </div>
+              }
+
+            </Container>
+          </Box>
+        
       </Dialog>
     );
   }

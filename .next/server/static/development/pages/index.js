@@ -645,13 +645,11 @@ const LoginPage = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "@material-ui/core/DialogTitle");
-/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Dialog */ "@material-ui/core/Dialog");
-/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
 var _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderDetailsDialog.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -659,52 +657,173 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-const axios = __webpack_require__(/*! axios */ "axios");
+const formatStr = str => {
+  return !!str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : '';
+};
 
 const OrderDetailsDialog = () => {
   const {
     order,
     setOpen,
     open
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_4__["OrderContext"]);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_3__["OrderContext"]);
   const {
-    0: isLoading,
-    1: setIsLoading
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
-  const name = !!order && order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
-
-  const loadDetails = async () => {
-    const orderDetails = await axios.get(`api/orders/${order.id}`);
-    setIsLoading(false);
-    console.log(orderDetails);
-  };
-
-  return __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    onClose: () => setOpen(false),
+    first_name,
+    last_name,
+    address_1,
+    address_2,
+    postcode,
+    city,
+    email,
+    phone
+  } = !!order && order.billing;
+  const productList = !!order ? order.line_items : [];
+  const method = !!order && order.shipping_lines[0] ? order.shipping_lines[0].method_title : 'Aucune méthode renseignée';
+  return __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Dialog"], {
     open: open,
-    onEnter: loadDetails,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 7
-    }
-  }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    onClose: () => setOpen(false),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21,
-      columnNumber: 9
+      columnNumber: 7
     }
-  }, "D\xE9tail commande"), __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["DialogTitle"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 25,
       columnNumber: 9
     }
-  }, "Nice shot ", name));
+  }, "D\xE9tail commande"), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Box"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 9
+    }
+  }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Container"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 13
+    }
+  }, order && __jsx("div", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 17
+    }
+  }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "h3",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 19
+    }
+  }, formatStr(first_name), " ", formatStr(last_name)), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 19
+    }
+  }, "M\xE9thode : ", method), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32,
+      columnNumber: 19
+    }
+  }, "Paiement : ", order.payment_method_title), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 19
+    }
+  }, "Total : ", order.total, "\u20AC"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "h5",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 19
+    }
+  }, "Contact"), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 19
+    }
+  }, address_1), !!address_2 && __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36,
+      columnNumber: 35
+    }
+  }, address_2), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 19
+    }
+  }, postcode), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 19
+    }
+  }, city), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 19
+    }
+  }, email), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 19
+    }
+  }, phone), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "h5",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 19
+    }
+  }, "Details de la commande"), productList.map((product, id) => {
+    return __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+      variant: "body1",
+      key: id,
+      __self: undefined,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 45,
+        columnNumber: 21
+      }
+    }, "- ", product.quantity, "x ", product.name);
+  })))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (OrderDetailsDialog);
@@ -1361,6 +1480,7 @@ const Orders = () => {
     async function loadOrders() {
       const newOrders = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`api/orders`);
       setOrders(newOrders.data);
+      console.log(newOrders.data);
       setIsLoading(false);
     }
 
@@ -1371,14 +1491,14 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 9
     }
   }, __jsx(_context_order_order_context__WEBPACK_IMPORTED_MODULE_9__["OrderProvider"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 9
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Toolbar"], {
@@ -1386,7 +1506,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 13
     }
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -1396,7 +1516,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 17
     }
   }, "Commandes"), __jsx("div", {
@@ -1404,7 +1524,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 34,
       columnNumber: 17
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["Tooltip"], {
@@ -1412,21 +1532,21 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 21
     }
   }, __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["IconButton"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 25
     }
   }, __jsx(_material_ui_icons_Search__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 29
     }
   }))), __jsx(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__["InputBase"], {
@@ -1437,14 +1557,14 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 21
     }
   }))), isLoading == true && __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 35
     }
   }), __jsx(_material_ui_core_Fade__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -1453,7 +1573,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 13
     }
   }, __jsx(_OrderTable__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1462,7 +1582,7 @@ const Orders = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 17
     }
   }))));
@@ -1865,17 +1985,6 @@ module.exports = require("@material-ui/core");
 
 /***/ }),
 
-/***/ "@material-ui/core/Card":
-/*!*****************************************!*\
-  !*** external "@material-ui/core/Card" ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Card");
-
-/***/ }),
-
 /***/ "@material-ui/core/CircularProgress":
 /*!*****************************************************!*\
   !*** external "@material-ui/core/CircularProgress" ***!
@@ -1895,28 +2004,6 @@ module.exports = require("@material-ui/core/CircularProgress");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/CssBaseline");
-
-/***/ }),
-
-/***/ "@material-ui/core/Dialog":
-/*!*******************************************!*\
-  !*** external "@material-ui/core/Dialog" ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/Dialog");
-
-/***/ }),
-
-/***/ "@material-ui/core/DialogTitle":
-/*!************************************************!*\
-  !*** external "@material-ui/core/DialogTitle" ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("@material-ui/core/DialogTitle");
 
 /***/ }),
 
