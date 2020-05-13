@@ -1,4 +1,4 @@
-const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
+
 const axios = require("axios");
 
   export default async (_req, res) => {

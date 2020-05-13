@@ -660,34 +660,48 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const axios = __webpack_require__(/*! axios */ "axios");
+
 const OrderDetailsDialog = () => {
   const {
     order,
     setOpen,
     open
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_4__["OrderContext"]);
+  const {
+    0: isLoading,
+    1: setIsLoading
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
   const name = !!order && order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
+
+  const loadDetails = async () => {
+    const orderDetails = await axios.get(`api/orders/${order.id}`);
+    setIsLoading(false);
+    console.log(orderDetails);
+  };
+
   return __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2___default.a, {
     onClose: () => setOpen(false),
     open: open,
+    onEnter: loadDetails,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 20,
       columnNumber: 7
     }
   }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 21,
       columnNumber: 9
     }
   }, "D\xE9tail commande"), __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, "Nice shot ", name));

@@ -57661,52 +57661,86 @@ var LoginPage = function LoginPage() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "./node_modules/@material-ui/core/esm/DialogTitle/index.js");
-/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js");
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "./node_modules/@material-ui/core/esm/Card/index.js");
-/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/DialogTitle */ "./node_modules/@material-ui/core/esm/DialogTitle/index.js");
+/* harmony import */ var _material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js");
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Card */ "./node_modules/@material-ui/core/esm/Card/index.js");
+/* harmony import */ var _context_order_order_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../context/order/order.context */ "./src/context/order/order.context.tsx");
+
+
 var _this = undefined,
     _jsxFileName = "/Users/Morgan/Programmation/ReactJS/FleurilandDashboard/client/src/components/Orders/OrderDetailsDialog.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
 
+
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 var OrderDetailsDialog = function OrderDetailsDialog() {
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_4__["OrderContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_context_order_order_context__WEBPACK_IMPORTED_MODULE_5__["OrderContext"]),
       order = _useContext.order,
       setOpen = _useContext.setOpen,
       open = _useContext.open;
 
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+      isLoading = _useState[0],
+      setIsLoading = _useState[1];
+
   var name = !!order && order.billing.first_name.charAt(0).toUpperCase() + order.billing.first_name.slice(1).toLowerCase();
-  return __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_2__["default"], {
+
+  var loadDetails = function loadDetails() {
+    var orderDetails;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function loadDetails$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(axios.get("api/orders/".concat(order.id)));
+
+          case 2:
+            orderDetails = _context.sent;
+            setIsLoading(false);
+            console.log(orderDetails);
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, null, null, null, Promise);
+  };
+
+  return __jsx(_material_ui_core_Dialog__WEBPACK_IMPORTED_MODULE_3__["default"], {
     onClose: function onClose() {
       return setOpen(false);
     },
     open: open,
+    onEnter: loadDetails,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 20,
       columnNumber: 7
     }
-  }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, __jsx(_material_ui_core_DialogTitle__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 21,
       columnNumber: 9
     }
-  }, "D\xE9tail commande"), __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "D\xE9tail commande"), __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 22,
       columnNumber: 9
     }
   }, "Nice shot ", name));
